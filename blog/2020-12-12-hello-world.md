@@ -14,6 +14,7 @@ tags: [hello, docusaurus]
 
 由于重装系统后Hexo博客有问题，没能找到解决方案。
 所以使用 Docusaurus 另外搭了一个博客。
+样式参考 [**峰华前端工程师的博客**](https://zxuqian.cn/)。
 Hexo博客还能继续访问，[**点此访问**](https://yancyqi2002.github.io/)。
 
 Hello World !
