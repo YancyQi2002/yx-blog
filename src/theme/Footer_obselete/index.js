@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import 'normalize.css/normalize.css'
+
 import React from "react";
 import classnames from "classnames";
 

@@ -5,6 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
+import 'normalize.css/normalize.css'
+
 import React, { useContext, useEffect, useState } from "react";
 import clsx from "clsx";
 import { MDXProvider } from "@mdx-js/react";
