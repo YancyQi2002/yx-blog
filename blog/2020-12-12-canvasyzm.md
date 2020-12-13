@@ -11,7 +11,7 @@ tags: [前端]
 <!--truncate-->
 ![img](./img/2020-12-12-canvasyzm.png)
 
-参照B站视频 BV1T64y1f7kM UP @ 老陈打码
+参照B站UP @ 老陈打码 视频 BV1T64y1f7kM 
 
 <iframe src="//player.bilibili.com/player.html?aid=755504605&bvid=BV1T64y1f7kM&cid=266173017&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"width="100%" height="550" > 
 </iframe>
