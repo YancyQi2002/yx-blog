@@ -4,7 +4,7 @@ module.exports = {
   title: "Yancy Qi ’s Blog",
   tagline: "The tagline of my site",
   titleDelimiter: "-",
-  url: "https://www.zxuqian.cn",
+  url: "https://yx-blog.vercel.app/",
   baseUrl: "/",
   favicon: "img/favicon-me.ico",
   organizationName: "YancyQi2002", // Usually your GitHub org/user name.
