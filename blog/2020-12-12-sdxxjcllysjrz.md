@@ -11,4 +11,4 @@ tags: [深度学习]
 <!--truncate-->
 ![img](./img/2020-12-12-sdxxjcllysjrz.png)
 
-2020年12月6日 NVIDIA 深度学习学院 DLI 培训
+2020年12月6日 NVIDIA 深度学习学院 DLI 培训 证明
