@@ -6,7 +6,7 @@
  */
 
 import React, { useContext, useEffect, useState } from "react";
-
+<script data-ad-client="ca-pub-2500903599637609" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import BlogPostItem from "../BlogPostItem";
