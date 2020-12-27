@@ -6,7 +6,7 @@
 
 /* You can override the default Infima variables here. */
 
-/* 目前仅兼容 Surface Duo */
+/* 目前仅对部分设备兼容 */
 :root {
   --ifm-color-primary: #007be2;
   --ifm-color-primary-dark: #119cc5;
@@ -372,5 +372,60 @@ html[data-theme="dark"] .footer__read_count {
 
   .bloghome__intro > p {
     line-height: 8px;
+  }
+}
+
+@media (width: 414px) and (height: 736px) {
+  .hero {
+    margin-top: -667px;
+  }
+
+  .bloghome__intro {
+    margin-top: 606px;
+  }
+
+  .bloghome__intro h2 {
+    margin-top: 8px;
+    margin-bottom: 5px;
+  }
+
+  .bloghome__intro>p {
+    line-height: 0px;
+  }
+
+  .social__links {
+    padding: 0 0 2.5em;
+  }
+
+  .blog__section_title {
+    padding-top: 0em;
+    margin: 1em 0 1em;
+  }
+
+  .container,
+  .row .col {
+    width: 93%;
+  }
+
+  .margin-bottom--lg,
+  .margin-vert--lg {
+    margin-bottom: 0rem!important;
+  }
+
+  .footer {
+    margin-top: -60px;
+  }
+
+  .footer__item {
+    margin-top: -6px;
+  }
+
+  .footer__col {
+    margin-top: -20px;
+    margin-bottom: 30px;
+  }
+
+  .footer .container .text--center {
+    margin-top: -22px;
   }
 }
