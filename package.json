@@ -2,6 +2,10 @@
   "name": "yx-blog",
   "version": "0.0.1",
   "private": true,
+  "proxy": [
+    "https://api.bilibili.com",
+    "https://api.kaaass.net/"
+  ],
   "scripts": {
     "start": "docusaurus start",
     "clear": "docusaurus clear",
@@ -21,6 +25,7 @@
     "@zxuqian/react-examples": "^0.1.4",
     "classnames": "^2.2.6",
     "core-js": "^3.8.1",
+    "json-loader": "^0.5.7",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
     "react-app-polyfill": "^2.0.0",
