@@ -375,6 +375,38 @@ html[data-theme="dark"] .footer__read_count {
   }
 }
 
+@media (width: 540px) and (height: 720px) {
+  .bloghome__intro {
+    margin-left: 16px !important;
+  }
+
+  .blog__section_title {
+    margin-bottom: 30px !important;
+  }
+
+  .post__date {
+    margin: auto;
+  }
+
+  .bloghome__posts .row .col--10 {
+    padding-left: 50px;
+    margin-left: 14px;
+  }
+
+  .blog__section_title {
+    padding-top: .2em;
+    margin-bottom: .2em;
+  }
+
+  .footer {
+    margin-top: 1em;
+  }
+
+  .footer__read_count {
+    margin-right: 30px;
+  }
+}
+
 @media (width: 414px) and (height: 736px) {
   body {
     margin-left: -22px !important;
@@ -382,6 +414,10 @@ html[data-theme="dark"] .footer__read_count {
 
   .navbar .navbar__items .navbar__toggle {
     margin-left: 24px;
+  }
+
+  .navbar-sidebar {
+    padding: 8px !important;
   }
 
   .hero {

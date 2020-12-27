@@ -92,7 +92,7 @@ function BlogListPage(props) {
               href="https://space.bilibili.com/314108035"
               className="bloghome__follow"
             >
-              去B站关注
+              去B站关注 ({(Math.round(followers) / 10000).toFixed(1)} 万)
             </a>
           </animated.div>
           <animated.p style={animatedTexts[3]}>
