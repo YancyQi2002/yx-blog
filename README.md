@@ -5,23 +5,18 @@
 ### 安装
 
 ```
-$ yarn install
+$ npm install
 ```
 
 ### 本地开发
 
 ```
-$ yarn start
+$ npm start
 ```
 
 ### Build
 
 ```
-$ yarn build
+$ npm run build
 ```
 
-### 部署
-
-```
-$ GIT_USER=<Your GitHub username> USE_SSH=true yarn deploy
-```

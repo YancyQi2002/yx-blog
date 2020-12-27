@@ -8,6 +8,11 @@
 import 'normalize.css/normalize.css'
 
 import React, { useContext, useEffect, useState } from "react";
+
+import 'core-js/es'  
+import 'react-app-polyfill/ie9'  
+import 'react-app-polyfill/stable'
+
 import clsx from "clsx";
 import { MDXProvider } from "@mdx-js/react";
 
@@ -23,9 +28,13 @@ import { MarkdownSection, StyledBlogItem } from "./style";
 import { withTheme } from "styled-components";
 
 import Eye from "@site/static/icons/eye.svg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTags } from "@fortawesome/free-solid-svg-icons";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
 const MONTHS = [
   "",
+  "January",
   "February",
   "March",
   "April",
@@ -96,6 +105,11 @@ function BlogPostItem(props) {
         <p className="row margin-top--none margin-bottom--lg">
           {tags.length > 0 && (
             <div className="col">
+              <FontAwesomeIcon
+                icon={faTags}
+                color="#c4d3e0"
+                className="margin-right--md"
+              />
               {tags
                 .slice(0, 4)
                 .map(({ label, permalink: tagPermalink }, index) => (
@@ -173,7 +187,7 @@ function BlogPostItem(props) {
               <MDXProvider components={MDXComponents}>{children}</MDXProvider>
             </MarkdownSection>
           </article>
-          <footer className="article__footer margin-top--lg">
+          <footer className="article__footer padding-top--md margin-top--lg margin-bottom--lg">
             {truncated && (
               <Link to={metadata.permalink} aria-label={`阅读 ${title} 的全文`}>
                 <strong className={styles.readMore}>阅读原文</strong>
@@ -196,20 +210,45 @@ function BlogPostItem(props) {
 }
 
 function Count({ postId, ...post }) {
-  const addViewCount = async () => {
-    await fetch("", {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ postId }),
-    });
-  };
 
-  useEffect(() => {
-    addViewCount();
-  }, []);
-  return null;
+  // const addViewCount = async () => {
+  //   await fetch("", {
+  //     method: "PUT",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ postId }),
+  //   });
+  // };
+
+  // useEffect(() => {
+  //   addViewCount();
+  // }, []);
+  // return null;
+
+  return (
+    <BrowserOnly fallback={<div></div>}>
+      {() => {
+        if (localStorage.getItem(postId)) return null;
+
+        const addViewCount = async () => {
+          await fetch("https://api.zxuqian.cn/post/increase_view", {
+            method: "PUT",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ postId }),
+          });
+          localStorage.setItem(postId, true);
+        };
+
+        useEffect(() => {
+          addViewCount();
+        }, []);
+        return null;
+      }}
+    </BrowserOnly>
+  );
 }
 
 export default BlogPostItem;

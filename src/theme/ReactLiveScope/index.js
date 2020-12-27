@@ -8,6 +8,11 @@
 import 'normalize.css/normalize.css'
 
 import React from "react";
+
+import 'core-js/es'  
+import 'react-app-polyfill/ie9'  
+import 'react-app-polyfill/stable'
+
 import styled from "styled-components";
 
 // Add react-live imports you need here

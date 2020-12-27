@@ -20,8 +20,10 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@zxuqian/react-examples": "^0.1.4",
     "classnames": "^2.2.6",
+    "core-js": "^3.8.1",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
+    "react-app-polyfill": "^2.0.0",
     "react-dom": "^16.8.4",
     "react-reveal": "^1.2.2",
     "react-spring": "^8.0.27",
@@ -32,12 +34,14 @@
     "production": [
       ">0.2%",
       "not dead",
-      "not op_mini all"
+      "not op_mini all",
+      "ie > 9"
     ],
     "development": [
       "last 1 chrome version",
       "last 1 firefox version",
-      "last 1 safari version"
+      "last 1 safari version",
+      "ie > 9"
     ]
   }
 }

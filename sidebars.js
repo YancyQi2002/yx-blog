@@ -23,7 +23,7 @@ module.exports = {
       "videos/css/04-selectors/css-selectors",
     ],
     HTML: ["videos/html/01-html-basics/html-basics"],
-
+    特效: ["videos/effects/01-glassmorphism/effects-glassmorphism"],
     浏览器: [
       "videos/browser/01-dom/what-is-dom",
       "videos/browser/02-bom/what-is-bom",
@@ -40,5 +40,11 @@ module.exports = {
       "videos/react/03-5-react-spring-animations/5-react-spring-animations",
     ],
     TypeScript: ["videos/ts/01-intro/ts-intro"],
+  },
+  resources: {
+    简介: ["resources/resources-intro"],
+    前端开发: [],
+    软件工具: [],
+    "UI 设计": [],
   },
 };

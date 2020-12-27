@@ -8,6 +8,11 @@
 import 'normalize.css/normalize.css'
 
 import React from "react";
+
+import 'core-js/es'  
+import 'react-app-polyfill/ie9'  
+import 'react-app-polyfill/stable'
+
 import Layout from "@theme/Layout";
 import BlogPostItem from "@theme/BlogPostItem";
 import Link from "@docusaurus/Link";

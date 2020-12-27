@@ -6,7 +6,7 @@ author: Yancy Qi
 author_title: 前端开发者
 author_url: https://yancyqi2002.github.io/Personal-page/
 author_image_url: https://avatars1.githubusercontent.com/u/63138264?s=460&u=2db0085943a7df4193922bc39dd3cb2b47e1f15d&v=4
-tags: [前端]
+tags: [前端, vue]
 ---
 
 
@@ -31,7 +31,7 @@ tags: [前端]
 
 <hr />
 
-## 初始化流程图
+## 初始化流程
 
 ![img](./img/2020-12-22-vue3play-plane-day01-1.png)
 

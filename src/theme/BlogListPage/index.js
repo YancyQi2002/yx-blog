@@ -6,7 +6,11 @@
  */
 
 import React, { useContext, useEffect, useState } from "react";
-<script data-ad-client="ca-pub-2500903599637609" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+import 'core-js/es'  
+import 'react-app-polyfill/ie9'  
+import 'react-app-polyfill/stable'
+
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import BlogPostItem from "../BlogPostItem";
@@ -26,7 +30,10 @@ import useFollowers from "./useFollowers";
 import useViews from "./useViews";
 import { useTrail, animated, useSpring } from "react-spring";
 import Fade from "react-reveal/Fade";
+
 import ArrowDown from "@site/static/icons/arrow-down.svg";
+import BilibiliIcon from "@site/static/icons/bilibili.svg";
+import WeiboIcon from '@site/static/icons/weibo.svg';
 
 function BlogListPage(props) {
   const { metadata, items } = props;
@@ -51,14 +58,14 @@ function BlogListPage(props) {
       friction: 45,
       tension: 460,
     },
-    delay: 200,
+    // delay: 300,
   });
   const animatedHero = useSpring({
     opacity: 1,
-    transform: "translateX(0)",
-    from: { opacity: 0, transform: "translateX(8em)" },
-    config: { mass: 2, tension: 260, friction: 30 },
-    delay: 600,
+    transform: "100%",
+    from: { opacity: 0, backgroundPositionX: "200%" },
+    config: { mass: 3, tension: 280, friction: 30 },
+    // delay: 1200,
   });
 
   // const animatedBackground = useSpring({
@@ -68,18 +75,11 @@ function BlogListPage(props) {
   //   },
   // });
 
-
-  let mystyle={
-    padding: '5px',
-    top: '-20px',
-    width: '600px',
-  }
-
   return (
     <Layout title={title} description={description}>
       {/* 个人简介 */}
       <div className="hero">
-        <div className="bloghome__intro" tyle={mystyle}>
+        <div className="bloghome__intro">
           <animated.h2 style={animatedTexts[0]}>
             Hello! 我是 &nbsp;
             <span className="intro__name">Yancy Qi</span>
@@ -159,24 +159,26 @@ function BlogListPage(props) {
 }
 
 function SocialLinks({ animatedProps, ...props }) {
-  const { isDarkTheme } = useThemeContext();
+  // const { isDarkTheme } = useThemeContext();
   return (
     <animated.div className="social__links" style={animatedProps}>
       <a href="https://space.bilibili.com/314108035">
-        <img
-          src={useBaseUrl(`icons/bilibili${isDarkTheme ? "-dark" : ""}.svg`)}
-          alt="bilibili"
-        />
+        <BilibiliIcon />
       </a>
       <a href="https://weibo.com/yancyqi">
-        <img
-          src={useBaseUrl(`icons/weibo${isDarkTheme ? "-dark" : ""}.svg`)}
-          alt="weibo"
-        />
+        <WeiboIcon />
       </a>
       <a href="https://github.com/yancyqi2002">
-        <FontAwesomeIcon icon={faGithub} />
+        <FontAwesomeIcon icon={faGithub} size="lg" />
       </a>
+      <div className="dropdown dropdown--hoverable">
+        <FontAwesomeIcon icon={faWeixin} size="lg" />
+        <img
+          width="50%"
+          className="dropdown__menu"
+          src={useBaseUrl("/img/weixin.png")}
+        />
+      </div>
     </animated.div>
   );
 }
