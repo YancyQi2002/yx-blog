@@ -7,7 +7,7 @@ module.exports = function(context, options) {
           {
             tagName: "script",
             attributes: {
-              "data-ad-client": "ca-pub-3487507367729662",
+              "data-ad-client": "ca-pub-2500903599637609",
               async: true,
               src:
                 "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"

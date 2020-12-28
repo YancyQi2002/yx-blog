@@ -145,6 +145,6 @@ module.exports = {
   plugins: [
     path.resolve(__dirname, "./src/plugin/plugin-baidu-analytics"),
     path.resolve(__dirname, "./src/plugin/plugin-baidu-push"),
-    // path.resolve(__dirname, "./src/plugin/plugin-google-adsense"),
+    path.resolve(__dirname, "./src/plugin/plugin-google-adsense"),
   ],
 };
