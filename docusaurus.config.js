@@ -146,5 +146,13 @@ module.exports = {
     path.resolve(__dirname, "./src/plugin/plugin-baidu-analytics"),
     path.resolve(__dirname, "./src/plugin/plugin-baidu-push"),
     path.resolve(__dirname, "./src/plugin/plugin-google-adsense"),
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        // `hashed` is recommended as long-term-cache of index file is possible.
+        hashed: true,
+        language: ["en", "zh"],
+      },
+    ],
   ],
 };
