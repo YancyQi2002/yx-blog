@@ -10,7 +10,7 @@ module.exports = function(context, options) {
             var _hmt = _hmt || [];
             (function() {
               var hm = document.createElement("script");
-              hm.src = "https://hm.baidu.com/hm.js?135f3e7db7162b348a790b8b00e07413";
+              hm.src = "https://hm.baidu.com/hm.js?941da2aae9293653562b42ce49eab250";
               var s = document.getElementsByTagName("script")[0]; 
               s.parentNode.insertBefore(hm, s);
             })();
@@ -20,7 +20,7 @@ module.exports = function(context, options) {
             tagName: "meta",
             attributes: {
               name: "baidu-site-verification",
-              content: "IXU12YQUjF"
+              content: "code-ayzAPFnBLG"
             }
           }
         ]
