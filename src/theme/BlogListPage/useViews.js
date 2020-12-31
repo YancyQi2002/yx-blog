@@ -8,7 +8,7 @@ export default function useViews(items) {
   const [views, setViews] = useState([]);
   const getViews = async () => {
     try {
-      const res = await fetch("", {
+      const res = await fetch("https://api.yx-blog.vercel.app/post/views", {
         method: "POST",
         body: JSON.stringify(postIds),
         headers: {

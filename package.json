@@ -4,7 +4,9 @@
   "private": true,
   "proxy": [
     "https://api.bilibili.com",
-    "https://api.kaaass.net/"
+    "https://api.kaaass.net",
+    "https://api.bilibili.com/x/relation/stat?vmid=314108035",
+    "https://api.yx-blog.vercel.app/post/views"
   ],
   "scripts": {
     "start": "docusaurus start",
@@ -14,9 +16,9 @@
     "deploy": "docusaurus deploy"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.0.0-alpha.69",
-    "@docusaurus/preset-classic": "^2.0.0-alpha.69",
-    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.69",
+    "@docusaurus/core": "^2.0.0-alpha.70",
+    "@docusaurus/preset-classic": "^2.0.0-alpha.70",
+    "@docusaurus/theme-live-codeblock": "^2.0.0-alpha.70",
     "@easyops-cn/docusaurus-search-local": "^0.14.2",
     "@fortawesome/fontawesome-svg-core": "^1.2.30",
     "@fortawesome/free-brands-svg-icons": "^5.14.0",
@@ -25,9 +27,13 @@
     "@fortawesome/react-fontawesome": "^0.1.11",
     "@zxuqian/react-examples": "^0.1.4",
     "bcryptjs": "^2.4.3",
+    "bullframe.css": "^3.3.9",
     "classnames": "^2.2.6",
     "core-js": "^3.8.1",
+    "html5shiv": "^3.7.3",
+    "http-proxy-middleware": "^1.0.6",
     "json-loader": "^0.5.7",
+    "node-pre-gyp": "^0.17.0",
     "normalize.css": "^8.0.1",
     "react": "^16.8.4",
     "react-app-polyfill": "^2.0.0",
@@ -50,5 +56,6 @@
       "last 1 safari version",
       "ie > 9"
     ]
-  }
+  },
+  "devDependencies": {}
 }

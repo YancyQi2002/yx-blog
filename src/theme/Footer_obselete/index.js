@@ -13,6 +13,9 @@ import 'core-js/es'
 import 'react-app-polyfill/ie9'  
 import 'react-app-polyfill/stable'
 
+import 'html5shiv'
+import 'bullframe.css'
+
 import classnames from "classnames";
 
 import Link from "@docusaurus/Link";

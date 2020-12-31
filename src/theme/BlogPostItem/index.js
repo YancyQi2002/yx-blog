@@ -232,7 +232,7 @@ function Count({ postId, ...post }) {
         if (localStorage.getItem(postId)) return null;
 
         const addViewCount = async () => {
-          await fetch("https://api.zxuqian.cn/post/increase_view", {
+          await fetch("https://api.yx-blog.vercel.app/post/increase_view", {
             method: "PUT",
             headers: {
               "Content-Type": "application/json",

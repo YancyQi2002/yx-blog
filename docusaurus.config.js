@@ -29,6 +29,10 @@ module.exports = {
               to: "tags/前端",
             },
             {
+              label: "Linux",
+              to: "tags/Linux",
+            },
+            {
               label: "深度学习",
               to: "tags/深度学习",
             },
