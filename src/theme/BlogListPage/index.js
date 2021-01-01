@@ -35,6 +35,10 @@ import ArrowDown from "@site/static/icons/arrow-down.svg";
 import BilibiliIcon from "@site/static/icons/bilibili.svg";
 import WeiboIcon from '@site/static/icons/weibo.svg';
 
+import Img from "react-webp-image";
+import imgPath from "@site/static/img/weixin.png";
+import webpPath from "@site/static/img/weixin.webp";
+
 function BlogListPage(props) {
   const { metadata, items } = props;
 
@@ -176,11 +180,13 @@ function SocialLinks({ animatedProps, ...props }) {
         <img
           width="50%"
           className="dropdown__menu"
-          src={useBaseUrl("/img/weixin.png")}
+          src={imgPath}
+          webp={webpPath}
         />
       </div>
     </animated.div>
   );
 }
+
 
 export default BlogListPage;
