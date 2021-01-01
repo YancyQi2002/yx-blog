@@ -110,7 +110,7 @@ module.exports = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Yancy Qi &nbsp;&nbsp;&nbsp;&nbsp; Built with Docusaurus.`,
+      copyright: `Copyright&nbsp;&nbsp;&copy;&nbsp;&nbsp;2020 — ${new Date().getFullYear()} Yancy Qi &nbsp;&nbsp;&nbsp;&nbsp; Built with Docusaurus.`,
     },
     prism: {
       darkTheme: require("prism-react-renderer/themes/vsDark"),
