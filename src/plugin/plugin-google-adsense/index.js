@@ -7,7 +7,7 @@ module.exports = function(context, options) {
           {
             tagName: "script",
             attributes: {
-              "rel": "preload",
+              "rel": ["preload", "preconnect", "dns-prefetch"],
               "data-ad-client": "ca-pub-2500903599637609",
               defer: true,
               async: true,
