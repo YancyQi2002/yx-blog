@@ -9,7 +9,7 @@ author_image_url: https://avatars1.githubusercontent.com/u/63138264?s=460&u=2db0
 tags: [Python]
 ---
 
-Python 程序设计课大作业
+**Python 程序设计课大作业**
 
 <!--truncate-->
 
@@ -484,7 +484,7 @@ class EnemyBullet :
 
 
 
-扫描二维码获取此版
+扫描二维码获取此版 exe 文件
 
 
 

@@ -20,6 +20,7 @@ module.exports = function(context, options) {
             tagName: "meta",
             attributes: {
               name: "baidu-site-verification",
+              "rel": ["preload", "preconnect", "dns-prefetch"],
               content: "code-ayzAPFnBLG"
             }
           }
