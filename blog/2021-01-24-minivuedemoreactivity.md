@@ -10,7 +10,7 @@ tags: [前端, vue]
 
 ---
 
-完成一个简版Vue3  Day 01 reactivity 响应式实现
+**完成一个简版Vue3  Day 01 reactivity 响应式实现**
 
 <!--truncate-->
 
@@ -603,6 +603,12 @@ import { effectWatch, reactive } from './core/reactivity/index.js'
 重新执行 html 文件，效果如图：
 
 ![img](./img/2021-01-24-minivuedemoreactivity009.png)
+
+
+
+**代码下载：**
+
+![img](./img/2021-01-24-minivuedemoreactivity010.png)
 
 
 
