@@ -83,7 +83,7 @@ function BlogListPage(props) {
         <animated.div className="hero">
           <div className="bloghome__intro">
             <animated.div style={animatedTexts[0]} className="hero_text">
-              <h1>Hello! 我是<span className="intro__name">Yancy Qi</span></h1>
+              <h2>Hello! 我是<span className="intro__name">Yancy Qi</span></h2>
             </animated.div>
             <animated.p style={animatedTexts[1]}>
               目标：掌握编程技巧，<br/>
