@@ -146,20 +146,23 @@ function BlogPostItem(props) {
 
       {/* 统计 */}
       {isBlogPostPage && <Count postId={postId} />}
-
-      <div className="row">
+      <div
+        className={`row 
+         ${!isBlogPostPage ? "blog-list--item" : ""}`}
+        style={{ margin: 0 }}
+      >
         {/* 列表页日期 */}
         {!isBlogPostPage && (
-          <div className="col col--2 padding-right--lg margin-bottom--lg">
-            <div class="post__date">
-              <div class="post__day">{day}</div>
-              <div class="post__year_month">
+          <div className="col col--3 padding-right--lg margin-bottom--lg">
+            <div className="post__date">
+              <div className="post__day">{day}</div>
+              <div className="post__year_month">
                 {year}年{month}月
               </div>
             </div>
           </div>
         )}
-        <div className={`col ${isBlogPostPage ? `col--12` : `col--10`}`}>
+        <div className={`col ${isBlogPostPage ? `col--12` : `col--9`}`}>
           {/* 博文部分 */}
           <article
             className={!isBlogPostPage ? "margin-bottom--md" : undefined}
@@ -188,19 +191,19 @@ function BlogPostItem(props) {
             </MarkdownSection>
           </article>
           <footer className="article__footer padding-top--md margin-top--lg margin-bottom--lg">
-            {truncated && (
-              <Link to={metadata.permalink} aria-label={`阅读 ${title} 的全文`}>
-                <strong className={styles.readMore}>阅读原文</strong>
-              </Link>
-            )}
             {!isBlogPostPage && (
               <span className="footer__read_count">
                 <Eye
-                  color={isDarkTheme ? "#76baff" : "#1e81e3"}
+                  color={isDarkTheme ? "#76baff" : "#006dfe"}
                   style={{ verticalAlign: "middle" }}
                 />{" "}
                 {views}
               </span>
+            )}
+            {truncated && (
+              <Link to={metadata.permalink} aria-label={`阅读 ${title} 的全文`}>
+                <strong className={styles.readMore}>阅读原文</strong>
+              </Link>
             )}
           </footer>
         </div>
@@ -229,7 +232,7 @@ function Count({ postId, ...post }) {
   return (
     <BrowserOnly fallback={<div></div>}>
       {() => {
-        if (localStorage.getItem(postId)) return null;
+        // if (localStorage.getItem(postId)) return null;
 
         const addViewCount = async () => {
           await fetch("https://api.yx-blog.vercel.app/post/increase_view", {
@@ -239,7 +242,7 @@ function Count({ postId, ...post }) {
             },
             body: JSON.stringify({ postId }),
           });
-          localStorage.setItem(postId, true);
+          // localStorage.setItem(postId, true);
         };
 
         useEffect(() => {

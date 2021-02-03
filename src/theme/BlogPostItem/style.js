@@ -14,10 +14,10 @@ const light = css`
     /* color: var(--ifm-link-color); */
   }
 
-  h2,
+  /* h2,
   h3 {
     color: var(--post-title-color);
-  }
+  } */
 
   p,
   li,
@@ -30,7 +30,7 @@ const light = css`
 
   p,
   li {
-    color: var(--test-color);
+    /* color: var(--test-color); */
   }
 `;
 
@@ -39,7 +39,14 @@ export const MarkdownSection = styled.section`
 `;
 
 export const StyledBlogItem = styled.div`
-  margin-bottom: 5.25em;
+  /* ${({ isBlogPostPage }) =>
+    !isBlogPostPage &&
+    css`
+      box-shadow: var(--post-shadow);
+      padding: 3em 2em;
+    `} */
+  margin-top: 4.25em;
+  margin-bottom: 4.25em;
   article {
     .single-post--date {
       color: var(--post-title-color);
@@ -49,26 +56,40 @@ export const StyledBlogItem = styled.div`
         font-size: 2em;
         /* color: #2f5c85; */
       }
-
       > h2 {
         font-size: 2em;
         line-height: 1.5em;
         margin-bottom: 20px !important;
         a {
-          color: var(--post-title-color);
+          color: var(--ifm-heading-color);
           &:hover {
             text-decoration: none;
           }
         }
       }
-
       > div > time {
         color: var(--post-pub-date-color);
       }
     }
-
     .markdown > h1 {
       font-size: 2em;
     }
   }
+  /* 卡片新拟态特效 */
+  .blog-list--item {
+    border-radius: 12px;
+    background: var(--blog-item-background-color);
+    box-shadow: var(--blog-item-shadow);
+    padding: 2em 1em;
+    position: relative;
+  }
+  .testt {
+    position: absolute;
+    font-size: 12vw;
+    color: #c8a3ff;
+  }
+  /* @media (max-width: 570px) {
+    box-shadow: none;
+    padding: 0;
+  } */
 `;
