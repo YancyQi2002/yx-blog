@@ -1,4 +1,6 @@
 const path = require("path");
+const math = require("remark-math");
+const katex = require("rehype-katex");
 
 module.exports = {
   title: "Yancy Qi ’s Blog",
@@ -19,6 +21,10 @@ module.exports = {
         srcDark: "img/logo-me.svg",
       },
       items: [
+        {
+          type: "localeDropdown",
+          position: "left",
+        },
         {
           to: "/",
           label: "Blog",
@@ -47,11 +53,6 @@ module.exports = {
           label: "GitHub",
           position: "right",
         },
-        // {
-        //   href: "https://github.com/zxuqian/frontend-questions/issues",
-        //   label: "提问",
-        //   position: "right",
-        // },
       ],
     },
     footer: {
@@ -128,6 +129,9 @@ module.exports = {
         blog: {
           path: "./blog",
           routeBasePath: "/",
+          blogSidebarTitle: "近期文章",
+          remarkPlugins: [math],
+          rehypePlugins: [katex],
           feedOptions: {
             type: "all",
             title: "Yancy Qi",
@@ -159,4 +163,25 @@ module.exports = {
       },
     ],
   ],
+  stylesheets: [
+    {
+      href: "/katex/katex.min.css",
+      type: "text/css",
+      integrity:
+        "sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X",
+      crossorigin: "anonymous",
+    },
+  ],
+  i18n: {
+    defaultLocale: "zh-CN",
+    locales: ["zh-CN", "en"],
+    localeConfigs: {
+      "zh-CN": {
+        label: "中文",
+      },
+      en: {
+        label: "English",
+      },
+    },
+  },
 };

@@ -30,10 +30,13 @@ import Fade from "react-reveal/Fade";
 
 import ArrowDown from "@site/static/icons/arrow-down.svg";
 import BilibiliIcon from "@site/static/icons/bilibili.svg";
+import Button from "../../components/Button";
 
 import Img from "react-webp-image";
 import imgPath from "@site/static/img/weixin.png";
 import webpPath from "@site/static/img/weixin.webp";
+
+import Translate, { translate } from "@docusaurus/Translate";
 
 function BlogListPage(props) {
   const { metadata, items } = props;
@@ -83,22 +86,39 @@ function BlogListPage(props) {
         <animated.div className="hero">
           <div className="bloghome__intro">
             <animated.div style={animatedTexts[0]} className="hero_text">
-              <h2>Hello! 我是<span className="intro__name">Yancy Qi</span></h2>
+              <Translate description="hero greet">Hello! 我是</Translate>
+              <span className="intro__name">
+                <Translate description="my name">Yancy Qi</Translate>
+              </span>
             </animated.div>
+
             <animated.p style={animatedTexts[1]}>
-              目标：掌握编程技巧，<br/>
-              提升工作竞争力和创新能力。
+              <Translate id="homepage.hero.text" description="hero text">
+                目标：掌握编程技巧，<br />
+                提升工作竞争力和创新能力。
+              </Translate>
             </animated.p>
             <animated.div style={animatedTexts[2]}>
-              <a
-                href="https://space.bilibili.com/314108035"
-                className="bloghome__follow"
+              <Button
+                isLink
+                href={translate({
+                  message:
+                    "https://space.bilibili.com/314108035",
+                  description: "social link bilibili",
+                })}
               >
-                去B站关注 ({(Math.round(followers) / 10000).toFixed(1)} 万)
-              </a>
+                <Translate description="follow me btn text">
+                  去B站关注
+                </Translate>
+                <Translate id="homepage.followers" description="followers">
+                  ({(Math.round(followers) / 10000).toFixed(1)} 万)
+                </Translate>
+              </Button>
             </animated.div>
             <animated.p style={animatedTexts[3]}>
-              QQ 1 ：1195029215 &nbsp; QQ 2 ：2714549959
+              <Translate id="homepage.qqgroup" description="qq group">
+                QQ 1 ：1195029215 &nbsp; QQ 2 ：2714549959
+              </Translate>
             </animated.p>
             <SocialLinks animatedProps={animatedTexts[4]} />
           </div>
@@ -123,7 +143,10 @@ function BlogListPage(props) {
               {/* <div className="content__divider"></div> */}
               {!isPaginated && (
                 <h1 className="blog__section_title">
-                  最新博客&nbsp;
+                  <Translate description="latest blogs heading">
+                    最新博客
+                  </Translate>
+                  &nbsp;
                   <svg
                     width="31"
                     height="31"
@@ -176,7 +199,7 @@ function SocialLinks({ animatedProps, ...props }) {
       <a href="https://weibo.com/yancyqi">
         <FontAwesomeIcon icon={faWeibo} size="lg" />
       </a>
-      <a href="https://github.com/zxuqian">
+      <a href="https://github.com/YancyQi2002?tab=repositories">
         <FontAwesomeIcon icon={faGithub} size="lg" />
       </a>
       <div className="dropdown dropdown--hoverable">

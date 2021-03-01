@@ -1,0 +1,26 @@
+{
+  "title": {
+    "message": "Yancy Qi",
+    "description": "The title in the navbar"
+  },
+  "item.label.博客": {
+    "message": "Blogs",
+    "description": "Navbar item with label 博客"
+  },
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
+  },
+  "item.label.前端": {
+    "message": "Frontend",
+    "description": "Navbar item with label 前端"
+  },
+  "item.label.Linux": {
+    "message": "Career",
+    "description": "Navbar item with label Linux"
+  },
+  "item.label.深度学习": {
+    "message": "Health",
+    "description": "Navbar item with label 深度学习"
+  }
+}

@@ -36,17 +36,33 @@ const light = css`
 
 export const MarkdownSection = styled.section`
   ${({ isDark }) => (isDark ? `` : light)}
+  ${({ isBlogPostPage }) =>
+    isBlogPostPage
+      ? ""
+      : css`
+          /* img {
+            width: 100%;
+            height: 40%;
+            max-width: 100%;
+            max-height: 400px;
+            object-fit: cover;
+            object-position: top;
+          } */
+        `}
 `;
 
 export const StyledBlogItem = styled.div`
-  /* ${({ isBlogPostPage }) =>
-    !isBlogPostPage &&
-    css`
-      box-shadow: var(--post-shadow);
-      padding: 3em 2em;
-    `} */
   margin-top: 4.25em;
-  margin-bottom: 4.25em;
+  margin-bottom: 7.25em;
+
+  ${({ isBlogPostPage }) =>
+    isBlogPostPage &&
+    css`
+      /* box-shadow: var(--post-shadow);
+      padding: 3em 2em; */
+      margin-top: 0;
+    `}
+
   article {
     .single-post--date {
       color: var(--post-title-color);
@@ -75,6 +91,7 @@ export const StyledBlogItem = styled.div`
       font-size: 2em;
     }
   }
+
   /* 卡片新拟态特效 */
   .blog-list--item {
     border-radius: 12px;
@@ -83,11 +100,13 @@ export const StyledBlogItem = styled.div`
     padding: 2em 1em;
     position: relative;
   }
+
   .testt {
     position: absolute;
     font-size: 12vw;
     color: #c8a3ff;
   }
+  
   /* @media (max-width: 570px) {
     box-shadow: none;
     padding: 0;

@@ -1,0 +1,66 @@
+{
+  "Hello! 我是": {
+    "message": "Hello! I'm ",
+    "description": "hero greet"
+  },
+  "Yancy Qi": {
+    "message": "Yancy Qi",
+    "description": "my name"
+  },
+  "homepage.hero.text": {
+    "message": "I'm a front-end developer. Objective: to master programming skills, improve work competitiveness and innovation ability.",
+    "description": "hero text"
+  },
+  "homepage.qqgroup": {
+    "message": "",
+    "description": "qq number"
+  },
+  "https://space.bilibili.com/314108035": {
+    "message": "https://space.bilibili.com/314108035",
+    "description": "social link bilibili"
+  },
+  "去B站关注": {
+    "message": "Follow Me on bilibili",
+    "description": "follow me btn text"
+  },
+  "homepage.followers": {
+    "message": "",
+    "description": "followers"
+  },
+  "最新博客": {
+    "message": "Latest Blogs",
+    "description": "latest blogs heading"
+  },
+  "blogpage.estimated.time": {
+    "message": "",
+    "description": "blog page estimated time"
+  },
+  "blogpage.estimated.time.label": {
+    "message": "min read",
+    "description": "blog page estimated time label"
+  },
+  "阅读原文": {
+    "message": "Read More",
+    "description": "read full text"
+  },
+  "blogtagpage.title": {
+    "message": "",
+    "description": "blog tag page title"
+  },
+  "blogtagpage.title.alt": {
+    "message": "Posts in tag: ",
+    "description": "blog tag page title in alternate order"
+  },
+  "blogtagpage.description": {
+    "message": "Tag",
+    "description": "blog tag page description"
+  },
+  "blogtagpage.count.label": {
+    "message": " posts",
+    "description": "blog page count label"
+  },
+  "blogtagpage.seeall.label": {
+    "message": "See All Tags",
+    "description": "blog page see all label"
+  }
+}
