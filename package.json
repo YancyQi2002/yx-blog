@@ -66,5 +66,8 @@
       "ie > 9"
     ]
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": ">=10"
+  }
 }

@@ -8,14 +8,19 @@ author_image_url: https://avatars1.githubusercontent.com/u/63138264?s=460&u=2db0
 tags: [hello, docusaurus]
 ---
 
-欢迎来到我的博客。此博客是用 [**Docusaurus 2 alpha**](https://v2.docusaurus.io/) 创建的。
+Welcome to my blog. This blog uses  [**Docusaurus 2 alpha**](https://v2.docusaurus.io/)  created.
 
 <!--truncate-->
 
-由于重装系统后Hexo博客有问题，没能找到解决方案。
-所以使用 Docusaurus 另外搭了一个博客。
-样式参照 [**峰华前端工程师的博客**](https://zxuqian.cn/)。
-之前使用Hexo搭建的博客还能继续访问，[**点此访问**](https://yancyqi2002.github.io/)。
+Because there is a problem with hexo blog after the system is reinstalled, no solution can be found for the time being.
+
+So I set up another blog with Docusaurus.
+
+Style reference [**Fenghua front end engineer's blog**](https://zxuqian.cn/).
+
+Previous blogs built with hexo can continue to visit, [**Click here to visit**](https://yancyqi2002.github.io/).
+
+
 
 Hello World !
 

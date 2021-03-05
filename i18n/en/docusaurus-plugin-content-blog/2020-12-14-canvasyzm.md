@@ -1,6 +1,6 @@
 ---
 slug: canvasyzm
-title: 【前端实战必备技能】canvas生成验证码
+title: [required skills for front end combat] cavas generate verification code
 author: Yancy Qi
 author_title: 前端开发者
 author_url: https://yancyqi2002.github.io/Personal-page/
@@ -16,10 +16,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 
-参照B站UP @ 老陈打码 视频 BV1T64y1f7kM 
+Refer to the up @老陈打码 video of Bilibili  BV1T64y1f7kM 
 
 <iframe src="//player.bilibili.com/player.html?aid=755504605&bvid=BV1T64y1f7kM&cid=266173017&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"width="670px" height="650px"max-width="100%" > 
 </iframe>
 
 
-在线演示 : [点此访问](https://yancyqi2002.github.io/Canvas-verification-code/)
+Online demo : [click here to visit](https://yancyqi2002.github.io/Canvas-verification-code/)

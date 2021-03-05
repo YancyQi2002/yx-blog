@@ -1,6 +1,6 @@
 ---
 slug: sdxxjcllysjrz
-title: NVIDIA DLI 深度学习基础：理论与实践入门认证
+title: NVIDIA DLI foundation of deep learning: Theory and practice introduction certification
 author: Yancy Qi
 author_title: 前端开发者
 author_url: https://yancyqi2002.github.io/Personal-page/
@@ -16,4 +16,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 
-2020年12月6日 NVIDIA 深度学习学院 DLI 培训 证明
+DLI training certificate of NVIDIA Deep Learning Institute on December 6, 2020
