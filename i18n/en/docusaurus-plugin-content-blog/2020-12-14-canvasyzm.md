@@ -1,6 +1,6 @@
 ---
 slug: canvasyzm
-title: [required skills for front end combat] cavas generate verification code
+title: 【前端实战必备技能】cavas generate verification code
 author: Yancy Qi
 author_title: 前端开发者
 author_url: https://yancyqi2002.github.io/Personal-page/
