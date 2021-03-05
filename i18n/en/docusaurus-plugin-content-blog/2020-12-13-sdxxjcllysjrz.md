@@ -17,3 +17,4 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 
 DLI training certificate of NVIDIA Deep Learning Institute on December 6, 2020
+
