@@ -4,7 +4,7 @@ import useThemeContext from "@theme/hooks/useThemeContext";
 
 function index({ slug, title, height = "600px" }) {
   const { isDarkTheme } = useThemeContext();
-  let themedSrc = `https://codesandbox.io/embed/${slug}?fontsize=14&hidenavigation=1&view=preview&theme=${
+  let themedSrc = `https://codesandbox.io/embed/${slug}?autoresize=1&expanddevtools=1&fontsize=14&hidenavigation=1&module=%2Fstyle.css&theme=${
     isDarkTheme ? "dark" : "light"
   }`;
   return (
@@ -13,7 +13,7 @@ function index({ slug, title, height = "600px" }) {
         src={themedSrc}
         style={{
           width: "100%",
-          height,
+          height: "500px",
           border: 0,
           "border-radius": "4px",
           overflow: "hidden",
