@@ -142,7 +142,7 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         sitemap: {
-          cacheTime: 600 * 1000, // 600 sec - cache purge period
+          // cacheTime: 600 * 1000, // 600 sec - cache purge period
           changefreq: "daily",
           priority: 0.5,
         },
@@ -165,11 +165,21 @@ module.exports = {
   ],
   stylesheets: [
     {
+      rel: "preconnect",
+      href: "https://fonts.gstatic.com",
+      type: "text/css",
+    },
+    {
       href: "/katex/katex.min.css",
       type: "text/css",
       integrity:
         "sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X",
       crossorigin: "anonymous",
+    },
+    {
+      href: "https://fonts.font.im/css?family=Raleway:500,700&display=swap",
+      type: "text/css",
+      rel: "stylesheet",
     },
   ],
   i18n: {
