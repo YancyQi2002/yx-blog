@@ -1,0 +1,18 @@
+{
+  "version.label": {
+    "message": "Next",
+    "description": "The label for version current"
+  },
+  "sidebar.tutorialSidebar.category.京剧": {
+    "message": "Jingju",
+    "description": "The label for category 京剧 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.网络组件与管理": {
+    "message": "Network Components & Management",
+    "description": "The label for category 网络组件与管理 in sidebar tutorialSidebar"
+  },
+  "sidebar.tutorialSidebar.category.操作系统": {
+    "message": "Operating system",
+    "description": "The label for category 操作系统 in sidebar tutorialSidebar"
+  }
+}

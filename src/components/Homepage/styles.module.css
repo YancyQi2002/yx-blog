@@ -1,0 +1,63 @@
+.highlighted {
+  @apply bg-clip-text;
+  background: linear-gradient(to left, #0054ad 0%, #b8fb3c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.socialContainer {
+  @apply px-0 pt-8 pb-16;
+}
+
+@media (max-width: 996px) {
+  .socialLinks > div:nth-child(odd) {
+    padding-right: calc(var(--ifm-spacing-horizontal) / 2);
+  }
+
+  .socialLinks > div:nth-child(even) {
+    padding-left: calc(var(--ifm-spacing-horizontal) / 2);
+  }
+}
+
+@media (max-width: 996px) {
+  .col {
+    --ifm-col-width: 50%;
+    margin-top: var(--ifm-spacing-vertical);
+  }
+}
+
+.btn {
+  @apply px-0 py-4 pr-6 w-full;
+  border-color: var(--ifm-color-emphasis-200);
+}
+
+.btn--active .btnText,
+.btn:active .btnText,
+.btn:hover .btnText,
+.btn:focus .btnText {
+  color: var(--ifm-font-color-base-inverse);
+}
+
+.btn--active .btnIcon,
+.btn:active .btnIcon,
+.btn:hover .btnIcon,
+.btn:focus .btnIcon {
+  fill: var(--ifm-font-color-base-inverse);
+}
+
+.btnIcon {
+  @apply block mx-auto my-0 px-0 py-2 w-6;
+  fill: #4093f6;
+}
+
+.socialLinks > .col > a:hover {
+  background-color: #4093f6;
+}
+
+.btnText {
+  color: var(--ifm-font-color-base);
+}
+
+[data-theme='dracula'] .socialLinks > .col > a > span {
+  @apply text-white;
+}

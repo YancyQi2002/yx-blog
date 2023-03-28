@@ -1,0 +1,41 @@
+[package]
+name = "app"
+version = "0.1.0"
+description = "A Tauri App"
+authors = ["Yancy Qi"]
+license = ""
+repository = ""
+default-run = "app"
+edition = "2021"
+rust-version = "1.68"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[build-dependencies]
+tauri-build = { version = "2.0.0-alpha.2", features = [] }
+
+[dependencies]
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+tauri = { version = "2.0.0-alpha.4", features = ["api-all", "windows7-compat"] }
+
+[lib]
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[features]
+# by default Tauri runs in production mode
+# when `tauri dev` runs it is executed with `cargo run --no-default-features` if `devPath` is an URL
+default = ["custom-protocol"]
+# this feature is used for production builds where `devPath` points to the filesystem
+# DO NOT remove this
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.dev]
+opt-level = 1               # Use slightly better optimizations.
+lto = "thin"                # Performs "thin" LTO. It takes substantially less time to run while still achieving performance gains similar to "fat".
+
+[profile.release]
+panic = "abort"             # Strip expensive panic clean-up logic
+codegen-units = 1           # Compile crates one after another so the compiler can optimize better
+lto = true                  # Enables link to optimizations
+opt-level = "s"             # Optimize for binary size

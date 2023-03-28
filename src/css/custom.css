@@ -1,0 +1,261 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
+
+@font-face {
+  font-family: yangrendongzhushi;
+  src: url('../fonts/yangrendongzhushiziti.ttf');
+}
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .1);
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme='dark'] {
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .3);
+}
+
+.navbar__item > ul > li > select {
+  @apply m-4 w-36;
+}
+
+[data-theme='acid'] :is(.navbar, .hero) {
+  background-color: #fafafa;
+}
+
+[data-theme='aqua'] :is(.navbar, .hero) {
+  background-color: #345ca8;
+}
+
+[data-theme='autumn'] :is(.navbar, .hero) {
+  background-color: #f2f2f2;
+}
+
+[data-theme='black'] :is(.navbar, .hero) {
+  @apply bg-black;
+}
+
+[data-theme='business'] :is(.navbar, .hero),
+[data-theme='halloween'] :is(.navbar, .hero) {
+  background-color: #212121;
+}
+
+[data-theme='coffee'] :is(.navbar, .hero) {
+  background-color: #211720;
+}
+
+[data-theme='cupcake'] :is(.navbar, .hero) {
+  background-color: #faf7f5;
+}
+
+[data-theme='cyberpunk'] :is(.navbar, .hero) {
+  background-color: #ffee00;
+}
+
+[data-theme='dracula'] :is(.navbar, .hero) {
+  background-color: #272935;
+}
+
+[data-theme='forest'] :is(.navbar, .hero) {
+  background-color: #171212;
+}
+
+[data-theme='garden'] :is(.navbar, .hero) {
+  background-color: #e9e7e7;
+}
+
+[data-theme='luxury'] :is(.navbar, .hero) {
+  background-color: #09090b;
+}
+
+[data-theme='night'] :is(.navbar, .hero) {
+  background-color: #0f1729;
+}
+
+[data-theme='retro'] :is(.navbar, .hero) {
+  background-color: #e4d8b4;
+}
+
+[data-theme='synthwave'] :is(.navbar, .hero) {
+  background-color: #2d1b69;
+}
+
+[data-theme='valentine'] :is(.navbar, .hero) {
+  background-color: #f0d6e8;
+}
+
+.navbar__logo > img {
+  @apply inline;
+}
+
+[data-theme='aqua'] .navbar a,
+[data-theme='aqua'] .navbar b,
+[data-theme='aqua'] .navbar .navbar__items > .navbar__item {
+  color: #c7dbf4;
+}
+
+[data-theme='business'] .navbar a,
+[data-theme='business'] .navbar b,
+[data-theme='business'] .navbar .navbar__items > .navbar__item,
+[data-theme='halloween'] .navbar a,
+[data-theme='halloween'] .navbar b,
+[data-theme='halloween'] .navbar .navbar__items > .navbar__item {
+  color: #d4d4d4;
+}
+
+[data-theme='coffee'] .navbar a,
+[data-theme='coffee'] .navbar b,
+[data-theme='coffee'] .navbar .navbar__items > .navbar__item {
+  color: #746d63;
+}
+
+[data-theme='luxury'] .navbar a,
+[data-theme='luxury'] .navbar b,
+[data-theme='luxury'] .navbar .navbar__items > .navbar__item {
+  color: #dca54c;
+}
+
+[data-theme='night'] .navbar a,
+[data-theme='night'] .navbar b,
+[data-theme='night'] .navbar .navbar__items > .navbar__item {
+  color: #b3c5ef;
+}
+
+[data-theme='black'] .navbar a,
+[data-theme='black'] .navbar b,
+[data-theme='black'] .navbar .navbar__items > .navbar__item,
+[data-theme='dracula'] .navbar a,
+[data-theme='dracula'] .navbar b,
+[data-theme='dracula'] .navbar .navbar__items > .navbar__item,
+[data-theme='synthwave'] .navbar a,
+[data-theme='synthwave'] .navbar b,
+[data-theme='synthwave'] .navbar .navbar__items > .navbar__item {
+  @apply text-white;
+}
+
+[data-theme='forest'] .navbar a,
+[data-theme='forest'] .navbar b,
+[data-theme='forest'] .navbar .navbar__items > .navbar__item {
+  color: #d7cccc;
+}
+
+[data-theme='dracula'] code {
+  @apply text-slate-900;
+}
+
+footer {
+  @apply flex justify-center;
+}
+
+.footer__col {
+  @apply w-56;
+}
+
+[data-theme='light'] img[src$='#gh-dark-mode-only'],
+[data-theme='dark'] img[src$='#gh-light-mode-only'] {
+  @apply hidden;
+}
+
+a:has(svg) {
+  @apply inline-flex justify-center items-center !important;
+}
+
+.markdown:has(hr) {
+  @apply prose-lg font-semibold;
+  font-family: KaiTi, STKaiti, yangrendongzhushi, Arial, Helvetica, sans-serif;
+  font-display: swap;
+}
+
+.markdown:has(hr) > hr {
+  @apply m-4;
+}
+
+.markdown:has(code) > code {
+  font-family: 'Fira Code', monospace;
+  font-display: swap;
+}
+
+.markdown:has(table) table {
+  @apply table-auto xl:text-xl md:text-lg xs:text-xs select-none hover:border-collapse;
+}
+
+.markdown:has(table) :is(table) :where(th,td) {
+  @apply p-4 hover:bg-[#F9FAFB];
+}
+
+.markdown:has(h2) :where(h2) {
+  background: linear-gradient(to right, #EC695C, #61C454) no-repeat right bottom;
+  background-size: 0 2px;
+  transition: background-size 1300ms;
+}
+
+.markdown:has(h2) :where(h2):hover {
+  background-position-x: left;
+  background-size: 100% 2px;
+}
+
+.markdown:has(h2):has(p) {
+  container-type: inline-size;
+}
+
+.markdown:has(h2):has(p) :where(p) {
+  font-size: clamp(.75rem, calc(100cqw / 36), 1.5rem);
+  font-family: KaiTi, STKaiti, yangrendongzhushi, Arial, Helvetica, sans-serif;
+  font-display: swap;
+}
+
+@keyframes throttle {
+  from {
+    @apply pointer-events-none;
+  }
+  to {
+    @apply pointer-events-auto;
+  }
+}
+
+button {
+  @apply active:animate-none;
+  animation: throttle 2s step-end forwards;
+}
+
+@container (max-width: 480px) {
+  .markdown:has(h2):has(p) :where(p) {
+    font-family: yangrendongzhushi, Helvetica, sans-serif;
+    font-size: clamp(.75rem, calc(100cqw / 30), 1.5rem);
+    font-display: swap;
+  }
+}
+
+@container (max-width: 233px) {
+  .markdown:has(h2):has(p) :where(p) {
+    @apply my-1;
+    font-family: yangrendongzhushi, 'Heiti SC', Droidsanafallback, Helvetica, sans-serif;
+    font-size: clamp(.75rem, calc(100cqw / 10), 1.125rem);
+    font-display: swap;
+  }
+}

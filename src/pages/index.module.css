@@ -1,0 +1,28 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+code {
+  font-family: 'Fira Code', monospace;
+}
+
+@supports (font-variation-settings: normal) {
+  code {
+    font-family: 'Fira Code VF', monospace;
+  }
+}
+
+.heroBanner {
+  @apply relative px-0 py-16 text-center overflow-hidden;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    @apply p-8;
+  }
+}
+
+.buttons {
+  @apply flex items-center justify-center;
+}

@@ -1,0 +1,8 @@
+.features {
+  @apply flex items-center px-0 py-8 w-full;
+}
+
+.featureSvg {
+  height: 200px;
+  width: 200px;
+}
