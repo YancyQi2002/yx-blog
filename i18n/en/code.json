@@ -353,5 +353,14 @@
   },
   "theme.SearchPage.searchContext.everywhere": {
     "message": "everywhere"
+  },
+  "当前环境不支持 H265": {
+    "message": "当前环境不支持 H265"
+  },
+  "知道啦": {
+    "message": "知道啦"
+  },
+  "theme.SearchBar.seeAllOutsideContext": {
+    "message": "See results outside {context}"
   }
 }

@@ -1,6 +1,7 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, { useState } from 'react'
 
+import Translate from '@docusaurus/Translate'
 import ReactPlayer from 'react-player'
 
 interface Video {
@@ -20,9 +21,25 @@ const VideoPage: React.FC = () => {
     // { url: '/video/jqjz.mp4', title: '狸猫换太子·九曲救主' },
   ])
 
-  // 处理视频点击事件
+  // 判断是否支持H265
+  const isH265Supported = ReactPlayer.canPlay('video/mp4 codecs="hev1"') || ReactPlayer.canPlay('video/mp4 codecs="hvc1"')
+
+  // 控制是否显示H265不支持提示框
+  const [showAlert, setShowAlert] = useState<boolean>(true)
+
+  /**
+   * 处理视频点击事件
+   * @param {string} url - 视频地址
+   * @returns {void}
+   */
   const handleVideoClick = (url: string): void => {
+    // 设置当前播放视频地址
     setVideoUrl(url)
+
+    if (!isH265Supported) {
+      // 如果不支持H265，则提示
+      setShowAlert(true)
+    }
   }
 
   /**
@@ -39,6 +56,8 @@ const VideoPage: React.FC = () => {
       else
         video.selected = false
     })
+
+    // 更新视频列表
     setVideoList(newVideoList)
   }
 
@@ -77,6 +96,26 @@ const VideoPage: React.FC = () => {
           </div>
         ))}
       </div>
+
+      {showAlert && !isH265Supported && (
+        <div className="alert shadow-lg">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <span>
+              <Translate>
+                当前环境不支持 H265
+              </Translate>
+            </span>
+          </div>
+          <div className="flex-none">
+            <button className="btn btn-sm btn-ghost" onClick={() => setShowAlert(false)}>
+              <Translate>
+                知道啦
+              </Translate>
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   )
 }
