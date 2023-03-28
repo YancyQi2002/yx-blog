@@ -66,7 +66,7 @@
     "@docusaurus/module-type-aliases": "2.4.0",
     "@docusaurus/types": "2.4.0",
     "@tailwindcss/typography": "^0.5.9",
-    "@tauri-apps/cli": "2.0.0-alpha.2",
+    "@tauri-apps/cli": "2.0.0-alpha.4",
     "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.2",
     "@tsconfig/docusaurus": "^1.0.7",
     "@types/react": "^18.0.30",
