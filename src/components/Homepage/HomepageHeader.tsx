@@ -7,7 +7,7 @@ import Heading from '@theme/Heading'
 
 import styles from './styles.module.css'
 
-export const HomepageHeader = () => {
+export function HomepageHeader() {
   return (
     <header className={clsx('hero pb-64', styles.heroBanner)}>
       <div className='container'>

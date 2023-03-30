@@ -229,6 +229,14 @@ a:has(svg) {
   font-display: swap;
 }
 
+.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) {
+  @apply block;
+}
+
+.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) > :where(*) {
+  @apply block;
+}
+
 @keyframes throttle {
   from {
     @apply pointer-events-none;

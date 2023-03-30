@@ -26,11 +26,11 @@ const monthNumStr = date.month <= 10 ? (`0${date.month}`) : date.month
 const dateNumStr = date.day <= 10 ? (`0${date.day}`) : date.day
 dateStr = `${monthNumStr}-${dateNumStr}`
 
-const isLeapYear = (/** @type {number} */ year) => {
+function isLeapYear(year) {
   return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)
 }
 
-const qinMingDate = (/** @type {number} */ year) => {
+function qinMingDate(year) {
   return (isLeapYear(year) || isLeapYear(year - 1))
     ? '04-04'
     : '04-05'

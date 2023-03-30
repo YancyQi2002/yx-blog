@@ -9,7 +9,7 @@ import Heading from '@theme/Heading'
 
 import styles from './styles.module.css'
 
-export const SocialLinks = ({ data }) => {
+export function SocialLinks({ data }) {
   const socialLinksComponents = data.map(({ name, url, svg }) => (
     <div className={clsx('col', styles.col)} key={name}>
       <Link
