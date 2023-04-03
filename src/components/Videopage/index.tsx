@@ -82,7 +82,7 @@ const VideoPage: React.FC = () => {
           </div>
         </div>
       )}
-      
+
       <ReactPlayer
         url={videoUrl}
         controls
