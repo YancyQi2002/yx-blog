@@ -9,7 +9,21 @@ import Heading from '@theme/Heading'
 
 import styles from './styles.module.css'
 
-export function SocialLinks({ data }) {
+// 定义每个社交链接对象的形状
+interface SocialLink {
+  name: string // 社交媒体平台的名称
+  url: string // 社交媒体平台的URL
+  svg: string // 社交媒体平台的SVG图标
+}
+
+// 定义SocialLinks组件的props形状
+interface SocialLinksProps {
+  data: SocialLink[] // 一个SocialLink对象的数组
+}
+
+// 定义SocialLinks组件
+export const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
+  // 遍历数据数组以创建社交链接组件数组
   const socialLinksComponents = data.map(({ name, url, svg }) => (
     <div className={clsx('col', styles.col)} key={name}>
       <Link
@@ -35,3 +49,5 @@ export function SocialLinks({ data }) {
     </div>
   )
 }
+
+export default SocialLinks
