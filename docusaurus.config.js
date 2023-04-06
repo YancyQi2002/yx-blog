@@ -175,6 +175,8 @@ const config = {
           // eslint-disable-next-line @typescript-eslint/ban-ts-comment
           // @ts-expect-error
           postcssOptions.plugins.push(require ('autoprefixer'))
+          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+          // @ts-expect-error
           postcssOptions.plugins.push(require ('postcss-preset-env'))
           return postcssOptions
         },
