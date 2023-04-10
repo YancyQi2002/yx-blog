@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React from 'react'
 
 import clsx from 'clsx'
