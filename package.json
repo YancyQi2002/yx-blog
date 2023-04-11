@@ -37,7 +37,7 @@
     "@headlessui/react": "^1.7.13",
     "@headlessui/tailwindcss": "0.0.0-insiders.7ec0652",
     "@js-temporal/polyfill": "^0.4.3",
-    "@mdx-js/react": "^1.6.22",
+    "@mdx-js/react": "^2.0.0",
     "@node-rs/jieba": "^1.6.2",
     "@node-rs/jieba-win32-x64-msvc": "^1.6.2",
     "@tauri-apps/api": "2.0.0-alpha.3",
