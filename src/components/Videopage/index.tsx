@@ -1,8 +1,9 @@
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, { useState } from 'react'
 
-import Translate from '@docusaurus/Translate'
 import ReactPlayer from 'react-player'
+
+import Translate from '@docusaurus/Translate'
 import type { Video } from '@site/src/interface'
 
 // VideoPage组件
@@ -12,7 +13,7 @@ const VideoPage: React.FC = () => {
   const [videoList, setVideoList] = useState<Video[]>([ // 视频列表
     { url: '/video/pkjm.mp4', title: '狸猫换太子·平寇进猫' },
     { url: '/video/cldc.mp4', title: '狸猫换太子·陈琳吊场' },
-    // { url: '/video/qgcp.mp4', title: '狸猫换太子·庆功赐帕' },
+    { url: '/video/qgcp1.mp4', title: '狸猫换太子·庆功赐帕(上)' },
     // { url: '/video/lmhz.mp4', title: '狸猫换太子·狸猫换子' },
     // { url: '/video/jqjz.mp4', title: '狸猫换太子·九曲救主' },
   ])
