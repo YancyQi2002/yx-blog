@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React from 'react'
 
 import clsx from 'clsx'
@@ -6,13 +5,8 @@ import clsx from 'clsx'
 import Translate from '@docusaurus/Translate'
 import Heading from '@theme/Heading'
 
+import type { FeatureItem } from '@site/src/interface'
 import styles from './styles.module.css'
-
-interface FeatureItem {
-  title: string
-  Svg: React.ComponentType<React.ComponentProps<'svg'>> | any
-  description: JSX.Element
-}
 
 const FeatureList: FeatureItem[] = [
   {

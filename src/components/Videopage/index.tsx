@@ -3,11 +3,7 @@ import React, { useState } from 'react'
 
 import Translate from '@docusaurus/Translate'
 import ReactPlayer from 'react-player'
-
-interface Video {
-  url: string // 视频地址
-  title: string // 视频标题
-}
+import type { Video } from '@site/src/interface'
 
 // VideoPage组件
 const VideoPage: React.FC = () => {
@@ -25,7 +21,7 @@ const VideoPage: React.FC = () => {
   const isH265Supported = ReactPlayer.canPlay('video/mp4 codecs="hev1"') || ReactPlayer.canPlay('video/mp4 codecs="hvc1"')
 
   // 控制是否显示H265不支持提示框
-  const [showAlert, setShowAlert] = useState<boolean>(true)
+  const [showAlert, setShowAlert] = useState<boolean>(false)
 
   /**
    * 处理视频点击事件
