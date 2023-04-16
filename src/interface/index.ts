@@ -19,8 +19,9 @@ interface FeatureItem {
 
 // 定义Video
 interface Video {
-  url: string // 视频地址
   title: string // 视频标题
+  url: string // 视频地址
+  av1_url?: string // 可选参数：视频AV1格式地址
 }
 
 export { SocialLink, SocialLinksProps, FeatureItem, Video }
