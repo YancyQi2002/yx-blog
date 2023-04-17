@@ -1,4 +1,3 @@
-/* eslint-disable unused-imports/no-unused-vars */
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import React, {
   Fragment,
@@ -16,9 +15,9 @@ const VideoPage: React.FC = () => {
   const [videoUrl, setVideoUrl] = useState<string>('') // 当前播放视频地址
 
   const [videoList, setVideoList] = useState<Video[]>([ // 视频列表
-    { title: '狸猫换太子·平寇进猫', url: '/video/pkjm.mp4' },
-    { title: '狸猫换太子·陈琳吊场', url: '/video/cldc.mp4' },
-    { title: '狸猫换太子·庆功赐帕(上)', url: '/video/qgcp1.mp4' },
+    { title: '狸猫换太子·平寇进猫', url: '/video/pkjm.mp4', webm_url: '/video/pkjm.webm' },
+    { title: '狸猫换太子·陈琳吊场', url: '/video/cldc.mp4', webm_url: '/video/cldc.webm' },
+    { title: '狸猫换太子·庆功赐帕(上)', url: '/video/qgcp1.mp4', webm_url: '/video/qgcp1.webm' },
     // { title: '狸猫换太子·狸猫换子', url: '/video/lmhz.mp4' },
     // { title: '狸猫换太子·九曲救主', url: '/video/jqjz.mp4' },
   ])
@@ -26,34 +25,45 @@ const VideoPage: React.FC = () => {
   // 控制是否显示H265不支持提示框
   const [showAlert, setShowAlert] = useState<boolean>(false)
 
+  const ele = document.createElement('video')
+
+  const ish265Supported = () => {
+    // 判断是否支持H265编码格式
+    const h265Supported = ele.canPlayType('video/mp4; codecs="hev1"') || ele.canPlayType('video/mp4; codecs="hvc1"')
+    if (h265Supported.toLowerCase() === 'maybe' || h265Supported.toLowerCase() === 'probably') {
+      // 如果支持H265，则不提示
+      setShowAlert(false)
+    }
+    else {
+      // 如果不支持H265，则提示
+      setShowAlert(true)
+    }
+  }
+
   /**
    * 处理视频点击事件
    * @param {string} url - 视频地址
    * @returns {void}
    */
   const handleVideoClick = (video: Video): void => {
-    const ele = document.createElement('video')
-    ele.style.display = 'none'
-
-    const av1Supported = ele.canPlayType('video/mp4; codecs="av1"')
-    if (av1Supported.toLocaleLowerCase() === 'maybe' || av1Supported.toLowerCase() === 'probably') {
-      // 如果av1_url存在且不为空则setVideoUrl(av1_url)，否则setVideoUrl(url)
-      if (video.av1_url) {
-        setVideoUrl(video.av1_url)
-        setShowAlert(false)
-      }
-      else
-        setVideoUrl(video.url)
-
-      // 判断是否支持H265编码格式
-      const h265Supported = ele.canPlayType('video/mp4; codecs="hev1"') || ele.canPlayType('video/mp4; codecs="hvc1"')
-      if (h265Supported.toLowerCase() === 'maybe' || h265Supported.toLowerCase() === 'probably') {
-        // 如果支持H265，则不提示
-        setShowAlert(false)
+    if (ele) { // 如果video元素存在，则执行以下操作
+      // 判断是否支持WebM格式
+      const webmSupported = ele.canPlayType('video/webm')
+      if (webmSupported.toLocaleLowerCase() === 'maybe' || webmSupported.toLowerCase() === 'probably') {
+        // 如果webm_url存在且不为空则setVideoUrl(webm_url)，否则setVideoUrl(url)
+        if (video.webm_url) {
+          setVideoUrl(video.webm_url)
+          setShowAlert(false)
+        }
+        else {
+          setVideoUrl(video.url)
+          ish265Supported()
+        }
       }
       else {
-        // 如果不支持H265，则提示
-        setShowAlert(true)
+        setVideoUrl(video.url)
+
+        ish265Supported()
       }
     }
   }
