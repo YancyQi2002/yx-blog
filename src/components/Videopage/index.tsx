@@ -6,6 +6,7 @@ import React, {
 
 import ReactPlayer from 'react-player'
 
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import Translate from '@docusaurus/Translate'
 import { Transition } from '@headlessui/react'
 import type { Video } from '@site/src/interface'
@@ -25,12 +26,12 @@ const VideoPage: React.FC = () => {
   // 控制是否显示H265不支持提示框
   const [showAlert, setShowAlert] = useState<boolean>(false)
 
-  const ele = document.createElement('video')
+  const ele = ExecutionEnvironment.canUseDOM ? document.createElement('video') : null
 
   const ish265Supported = () => {
     // 判断是否支持H265编码格式
-    const h265Supported = ele.canPlayType('video/mp4; codecs="hev1"') || ele.canPlayType('video/mp4; codecs="hvc1"')
-    if (h265Supported.toLowerCase() === 'maybe' || h265Supported.toLowerCase() === 'probably') {
+    const h265Supported = ele?.canPlayType('video/mp4; codecs="hev1"') || ele?.canPlayType('video/mp4; codecs="hvc1"')
+    if (h265Supported?.toLowerCase() === 'maybe' || h265Supported?.toLowerCase() === 'probably') {
       // 如果支持H265，则不提示
       setShowAlert(false)
     }
@@ -48,8 +49,8 @@ const VideoPage: React.FC = () => {
   const handleVideoClick = (video: Video): void => {
     if (ele) { // 如果video元素存在，则执行以下操作
       // 判断是否支持WebM格式
-      const webmSupported = ele.canPlayType('video/webm')
-      if (webmSupported.toLocaleLowerCase() === 'maybe' || webmSupported.toLowerCase() === 'probably') {
+      const webmSupported = ele?.canPlayType('video/webm')
+      if (webmSupported?.toLocaleLowerCase() === 'maybe' || webmSupported?.toLowerCase() === 'probably') {
         // 如果webm_url存在且不为空则setVideoUrl(webm_url)，否则setVideoUrl(url)
         if (video.webm_url) {
           setVideoUrl(video.webm_url)
