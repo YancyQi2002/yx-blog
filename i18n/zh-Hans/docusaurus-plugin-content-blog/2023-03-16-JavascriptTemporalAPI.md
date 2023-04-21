@@ -80,18 +80,18 @@ dateStr = `${monthNumStr}-${dateNumStr}`
 
 ```jsx live
 function GetDate(props) {
-    const [date, setDate] = useState(new Date())
-    const fullYear = date.getFullYear()
-    const monthNumStr = (date.getMonth() + 1) <= 10
-        ? (`0${(date.getMonth() + 1).toString()}`)
-        : (date.getMonth() + 1)
-    const dateNumStr = date.getDate() <= 10
-        ? (`0${date.getDate().toString()}`)
-        : date.getDate()
-    const dateStr = `${monthNumStr}-${dateNumStr}`
+  const [date, setDate] = useState(new Date())
+  const fullYear = date.getFullYear()
+  const monthNumStr = (date.getMonth() + 1) <= 10
+    ? (`0${(date.getMonth() + 1).toString()}`)
+    : (date.getMonth() + 1)
+  const dateNumStr = date.getDate() <= 10
+    ? (`0${date.getDate().toString()}`)
+    : date.getDate()
+  const dateStr = `${monthNumStr}-${dateNumStr}`
 
-    return (
+  return (
         <div>{dateStr}</div>
-    )
+  )
 }
 ```

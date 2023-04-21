@@ -43,7 +43,7 @@ const VideoPage: React.FC = () => {
 
   /**
    * 处理视频点击事件
-   * @param {string} url - 视频地址
+   * @param {Video} video - 被点击的视频
    * @returns {void}
    */
   const handleVideoClick = (video: Video): void => {
@@ -58,13 +58,12 @@ const VideoPage: React.FC = () => {
         }
         else {
           setVideoUrl(video.url)
-          ish265Supported()
+          ish265Supported() // 判断是否支持H265编码格式
         }
       }
       else {
         setVideoUrl(video.url)
-
-        ish265Supported()
+        ish265Supported() // 判断是否支持H265编码格式
       }
     }
   }
