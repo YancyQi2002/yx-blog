@@ -140,6 +140,7 @@ const config = {
           },
           path: './blog',
           blogSidebarTitle: '近期文章',
+          blogSidebarCount: 8,
           remarkPlugins: [
             math,
             require('@docusaurus/remark-plugin-npm2yarn'),
