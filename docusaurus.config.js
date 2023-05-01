@@ -193,13 +193,11 @@ const config = {
         configureWebpack(config, isServer, utils) {
           return {
             mergeStrategy: { 'module.rules': 'prepend' },
-            module: {
-              devServer: {
-                headers: {
-                  'Cross-Origin-Opener-Policy': 'same-origin',
-                  'Cross-Origin-Embedder-Policy': 'require-corp',
-                  'Origin-Trial': OriginTrial,
-                },
+            devServer: {
+              headers: {
+                'Cross-Origin-Opener-Policy': 'same-origin',
+                'Cross-Origin-Embedder-Policy': 'require-corp',
+                'Origin-Trial': OriginTrial,
               },
             },
           }
