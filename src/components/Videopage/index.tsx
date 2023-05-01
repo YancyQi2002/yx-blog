@@ -8,8 +8,45 @@ import ReactPlayer from 'react-player'
 
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import Translate from '@docusaurus/Translate'
+import {
+  createFFmpeg,
+  fetchFile,
+} from '@ffmpeg/ffmpeg'
 import { Transition } from '@headlessui/react'
 import type { Video } from '@site/src/interface'
+
+const ffmpeg = createFFmpeg({ log: true })
+
+async function transcodeVideo(inputFile) {
+  // 初始化ffmpeg
+  await ffmpeg.load()
+
+  // 读取输入文件
+  const input: Uint8Array = await fetchFile(inputFile)
+
+  const outputFileName = `${inputFile.slice(0, inputFile.length - 4)}_h264.mp4`
+
+  // 转码视频
+  await ffmpeg.run(
+    '-i', // 输入文件
+    new TextDecoder().decode(input), // 解码输入文件 使用 TextDecoder 对象将 Uint8Array 类型转换为字符串类型
+    '-c:v', // 视频编码器
+    'libx264', // H.264编码器
+    '-preset', // 编码速度
+    'slow', // 慢速编码
+    '-crf', // 视频质量
+    '22', // 视频质量
+    '-c:a', // 音频编码器
+    'copy', // 复制音频编码
+    outputFileName, // 输出文件
+  )
+
+  // 读取输出文件
+  const output = ffmpeg.FS('readFile', outputFileName)
+
+  // 返回输出文件的URL
+  return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
+}
 
 // VideoPage组件
 const VideoPage: React.FC = () => {
@@ -33,7 +70,7 @@ const VideoPage: React.FC = () => {
    * @param {Video} video - 被点击的视频
    * @returns {void}
    */
-  const handleVideoClick = (video: Video): void => {
+  const handleVideoClick = async (video: Video) => {
     if (ele) { // 如果video元素存在，则执行以下操作
       // 判断是否支持H265编码格式
       const h265Supported = ele?.canPlayType('video/mp4; codecs="hev1"') || ele?.canPlayType('video/mp4; codecs="hvc1"')
@@ -53,12 +90,26 @@ const VideoPage: React.FC = () => {
           }
           else {
             setShowAlert(true)
-            setVideoUrl(video.url)
+            try {
+              const transcodedUrl = await transcodeVideo(video.url) // 转码视频
+              setVideoUrl(transcodedUrl)
+            }
+            catch (err) {
+              console.error(err)
+              setVideoUrl(video.url)
+            }
           }
         }
         else {
           setShowAlert(true)
-          setVideoUrl(video.url)
+          try {
+            const transcodedUrl = await transcodeVideo(video.url) // 转码视频
+            setVideoUrl(transcodedUrl)
+          }
+          catch (err) {
+            console.error(err)
+            setVideoUrl(video.url)
+          }
         }
       }
     }

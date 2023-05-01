@@ -24,4 +24,4 @@ interface Video {
   webm_url?: string // 可选参数：视频WebM格式地址
 }
 
-export { SocialLink, SocialLinksProps, FeatureItem, Video }
+export { FeatureItem, SocialLink, SocialLinksProps, Video }

@@ -9,6 +9,8 @@ const katex = import ('rehype-katex')
 
 const { Temporal } = require('@js-temporal/polyfill')
 
+const OriginTrial = 'AsQfvYHVhFEUOGL9ddGU33VJ525p51lAhfmfjcqod4JV36SUb6h5bvanj/4Om/MRcAJpK8mTlXHppPn0FSWJvAQAAAB8eyJvcmlnaW4iOiJodHRwczovL3l4LWJsb2cudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ=='
+
 let dateStr = ''
 
 // Date object
@@ -164,7 +166,7 @@ const config = {
     'docusaurus2-dotenv',
     '@docusaurus/theme-live-codeblock',
     // eslint-disable-next-line unused-imports/no-unused-vars
-    async function myPlugin(context, options) {
+    async function myTailwindcssPlugin(context, options) {
       return {
         name: 'docusaurus-tailwindcss',
         /**
@@ -180,6 +182,27 @@ const config = {
           // @ts-expect-error
           postcssOptions.plugins.push(require ('postcss-preset-env'))
           return postcssOptions
+        },
+      }
+    },
+    // eslint-disable-next-line unused-imports/no-unused-vars
+    async function myCrossPlugin(context, options) {
+      return {
+        name: 'docusaurus-cross',
+        // eslint-disable-next-line unused-imports/no-unused-vars
+        configureWebpack(config, isServer, utils) {
+          return {
+            mergeStrategy: { 'module.rules': 'prepend' },
+            module: {
+              devServer: {
+                headers: {
+                  'Cross-Origin-Opener-Policy': 'same-origin',
+                  'Cross-Origin-Embedder-Policy': 'require-corp',
+                  'Origin-Trial': OriginTrial,
+                },
+              },
+            },
+          }
         },
       }
     },
