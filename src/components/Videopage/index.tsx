@@ -18,34 +18,40 @@ import type { Video } from '@site/src/interface'
 const ffmpeg = createFFmpeg({ log: true })
 
 async function transcodeVideo(inputFile) {
-  // 初始化ffmpeg
-  await ffmpeg.load()
+  try {
+    // 初始化ffmpeg
+    await ffmpeg.load()
 
-  // 读取输入文件
-  const input: Uint8Array = await fetchFile(inputFile)
+    // 读取输入文件
+    const input: Uint8Array = await fetchFile(inputFile)
 
-  const outputFileName = `${inputFile.slice(0, inputFile.length - 4)}_h264.mp4`
+    const outputFileName = `${inputFile.slice(0, inputFile.length - 4)}_h264.mp4`
 
-  // 转码视频
-  await ffmpeg.run(
-    '-i', // 输入文件
-    new TextDecoder().decode(input), // 解码输入文件 使用 TextDecoder 对象将 Uint8Array 类型转换为字符串类型
-    '-c:v', // 视频编码器
-    'libx264', // H.264编码器
-    '-preset', // 编码速度
-    'slow', // 慢速编码
-    '-crf', // 视频质量
-    '22', // 视频质量
-    '-c:a', // 音频编码器
-    'copy', // 复制音频编码
-    outputFileName, // 输出文件
-  )
+    // 转码视频
+    await ffmpeg.run(
+      '-i', // 输入文件
+      new TextDecoder().decode(input), // 解码输入文件 使用 TextDecoder 对象将 Uint8Array 类型转换为字符串类型
+      '-c:v', // 视频编码器
+      'libx264', // H.264编码器
+      '-preset', // 编码速度
+      'fast', // 快速编码
+      '-crf', // 视频质量
+      '22', // 视频质量
+      '-c:a', // 音频编码器
+      'copy', // 复制音频编码
+      outputFileName, // 输出文件
+    )
 
-  // 读取输出文件
-  const output = ffmpeg.FS('readFile', outputFileName)
+    // 读取输出文件
+    const output = ffmpeg.FS('readFile', outputFileName)
 
-  // 返回输出文件的URL
-  return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
+    // 返回输出文件的URL
+    return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
+  }
+  catch (error) {
+    console.error('Error in transcodeVideo:', error)
+    return null
+  }
 }
 
 // VideoPage组件
@@ -70,45 +76,45 @@ const VideoPage: React.FC = () => {
    * @param {Video} video - 被点击的视频
    * @returns {void}
    */
+  /**
+   * 处理视频点击事件
+   * @param {Video} video - 被点击的视频
+   * @returns {void}
+   */
   const handleVideoClick = async (video: Video) => {
     if (ele) { // 如果video元素存在，则执行以下操作
       // 判断是否支持H265编码格式
       const h265Supported = ele?.canPlayType('video/mp4; codecs="hev1"') || ele?.canPlayType('video/mp4; codecs="hvc1"')
-      if (h265Supported?.toLowerCase() === 'maybe' || h265Supported?.toLowerCase() === 'probably') {
-        // 如果支持H265，则不提示
+      const supportsH265 = (h265Supported?.toLowerCase() === 'maybe' || h265Supported?.toLowerCase() === 'probably')
+
+      // 判断是否支持WebM格式
+      const supportsWebM = (ele?.canPlayType('video/webm')?.toLocaleLowerCase() === 'maybe' || ele?.canPlayType('video/webm')?.toLowerCase() === 'probably')
+
+      // 如果支持H265编码格式，则播放该视频而不提示用户
+      if (supportsH265) {
         setShowAlert(false)
         setVideoUrl(video.url)
       }
       else {
-        // 判断是否支持WebM格式
-        const webmSupported = ele?.canPlayType('video/webm')
-        if (webmSupported?.toLocaleLowerCase() === 'maybe' || webmSupported?.toLowerCase() === 'probably') {
-          // 如果webm_url存在且不为空则setVideoUrl(webm_url)，否则setVideoUrl(url)
-          if (video.webm_url) {
-            setVideoUrl(video.webm_url)
-            setShowAlert(false)
-          }
-          else {
-            setShowAlert(true)
-            try {
-              const transcodedUrl = await transcodeVideo(video.url) // 转码视频
-              setVideoUrl(transcodedUrl)
-            }
-            catch (err) {
-              console.error(err)
-              setVideoUrl(video.url)
-            }
-          }
+        // 如果支持WebM格式，并且当前视频具有WebM URL，则播放WebM格式
+        if (supportsWebM && video.webm_url) {
+          setVideoUrl(video.webm_url)
+          setShowAlert(false)
         }
         else {
+          // 如果用户的设备不支持播放该视频格式，则转码视频
           setShowAlert(true)
           try {
-            const transcodedUrl = await transcodeVideo(video.url) // 转码视频
+            setVideoUrl(video.url)
+            // 尝试将视频编码格式转换为能在用户设备上播放的mp4格式
+            let transcodedUrl = await transcodeVideo(video.url)
+            if (transcodedUrl === null)
+              transcodedUrl = video.url // 如果转码失败，则使用原视频地址
             setVideoUrl(transcodedUrl)
           }
           catch (err) {
             console.error(err)
-            setVideoUrl(video.url)
+            setVideoUrl(video.url) // 如果转码失败，则使用原视频地址
           }
         }
       }
