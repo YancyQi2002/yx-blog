@@ -20,6 +20,7 @@ interface FeatureItem {
 // 定义Video
 interface Video {
   title: string // 视频标题
+  tip_content: string // 提示信息
   url: string // 视频地址
   webm_url?: string // 可选参数：视频WebM格式地址
 }

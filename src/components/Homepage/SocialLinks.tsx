@@ -10,7 +10,7 @@ import type { SocialLinksProps } from '@site/src/interface'
 import styles from './styles.module.css'
 
 // 定义SocialLinks组件
-export const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
+const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
   // 将socialLinksComponents数组定义为一个状态，并使用React.useMemo()来缓存它
   const [socialLinksComponents, setSocialLinksComponents] = React.useState<JSX.Element[]>([])
   React.useMemo(() => {

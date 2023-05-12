@@ -6,6 +6,14 @@ import React, {
 
 import ReactPlayer from 'react-player'
 
+import {
+  Tooltip,
+  TooltipArrow,
+  TooltipArrowTip,
+  TooltipContent,
+  TooltipPositioner,
+  TooltipTrigger,
+} from '@ark-ui/react'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import Translate from '@docusaurus/Translate'
 import {
@@ -54,20 +62,34 @@ async function transcodeVideo(inputFile) {
   }
 }
 
+const initList: Video[] = [ // 视频列表
+  {
+    title: '狸猫换太子·平寇进猫',
+    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">曹文豹打败阿利托汉</p>',
+    url: '/video/pkjm.mp4',
+    webm_url: '/video/pkjm.webm',
+  },
+  {
+    title: '狸猫换太子·陈琳吊场',
+    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">陈琳吊场</p>',
+    url: '/video/cldc.mp4',
+  },
+  {
+    title: '狸猫换太子·庆功赐帕(上)',
+    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">百花亭庆功·寇准题诗·真宗赐帕</p>',
+    url: '/video/qgcp1.mp4',
+  },
+  // { title: '狸猫换太子·狸猫换子', url: '/video/lmhz.mp4' },
+  // { title: '狸猫换太子·九曲救主', url: '/video/jqjz.mp4' },
+]
+
 // VideoPage组件
 const VideoPage: React.FC = () => {
+  const [isComposing, setIsComposing] = useState<boolean>(false)
+  const [inputValue, setInputValue] = useState<string>('')
   const [videoUrl, setVideoUrl] = useState<string>('') // 当前播放视频地址
-
-  const [videoList, setVideoList] = useState<Video[]>([ // 视频列表
-    { title: '狸猫换太子·平寇进猫', url: '/video/pkjm.mp4', webm_url: '/video/pkjm.webm' },
-    { title: '狸猫换太子·陈琳吊场', url: '/video/cldc.mp4' },
-    { title: '狸猫换太子·庆功赐帕(上)', url: '/video/qgcp1.mp4' },
-    // { title: '狸猫换太子·狸猫换子', url: '/video/lmhz.mp4' },
-    // { title: '狸猫换太子·九曲救主', url: '/video/jqjz.mp4' },
-  ])
-
-  // 控制是否显示H265不支持提示框
-  const [showAlert, setShowAlert] = useState<boolean>(false)
+  const [videoList, setVideoList] = useState<Video[]>(initList)
+  const [showAlert, setShowAlert] = useState<boolean>(false) // 控制是否显示H265不支持提示框
 
   const ele = ExecutionEnvironment.canUseDOM ? document.createElement('video') : null
 
@@ -142,6 +164,28 @@ const VideoPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full rounded-lg">
+      <input
+        type="text"
+        className="input input-bordered mb-2 w-full max-w-xs border-2"
+        onCompositionStart={() => setIsComposing(true)}
+        onCompositionEnd={(e) => {
+          if (e.currentTarget.value === '')
+            setVideoList(initList)
+          if (isComposing) {
+            setInputValue(e.currentTarget.value)
+            setVideoList(videoList.filter(video => video.title.includes(e.currentTarget.value)))
+            setIsComposing(false)
+          }
+        }}
+        onChange={(e) => {
+          if (!isComposing) {
+            setInputValue(e.currentTarget.value)
+            if (e.currentTarget.value === '')
+              setVideoList(initList)
+          }
+        }}
+      />
+
       <Transition
         appear
         show={showAlert}
@@ -190,18 +234,32 @@ const VideoPage: React.FC = () => {
       />
 
       <div className="flex flex-wrap justify-center mt-2 w-full select-none">
-        {videoList.map((video, index) => (
-          <div key={index} className="m-1">
-            <div
-              onClick={() => {
-                handleVideoClick(video)
-                handleVideoItemSelect(index)
-              }}
-              className={`p-4 rounded-lg shadow-md cursor-pointer transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110 ${video.selected ? 'bg-gray-200' : ''}`}
-              title={video.title}
-            >
-              {video.title}
-            </div>
+        {videoList.filter(video => video.title.includes(inputValue)).map((video, index) => (
+          <div key={index} className="m-1 transition duration-200">
+            <Tooltip openDelay={500} closeDelay={200}>
+              <TooltipTrigger
+                className={`p-4 rounded-lg shadow cursor-pointer transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${video.selected ? 'bg-gray-200' : ''}`}
+                onClick={() => {
+                  handleVideoClick(video)
+                  handleVideoItemSelect(index)
+                }}
+              >
+                <span>
+                  <div title={video.title}>
+                    {video.title}
+                  </div>
+                </span>
+              </TooltipTrigger>
+
+              <TooltipPositioner>
+                <TooltipArrow>
+                  <TooltipArrowTip />
+                </TooltipArrow>
+                <TooltipContent className='px-4 w-60 text-xs'>
+                  <div className='text-center' dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
+                </TooltipContent>
+              </TooltipPositioner>
+            </Tooltip>
           </div>
         ))}
       </div>

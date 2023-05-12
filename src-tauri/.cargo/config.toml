@@ -1,5 +1,14 @@
 [build]
 target = 'x86_64-pc-windows-msvc'
+
+[target.x86_64-pc-windows-msvc]
+linker = "lld"
+rustflags = [
+  "-Lnative=D:/.xwin/crt/lib/x86_64",
+  "-Lnative=D:/.xwin/sdk/lib/um/x86_64",
+  "-Lnative=/home/username/.xwin/sdk/lib/ucrt/x86_64"
+]
+
 [target.aarch64-linux-android]
 linker = 'D:\androidSdk\ndk\25.0.8775105\toolchains/llvm/prebuilt/windows-x86_64\bin\aarch64-linux-android24-clang.cmd'
 rustflags = [

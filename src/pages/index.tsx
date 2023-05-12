@@ -1,14 +1,19 @@
 /* eslint-disable @docusaurus/no-untranslated-text */
-import React, { useEffect } from 'react'
+import React, {
+  Suspense,
+  lazy,
+  useEffect,
+} from 'react'
 
 import { themeChange } from 'theme-change'
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { Temporal } from '@js-temporal/polyfill'
 import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
-import { SocialLinks } from '@site/src/components/Homepage/SocialLinks'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import Layout from '@theme/Layout'
+
+const SocialLinks = lazy(() => import('../components/Homepage/SocialLinks.tsx'))
 
 let dateStr = ''
 
@@ -131,7 +136,9 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <div className="container padding-vert">
-          <SocialLinks data={ socialLinks } />
+          <Suspense fallback={<div>Loading...</div>}>
+            <SocialLinks data={ socialLinks } />
+          </Suspense>
         </div>
         <HomepageFeatures />
       </main>

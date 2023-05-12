@@ -3,8 +3,6 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 F
 app/proguard-rules.pro,9\e\9e08934d811afe28fbc77aaa3c0d747b94348db9
-F
-app/proguard-tauri.pro,9\3\932011ddf9400dcc1729cf4fb7450ed6fa3232fc
 E
 tauri.settings.gradle,0\8\088645871b5ae84f651cc3ae2abcb2443d431bc8
 J
@@ -19,8 +17,6 @@ I
 buildSrc/build.gradle.kts,d\9\d90b697280fada81e52ec92d24725920f1cb087b
 @
 local.properties,0\7\0712df971a99ac4d2fccb8e0fb19f377f3374cca
-@
-build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 h
@@ -31,3 +27,7 @@ p
 @app/src/main/java/com/yancy/app/generated/RustWebChromeClient.kt,e\f\ef6fc062eedc134a3f1ef980a61fc4b84ab5aa24
 h
 8app/src/main/java/com/yancy/app/generated/RustWebView.kt,5\1\51cbd2ba033eb6d4e8baa363dfab3f2a4e96bcd4
+@
+build.gradle.kts,d\b\dbcff70658daf80b53ce624f6adcaa529df5ed8d
+F
+app/proguard-tauri.pro,9\3\932011ddf9400dcc1729cf4fb7450ed6fa3232fc
