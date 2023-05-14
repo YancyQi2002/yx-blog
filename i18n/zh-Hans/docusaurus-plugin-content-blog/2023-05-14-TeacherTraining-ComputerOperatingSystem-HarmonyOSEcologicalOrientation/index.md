@@ -1,11 +1,11 @@
 ---
 slug: TeacherTraining-ComputerOperatingSystem-HarmonyOSEcologicalOrientation
-title: 计算机操作系统（鸿蒙生态方向）证书
+title: 计算机操作系统（鸿蒙生态方向）
 authors: yancyqi
 tags: [华为, HarmonyOS, HDF, 前端]
 ---
 
-设备和应用开发（鸿蒙生态方向）证书
+计算机操作系统（鸿蒙生态方向）证书
 
 <!--truncate-->
 
