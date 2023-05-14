@@ -21,7 +21,10 @@ import {
   fetchFile,
 } from '@ffmpeg/ffmpeg'
 import { Transition } from '@headlessui/react'
-import type { Video } from '@site/src/interface'
+import {
+  type Video,
+  initJingjuVedioList,
+} from '@site/src/interface'
 
 const ffmpeg = createFFmpeg({ log: true })
 
@@ -62,42 +65,16 @@ async function transcodeVideo(inputFile) {
   }
 }
 
-const initList: Video[] = [ // 视频列表
-  {
-    title: '狸猫换太子·平寇进猫',
-    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">曹文豹打败阿利托汉</p>',
-    url: '/video/pkjm.mp4',
-    webm_url: '/video/pkjm.webm',
-  },
-  {
-    title: '狸猫换太子·陈琳吊场',
-    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">陈琳吊场</p>',
-    url: '/video/cldc.mp4',
-  },
-  {
-    title: '狸猫换太子·庆功赐帕(上)',
-    tip_content: '<p>名段欣赏·南派京剧狸猫换太子第一本</p><p class="-mt-4">百花亭庆功·寇准题诗·真宗赐帕</p>',
-    url: '/video/qgcp1.mp4',
-  },
-  // { title: '狸猫换太子·狸猫换子', url: '/video/lmhz.mp4' },
-  // { title: '狸猫换太子·九曲救主', url: '/video/jqjz.mp4' },
-]
-
 // VideoPage组件
 const VideoPage: React.FC = () => {
   const [isComposing, setIsComposing] = useState<boolean>(false)
   const [inputValue, setInputValue] = useState<string>('')
   const [videoUrl, setVideoUrl] = useState<string>('') // 当前播放视频地址
-  const [videoList, setVideoList] = useState<Video[]>(initList)
+  const [videoList, setVideoList] = useState<Video[]>(initJingjuVedioList)
   const [showAlert, setShowAlert] = useState<boolean>(false) // 控制是否显示H265不支持提示框
 
   const ele = ExecutionEnvironment.canUseDOM ? document.createElement('video') : null
 
-  /**
-   * 处理视频点击事件
-   * @param {Video} video - 被点击的视频
-   * @returns {void}
-   */
   /**
    * 处理视频点击事件
    * @param {Video} video - 被点击的视频
@@ -164,27 +141,34 @@ const VideoPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full rounded-lg">
-      <input
-        type="text"
-        className="input input-bordered mb-2 w-full max-w-xs border-2"
-        onCompositionStart={() => setIsComposing(true)}
-        onCompositionEnd={(e) => {
-          if (e.currentTarget.value === '')
-            setVideoList(initList)
-          if (isComposing) {
-            setInputValue(e.currentTarget.value)
-            setVideoList(videoList.filter(video => video.title.includes(e.currentTarget.value)))
-            setIsComposing(false)
-          }
-        }}
-        onChange={(e) => {
-          if (!isComposing) {
-            setInputValue(e.currentTarget.value)
+      <div className="relative h-full">
+        <span className="absolute inset-y-0 -top-2 left-0 flex items-center pl-2.5">
+          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.031 20.79c.46.46 1.17-.25.71-.7l-3.75-3.76a7.904 7.904 0 0 0 2.04-5.31c0-4.39-3.57-7.96-7.96-7.96s-7.96 3.57-7.96 7.96c0 4.39 3.57 7.96 7.96 7.96c1.98 0 3.81-.73 5.21-1.94l3.75 3.75zM4.11 11.02c0-3.84 3.13-6.96 6.96-6.96c3.84 0 6.96 3.12 6.96 6.96s-3.12 6.96-6.96 6.96c-3.83 0-6.96-3.12-6.96-6.96z" />
+          </svg>
+        </span>
+        <input
+          type="text"
+          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2"
+          onCompositionStart={() => setIsComposing(true)}
+          onCompositionEnd={(e) => {
             if (e.currentTarget.value === '')
-              setVideoList(initList)
-          }
-        }}
-      />
+              setVideoList(initJingjuVedioList)
+            if (isComposing) {
+              setInputValue(e.currentTarget.value)
+              setVideoList(videoList.filter(video => video.title.includes(e.currentTarget.value)))
+              setIsComposing(false)
+            }
+          }}
+          onChange={(e) => {
+            if (!isComposing) {
+              setInputValue(e.currentTarget.value)
+              if (e.currentTarget.value === '')
+                setVideoList(initJingjuVedioList)
+            }
+          }}
+        />
+      </div>
 
       <Transition
         appear
