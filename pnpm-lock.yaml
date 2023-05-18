@@ -127,8 +127,8 @@ devDependencies:
     specifier: 2.0.0-alpha.8
     version: 2.0.0-alpha.8
   '@tauri-apps/cli-win32-x64-msvc':
-    specifier: 2.0.0-alpha.8
-    version: 2.0.0-alpha.8
+    specifier: 2.0.0-alpha.9
+    version: 2.0.0-alpha.9
   '@tsconfig/docusaurus':
     specifier: ^1.0.7
     version: 1.0.7
@@ -4883,6 +4883,15 @@ packages:
 
   /@tauri-apps/cli-win32-x64-msvc@2.0.0-alpha.8:
     resolution: {integrity: sha512-zvWd13hRfRM0AEJJZ4t4CeB/cyru8hvbB6c+sxYDS9GPRWfHSH5dIeKoHhnMwP5fEOPZLN7VaeEP6tC88trD6g==}
+    engines: {node: '>= 10'}
+    cpu: [x64]
+    os: [win32]
+    requiresBuild: true
+    dev: true
+    optional: true
+
+  /@tauri-apps/cli-win32-x64-msvc@2.0.0-alpha.9:
+    resolution: {integrity: sha512-541nR7UoasX/fnEWhC14H4Ppj17Aa1fbCyFb9+zmWjupVkEGf/yQFvdWRHdmCkgOdGuxPahR5hbOPh+jvaklFw==}
     engines: {node: '>= 10'}
     cpu: [x64]
     os: [win32]
