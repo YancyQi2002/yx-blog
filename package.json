@@ -60,7 +60,7 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.38.6",
+    "@antfu/eslint-config": "^0.39.0",
     "@commitlint/cli": "^17.6.3",
     "@commitlint/config-conventional": "^17.6.3",
     "@docusaurus/eslint-plugin": "0.0.0-5580",
