@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="91523812-d56a-49b8-8751-f760cd65fb51" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/strings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../build.gradle.kts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../buildSrc/src/main/java/com/yancy/app/kotlin/BuildTask.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../buildSrc/src/main/java/com/yancy/app/kotlin/RustPlugin.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../settings.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Cargo.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Cargo.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../Cargo.toml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Cargo.toml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/../.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/deploymentTargetDropDown.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/easyRequestCollection.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/5/05efc8b1657769a27696d478ded1e95f38737233" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/0/8/088645871b5ae84f651cc3ae2abcb2443d431bc8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/3/932011ddf9400dcc1729cf4fb7450ed6fa3232fc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/b/1/b142ef53c5faa3d92e68869abb9ecfa673b9f0c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/issuestore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/5/05efc8b1657769a27696d478ded1e95f38737233" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/0/8/088645871b5ae84f651cc3ae2abcb2443d431bc8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/8/c/8c55c3ccc257e5907959013f99656e4c8ec3903e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/3/932011ddf9400dcc1729cf4fb7450ed6fa3232fc" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/9/e/9e08934d811afe28fbc77aaa3c0d747b94348db9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/b/1/b142ef53c5faa3d92e68869abb9ecfa673b9f0c8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/f/b/fbe448ebfc3eb2d4e308f6b8b043666f5b57235e" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/sonarlint/securityhotspotstore/index.pb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/proguard-rules.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/androidTest/java/app/tauri/ExampleInstrumentedTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/FsUtils.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/JniMethod.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/Logger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/PathPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/PermissionHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/PermissionState.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/annotation/ActivityCallback.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/annotation/Permission.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/annotation/PermissionCallback.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/annotation/PluginMethod.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/annotation/TauriPlugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/InvalidPluginMethodException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/Invoke.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/JSArray.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/JSObject.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/Plugin.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/PluginHandle.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/PluginManager.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/PluginMethodData.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/main/java/app/tauri/plugin/PluginResult.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.tauri/tauri-api/src/test/java/app/tauri/ExampleUnitTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/BuildConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/yancy/app/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/Ipc.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/Logger.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/PermissionHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/RustWebChromeClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/RustWebView.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/RustWebViewClient.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/bin/main/com/yancy/app/generated/TauriActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-rules.pro" beforeDir="false" afterPath="$PROJECT_DIR$/proguard-rules.pro" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/proguard-tauri.pro" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/yancy/app/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable-v24/ic_launcher_foreground.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_launcher_background.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-hdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-mdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_foreground.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values-night/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values-night/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/xml/file_paths.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/xml/file_paths.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/tauri.build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/buildSrc/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/../buildSrc/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/../gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tauri.settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../src/lib.rs" beforeDir="false" afterPath="$PROJECT_DIR$/../../../src/lib.rs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../tauri.conf.json" beforeDir="false" afterPath="$PROJECT_DIR$/../../../tauri.conf.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="2PzyvvucoS9j4bsefxK6YEukxQw" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "main"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="91523812-d56a-49b8-8751-f760cd65fb51" name="更改" comment="" />
+      <created>1684474446735</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1684474446735</updated>
+    </task>
+    <servers />
+  </component>
+</project>
