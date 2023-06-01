@@ -141,7 +141,7 @@ const VideoPage: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center h-full rounded-lg">
-      <div className="relative h-full">
+      <div className="relative h-full join">
         <span className="absolute inset-y-0 -top-2 left-0 flex items-center pl-2.5">
           <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.031 20.79c.46.46 1.17-.25.71-.7l-3.75-3.76a7.904 7.904 0 0 0 2.04-5.31c0-4.39-3.57-7.96-7.96-7.96s-7.96 3.57-7.96 7.96c0 4.39 3.57 7.96 7.96 7.96c1.98 0 3.81-.73 5.21-1.94l3.75 3.75zM4.11 11.02c0-3.84 3.13-6.96 6.96-6.96c3.84 0 6.96 3.12 6.96 6.96s-3.12 6.96-6.96 6.96c-3.83 0-6.96-3.12-6.96-6.96z" />
@@ -149,7 +149,7 @@ const VideoPage: React.FC = () => {
         </span>
         <input
           type="text"
-          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2"
+          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2 join-item"
           onCompositionStart={() => setIsComposing(true)}
           onCompositionEnd={(e) => {
             if (e.currentTarget.value === '')

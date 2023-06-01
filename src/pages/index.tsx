@@ -50,9 +50,8 @@ const dateArray: string[] = [
   '09-09',
   '10-27',
   '11-30',
-]
-dateArray.push(qinMingDate(fullYear))
-dateArray.sort()
+  qinMingDate(fullYear),
+].sort()
 
 const socialLinks: {
   name: string
@@ -136,7 +135,13 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <main>
         <div className="container padding-vert">
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={
+            <div className="flex justify-center items-center -mt-48 px-0 pt-8 pb-16">
+              <div className="animate-spin text-4xl text-blue-500">
+                <span className="loading loading-ring loading-lg"></span>
+              </div>
+            </div>
+          }>
             <SocialLinks data={ socialLinks } />
           </Suspense>
         </div>

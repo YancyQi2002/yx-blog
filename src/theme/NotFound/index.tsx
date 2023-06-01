@@ -1,4 +1,9 @@
-import React, { useEffect } from 'react'
+/* eslint-disable @docusaurus/no-untranslated-text */
+import React, {
+  Suspense,
+  lazy,
+  useEffect,
+} from 'react'
 
 import { themeChange } from 'theme-change'
 
@@ -7,7 +12,7 @@ import { translate } from '@docusaurus/Translate'
 import { Temporal } from '@js-temporal/polyfill'
 import Layout from '@theme/Layout'
 
-import NotFoundContent from './Content'
+const NotFoundContent = lazy(() => import('./Content/index.tsx'))
 
 let dateStr = ''
 
@@ -38,9 +43,8 @@ const dateArray: string[] = [
   '09-09',
   '10-27',
   '11-30',
-]
-dateArray.push(qinMingDate(fullYear))
-dateArray.sort()
+  qinMingDate(fullYear),
+].sort()
 
 export default function Index(): JSX.Element {
   useEffect(() => {
@@ -68,7 +72,15 @@ export default function Index(): JSX.Element {
     <>
       <PageMetadata title={title} />
       <Layout>
-        <NotFoundContent />
+        <Suspense fallback={
+          <div className="flex justify-center items-center">
+            <div className="animate-spin text-4xl text-blue-500">
+              <span className="loading loading-ring loading-lg"></span>
+            </div>
+          </div>
+        }>
+          <NotFoundContent />
+        </Suspense>
       </Layout>
     </>
   )

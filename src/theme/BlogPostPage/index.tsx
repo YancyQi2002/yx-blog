@@ -38,9 +38,8 @@ const dateArray: string[] = [
   '09-09',
   '10-27',
   '11-30',
-]
-dateArray.push(qinMingDate(fullYear))
-dateArray.sort()
+  qinMingDate(fullYear),
+].sort()
 
 export default function BlogPostPageWrapper(props: Props): JSX.Element {
   useEffect(() => {
