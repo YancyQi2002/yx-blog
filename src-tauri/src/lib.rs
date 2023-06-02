@@ -1,4 +1,5 @@
 use tauri::{App, Manager};
+use tauri_plugin_log::{LogTarget};
 use window_shadows::set_shadow;
 use window_vibrancy::{apply_blur, apply_vibrancy, NSVisualEffectMaterial};
 
@@ -51,6 +52,11 @@ impl AppBuilder {
 
         Ok(())
       })
+      .plugin(tauri_plugin_log::Builder::default().targets([
+        LogTarget::LogDir,
+        LogTarget::Stdout,
+        LogTarget::Webview,
+      ]).build())
       .run(tauri::generate_context!())
       .expect("error while running tauri application");
   }

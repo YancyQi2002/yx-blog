@@ -25,10 +25,17 @@ import {
   type Video,
   initJingjuVedioList,
 } from '@site/src/interface'
+import {
+  attachConsole,
+  error,
+} from '@tauri-apps/plugin-log'
 
 const ffmpeg = createFFmpeg({ log: true })
 
 async function transcodeVideo(inputFile) {
+  // with LogTarget::Webview enabled this function will print logs to the browser console
+  const detach = await attachConsole()
+
   try {
     // 初始化ffmpeg
     await ffmpeg.load()
@@ -59,8 +66,10 @@ async function transcodeVideo(inputFile) {
     // 返回输出文件的URL
     return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
   }
-  catch (error) {
-    console.error('Error in transcodeVideo:', error)
+  catch (err) {
+    error(`Error in transcodeVideo:${err}`)
+    // detach the browser console from the log stream
+    detach()
     return null
   }
 }
@@ -81,6 +90,8 @@ const VideoPage: React.FC = () => {
    * @returns {void}
    */
   const handleVideoClick = async (video: Video) => {
+    const detach = await attachConsole()
+
     if (ele) { // 如果video元素存在，则执行以下操作
       // 判断是否支持H265编码格式
       const h265Supported = ele?.canPlayType('video/mp4; codecs="hev1"') || ele?.canPlayType('video/mp4; codecs="hvc1"')
@@ -112,8 +123,9 @@ const VideoPage: React.FC = () => {
             setVideoUrl(transcodedUrl)
           }
           catch (err) {
-            console.error(err)
+            error(err)
             setVideoUrl(video.url) // 如果转码失败，则使用原视频地址
+            detach()
           }
         }
       }

@@ -1,4 +1,3 @@
-/* eslint-disable @docusaurus/no-untranslated-text */
 import React, {
   Suspense,
   lazy,
