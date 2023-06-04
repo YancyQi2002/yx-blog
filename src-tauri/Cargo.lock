@@ -453,12 +453,12 @@ dependencies = [
 
 [[package]]
 name = "cssparser-macros"
-version = "0.6.0"
+version = "0.6.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dfae75de57f2b2e85e8768c3ea840fd159c8f33e2b6522c7835b7abac81be16e"
+checksum = "13b588ba4ac1a99f7f2964d24b3d896ddc6bf847ee3855dbd4366f058cfcd331"
 dependencies = [
  "quote",
- "syn 1.0.109",
+ "syn 2.0.18",
 ]
 
 [[package]]
@@ -1733,9 +1733,9 @@ dependencies = [
 
 [[package]]
 name = "once_cell"
-version = "1.17.2"
+version = "1.18.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "9670a07f94779e00908f3e686eab508878ebb390ba6e604d3a284c00e8d0487b"
+checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
 
 [[package]]
 name = "overload"
@@ -2816,7 +2816,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-log"
 version = "2.0.0-alpha.0"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#cf5864266e2e0fe465af5f01d36214b7de66b528"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#d8b4aca69f628b170804ecb982e2c319d026ef47"
 dependencies = [
  "android_logger",
  "byte-unit",
