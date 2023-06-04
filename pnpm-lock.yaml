@@ -93,8 +93,8 @@ dependencies:
     specifier: ^5.1.1
     version: 5.1.1
   styled-components:
-    specifier: 6.0.0-rc.2
-    version: 6.0.0-rc.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: 6.0.0-rc.3
+    version: 6.0.0-rc.3(react-dom@18.2.0)(react@18.2.0)
   theme-change:
     specifier: ^2.5.0
     version: 2.5.0
@@ -865,7 +865,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.21.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.12.9)
       '@babel/plugin-transform-parameters': 7.22.3(@babel/core@7.12.9)
     dev: false
@@ -17120,9 +17120,9 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-components@6.0.0-rc.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-Rtgv4GQu2XrMGybwUqI+uoD5OTeldyedAiO2eVWtM3aF4qUoKTrWN/Y4uHtSlX+DVzXpH7W/DXFH+noKKxui0Q==}
-    engines: {node: '>= 14'}
+  /styled-components@6.0.0-rc.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-5FbCTxynopck99GRwM5Ey0+VRp8pkQq69TwGOJJeYtR7gPvwGjNx8yBPLN7/dfxwwvn9ymOZYB19eQkv2k70wQ==}
+    engines: {node: '>= 16'}
     peerDependencies:
       babel-plugin-styled-components: '>= 2'
       react: '>= 16.8.0'
@@ -17143,6 +17143,7 @@ packages:
       '@babel/traverse': 7.22.4
       '@emotion/unitless': 0.8.1
       css-to-react-native: 3.2.0
+      postcss: 8.4.24
       react: 18.2.0
       react-dom: 18.2.0(react@18.2.0)
       shallowequal: 1.1.0
