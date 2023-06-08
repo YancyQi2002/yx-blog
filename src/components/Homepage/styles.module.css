@@ -1,6 +1,6 @@
 .highlighted {
   @apply bg-clip-text;
-  background: linear-gradient(to left, #0054ad 0%, #b8fb3c 100%);
+  background: linear-gradient(to left, color(display-p3 108 146 140 / 0), color(rec2020 184 251 60 / 1));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -47,11 +47,11 @@
 
 .btnIcon {
   @apply block mx-auto my-0 px-0 py-2 w-6;
-  fill: #4093f6;
+  fill: color(rec2020 64 147 246);
 }
 
 .socialLinks > .col > a:hover {
-  background-color: #4093f6;
+  background-color: color(rec2020 64 147 246);
 }
 
 .btnText {

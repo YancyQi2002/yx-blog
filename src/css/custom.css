@@ -17,27 +17,27 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #2e8555;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: color(rec2020 46 133 85);
+  --ifm-color-primary-dark: color(rec2020 41 120 76);
+  --ifm-color-primary-darker: color(rec2020 39 113 72);
+  --ifm-color-primary-darkest: color(rec2020 32 93 59);
+  --ifm-color-primary-light: color(rec2020 51 146 93);
+  --ifm-color-primary-lighter: color(rec2020 53 153 98);
+  --ifm-color-primary-lightest: color(rec2020 60 173 110);
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .1);
+  --docusaurus-highlighted-code-line-bg: color(rec2020 0 0 0 / .1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: #25c2a0;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .3);
+  --ifm-color-primary: color(rec2020 37 194 160);
+  --ifm-color-primary-dark: color(rec2020 33 175 144);
+  --ifm-color-primary-darker: color(rec2020 31 165 136);
+  --ifm-color-primary-darkest: color(rec2020 26 136 112);
+  --ifm-color-primary-light: color(rec2020 41 213 176);
+  --ifm-color-primary-lighter: color(rec2020 50 216 180);
+  --ifm-color-primary-lightest: color(rec2020 79 221 191);
+  --docusaurus-highlighted-code-line-bg: color(rec2020 0 0 0 / .3);
 }
 
 .navbar__item > ul > li > select {
@@ -229,10 +229,7 @@ a:has(svg) {
   font-display: swap;
 }
 
-.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) {
-  @apply block;
-}
-
+.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert)
 .markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) > :where(*) {
   @apply block;
 }
