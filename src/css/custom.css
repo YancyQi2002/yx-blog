@@ -15,32 +15,58 @@
   src: url('../fonts/yangrendongzhushiziti.ttf');
 }
 
-/* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: color(display-p3 46 133 85);
-  --ifm-color-primary-dark: color(display-p3 41 120 76);
-  --ifm-color-primary-darker: color(display-p3 39 113 72);
-  --ifm-color-primary-darkest: color(display-p3 32 93 59);
-  --ifm-color-primary-light: color(display-p3 51 146 93);
-  --ifm-color-primary-lighter: color(display-p3 53 153 98);
-  --ifm-color-primary-lightest: color(display-p3 60 173 110);
+  --ifm-color-primary: #2e8555;
+  --ifm-color-primary-dark: #29784c;
+  --ifm-color-primary-darker: #277148;
+  --ifm-color-primary-darkest: #205d3b;
+  --ifm-color-primary-light: #33925d;
+  --ifm-color-primary-lighter: #359962;
+  --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
-  --ifm-color-primary: color(display-p3 37 194 160);
-  --ifm-color-primary-dark: color(display-p3 33 175 144);
-  --ifm-color-primary-darker: color(display-p3 31 165 136);
-  --ifm-color-primary-darkest: color(display-p3 26 136 112);
-  --ifm-color-primary-light: color(display-p3 41 213 176);
-  --ifm-color-primary-lighter: color(display-p3 50 216 180);
-  --ifm-color-primary-lightest: color(display-p3 79 221 191);
-  --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .3);
+  --ifm-color-primary: #25c2a0;
+  --ifm-color-primary-dark: #21af90;
+  --ifm-color-primary-darker: #1fa588;
+  --ifm-color-primary-darkest: #1a8870;
+  --ifm-color-primary-light: #29d5b0;
+  --ifm-color-primary-lighter: #32d8b4;
+  --ifm-color-primary-lightest: #4fddbf;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .3);
 }
 
-.navbar__item > ul > li > select {
+@supports (color: color(display-p3 1 1 1)) {
+  /* You can override the default Infima variables here. */
+  :root {
+    --ifm-color-primary: color(display-p3 .1804 .5216 .3333);
+    --ifm-color-primary-dark: color(display-p3 .1647 .4706 .298);
+    --ifm-color-primary-darker: color(display-p3 .1529 .4431 .2824);
+    --ifm-color-primary-darkest: color(display-p3 .1255 .3647 .2314);
+    --ifm-color-primary-light: color(display-p3 .2 .5725 .3647);
+    --ifm-color-primary-lighter: color(display-p3 .2078 .6 .3843);
+    --ifm-color-primary-lightest: color(display-p3 .2353 .6784 .4314);
+    --ifm-code-font-size: 95%;
+    --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .1);
+  }
+
+  /* For readability concerns, you should choose a lighter palette in dark mode. */
+  [data-theme='dark'] {
+    --ifm-color-primary: color(display-p3 .1451 .7608 .6275);
+    --ifm-color-primary-dark: color(display-p3 .1294 .6863 .5647);
+    --ifm-color-primary-darker: color(display-p3 .1216 .6471 .5333);
+    --ifm-color-primary-darkest: color(display-p3 .102 .5333 .4392);
+    --ifm-color-primary-light: color(display-p3 .1608 .8353 .6902);
+    --ifm-color-primary-lighter: color(display-p3 .1961 .8471 .7059);
+    --ifm-color-primary-lightest: color(display-p3 .3098 .8667 .749);
+    --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .3);
+  }
+}
+
+.navbar__item>ul>li>select {
   @apply m-4 w-36;
 }
 
@@ -109,58 +135,58 @@
   background-color: #f0d6e8;
 }
 
-.navbar__logo > img {
+.navbar__logo>img {
   @apply inline;
 }
 
 [data-theme='aqua'] .navbar a,
 [data-theme='aqua'] .navbar b,
-[data-theme='aqua'] .navbar .navbar__items > .navbar__item {
+[data-theme='aqua'] .navbar .navbar__items>.navbar__item {
   color: #c7dbf4;
 }
 
 [data-theme='business'] .navbar a,
 [data-theme='business'] .navbar b,
-[data-theme='business'] .navbar .navbar__items > .navbar__item,
+[data-theme='business'] .navbar .navbar__items>.navbar__item,
 [data-theme='halloween'] .navbar a,
 [data-theme='halloween'] .navbar b,
-[data-theme='halloween'] .navbar .navbar__items > .navbar__item {
+[data-theme='halloween'] .navbar .navbar__items>.navbar__item {
   color: #d4d4d4;
 }
 
 [data-theme='coffee'] .navbar a,
 [data-theme='coffee'] .navbar b,
-[data-theme='coffee'] .navbar .navbar__items > .navbar__item {
+[data-theme='coffee'] .navbar .navbar__items>.navbar__item {
   color: #746d63;
 }
 
 [data-theme='luxury'] .navbar a,
 [data-theme='luxury'] .navbar b,
-[data-theme='luxury'] .navbar .navbar__items > .navbar__item {
+[data-theme='luxury'] .navbar .navbar__items>.navbar__item {
   color: #dca54c;
 }
 
 [data-theme='night'] .navbar a,
 [data-theme='night'] .navbar b,
-[data-theme='night'] .navbar .navbar__items > .navbar__item {
+[data-theme='night'] .navbar .navbar__items>.navbar__item {
   color: #b3c5ef;
 }
 
 [data-theme='black'] .navbar a,
 [data-theme='black'] .navbar b,
-[data-theme='black'] .navbar .navbar__items > .navbar__item,
+[data-theme='black'] .navbar .navbar__items>.navbar__item,
 [data-theme='dracula'] .navbar a,
 [data-theme='dracula'] .navbar b,
-[data-theme='dracula'] .navbar .navbar__items > .navbar__item,
+[data-theme='dracula'] .navbar .navbar__items>.navbar__item,
 [data-theme='synthwave'] .navbar a,
 [data-theme='synthwave'] .navbar b,
-[data-theme='synthwave'] .navbar .navbar__items > .navbar__item {
+[data-theme='synthwave'] .navbar .navbar__items>.navbar__item {
   @apply text-white;
 }
 
 [data-theme='forest'] .navbar a,
 [data-theme='forest'] .navbar b,
-[data-theme='forest'] .navbar .navbar__items > .navbar__item {
+[data-theme='forest'] .navbar .navbar__items>.navbar__item {
   color: #d7cccc;
 }
 
@@ -191,11 +217,11 @@ a:has(svg) {
   font-display: swap;
 }
 
-.markdown:has(hr) > hr {
+.markdown:has(hr)>hr {
   @apply m-4;
 }
 
-.markdown:has(code) > code {
+.markdown:has(code)>code {
   font-family: 'Fira Code', monospace;
   font-display: swap;
 }
@@ -204,7 +230,7 @@ a:has(svg) {
   @apply table-auto xl:text-xl md:text-lg xs:text-xs select-none hover:border-collapse;
 }
 
-.markdown:has(table) :is(table) :where(th,td) {
+.markdown:has(table) :is(table) :where(th, td) {
   @apply p-4 hover:bg-[#F9FAFB];
 }
 
@@ -212,6 +238,14 @@ a:has(svg) {
   background: linear-gradient(to right, #EC695C, #61C454) no-repeat right bottom;
   background-size: 0 2px;
   transition: background-size 1300ms;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  .markdown:has(h2) :where(h2) {
+    background: linear-gradient(to right, color(display-p3 .9255 .4118 .3608), color(display-p3 .3804 .7686 .3294)) no-repeat right bottom;
+    background-size: 0 2px;
+    transition: background-size 1300ms;
+  }
 }
 
 .markdown:has(h2) :where(h2):hover {
@@ -229,8 +263,7 @@ a:has(svg) {
   font-display: swap;
 }
 
-.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert)
-.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) > :where(*) {
+.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) .markdown:has(h2):has(.alert):has(span):has(p) :where(.alert)> :where(*) {
   @apply block;
 }
 
@@ -238,6 +271,7 @@ a:has(svg) {
   from {
     @apply pointer-events-none;
   }
+
   to {
     @apply pointer-events-auto;
   }

@@ -1,8 +1,17 @@
 .highlighted {
   @apply bg-clip-text;
-  background: linear-gradient(to left, color(display-p3 108 146 140 / 0), color(rec2020 184 251 60 / 1));
+  background: linear-gradient(to left, #6C928C 0%, #B8FB3C 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@supports (color: color(display-p3 1 1 1)) {
+  .highlighted {
+    @apply bg-clip-text;
+    background: linear-gradient(to left, color(display-p3 .4 .57 .54) 0%, color(display-p3 .72 1 .24) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
 }
 
 .socialContainer {
@@ -47,11 +56,24 @@
 
 .btnIcon {
   @apply block mx-auto my-0 px-0 py-2 w-6;
-  fill: color(a98-rgb 64 147 246);
+  fill: #4093f6;
+}
+
+@supports (color: color(a98-rgb 1 1 1)) {
+  .btnIcon {
+    @apply block mx-auto my-0 px-0 py-2 w-6;
+    fill: color(a98-rgb .251 .576 .965);
+  }
 }
 
 .socialLinks > .col > a:hover {
-  background-color: color(prophoto-rgb 64 147 246);
+  background-color: #4093F6;
+}
+
+@supports (color: color(prophoto-rgb 1 1 1)) {
+  .socialLinks > .col > a:hover {
+    background-color: color(prophoto-rgb .251 .542 .957);
+  }
 }
 
 .btnText {
