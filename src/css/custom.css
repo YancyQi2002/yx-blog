@@ -263,8 +263,9 @@ a:has(svg) {
   font-display: swap;
 }
 
-.markdown:has(h2):has(.alert):has(span):has(p) :where(.alert) .markdown:has(h2):has(.alert):has(span):has(p) :where(.alert)> :where(*) {
-  @apply block;
+.markdown:has(hr):has(p):not(:has(input)) .alert
+.markdown:has(hr):has(p):not(:has(input)) .alert > :where(*) {
+  @apply !block;
 }
 
 @keyframes throttle {

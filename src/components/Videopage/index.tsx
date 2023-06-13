@@ -25,17 +25,10 @@ import {
   type Video,
   initJingjuVedioList,
 } from '@site/src/interface'
-import {
-  attachConsole,
-  error,
-} from '@tauri-apps/plugin-log'
 
 const ffmpeg = createFFmpeg({ log: true })
 
 async function transcodeVideo(inputFile) {
-  // with LogTarget::Webview enabled this function will print logs to the browser console
-  const detach = await attachConsole()
-
   try {
     // 初始化ffmpeg
     await ffmpeg.load()
@@ -67,9 +60,8 @@ async function transcodeVideo(inputFile) {
     return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
   }
   catch (err) {
-    error(`Error in transcodeVideo:${err}`)
-    // detach the browser console from the log stream
-    detach()
+    // eslint-disable-next-line no-console
+    console.log(`Error in transcodeVideo:${err}`)
     return null
   }
 }
@@ -90,8 +82,6 @@ const VideoPage: React.FC = () => {
    * @returns {void}
    */
   const handleVideoClick = async (video: Video) => {
-    const detach = await attachConsole()
-
     if (ele) { // 如果video元素存在，则执行以下操作
       // 判断是否支持H265编码格式
       const h265Supported = ele?.canPlayType('video/mp4; codecs="hev1"') || ele?.canPlayType('video/mp4; codecs="hvc1"')
@@ -123,9 +113,9 @@ const VideoPage: React.FC = () => {
             setVideoUrl(transcodedUrl)
           }
           catch (err) {
-            error(err)
+            // eslint-disable-next-line no-console
+            console.log(err)
             setVideoUrl(video.url) // 如果转码失败，则使用原视频地址
-            detach()
           }
         }
       }
@@ -154,14 +144,14 @@ const VideoPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full rounded-lg">
       <div className="relative h-full join">
-        <span className="absolute inset-y-0 -top-2 left-0 flex items-center pl-2.5">
+        <span className="absolute inset-y-0 -top-2 left-0 flex items-center pl-2.5 z-10">
           <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.031 20.79c.46.46 1.17-.25.71-.7l-3.75-3.76a7.904 7.904 0 0 0 2.04-5.31c0-4.39-3.57-7.96-7.96-7.96s-7.96 3.57-7.96 7.96c0 4.39 3.57 7.96 7.96 7.96c1.98 0 3.81-.73 5.21-1.94l3.75 3.75zM4.11 11.02c0-3.84 3.13-6.96 6.96-6.96c3.84 0 6.96 3.12 6.96 6.96s-3.12 6.96-6.96 6.96c-3.83 0-6.96-3.12-6.96-6.96z" />
           </svg>
         </span>
         <input
           type="text"
-          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2 join-item"
+          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2 join-item !rounded-md"
           onCompositionStart={() => setIsComposing(true)}
           onCompositionEnd={(e) => {
             if (e.currentTarget.value === '')
@@ -194,15 +184,13 @@ const VideoPage: React.FC = () => {
         leaveTo="opacity-0"
       >
         <div className="mb-2 alert shadow-lg">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+          <span>
+            <Translate>
+              当前环境不支持 H265
+            </Translate>
+          </span>
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="stroke-info flex-shrink-0 w-6 h-6"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <span>
-              <Translate>
-                当前环境不支持 H265
-              </Translate>
-            </span>
-          </div>
-          <div className="flex-none">
             <button className="btn btn-sm btn-ghost" onClick={() => setShowAlert(false)}>
               <Translate>
                 知道啦
