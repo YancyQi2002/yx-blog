@@ -135,6 +135,65 @@
   background-color: #f0d6e8;
 }
 
+@supports (color: color(display-p3 1 1 1)) {
+  [data-theme='aqua'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .2039 .3647 .6588);
+  }
+  
+  [data-theme='autumn'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .949 .949 .949);
+  }
+
+  [data-theme='business'] :is(.navbar, .hero),
+  [data-theme='halloween'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .1294 .1294 .1294);
+  }
+
+  [data-theme='coffee'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .1294 .0941 .1255);
+  }
+
+  [data-theme='cupcake'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .9804 .9686 .9608);
+  }
+  
+  [data-theme='cyberpunk'] :is(.navbar, .hero) {
+    background-color: color(display-p3 1 .9333 0);
+  }
+
+  [data-theme='dracula'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .1529 .1765 .2078);
+  }
+
+  [data-theme='forest'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .0902 .0706 .0706);
+  }
+
+  [data-theme='garden'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .9137 .9059 .9059);
+  }
+
+  [data-theme='luxury'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .0353 .0353 .0431);
+  }
+  
+  [data-theme='night'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .0588 .0902 .1608);
+  }
+  
+  [data-theme='retro'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .8941 .8471 .7059);
+  }
+  
+  [data-theme='synthwave'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .1765 .1059 .4118);
+  }
+  
+  [data-theme='valentine'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .9412 .8392 .9098);
+  }
+}
+
 .navbar__logo>img {
   @apply inline;
 }
