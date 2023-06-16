@@ -249,6 +249,47 @@
   color: #d7cccc;
 }
 
+@supports (color: color(display-p3 1 1 1)) {
+  [data-theme='aqua'] .navbar a,
+  [data-theme='aqua'] .navbar b,
+  [data-theme='aqua'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .7804 .8549 .9569);
+  }
+
+  [data-theme='business'] .navbar a,
+  [data-theme='business'] .navbar b,
+  [data-theme='business'] .navbar .navbar__items>.navbar__item,
+  [data-theme='halloween'] .navbar a,
+  [data-theme='halloween'] .navbar b,
+  [data-theme='halloween'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .8314 .8314 .8314);
+  }
+
+  [data-theme='coffee'] .navbar a,
+  [data-theme='coffee'] .navbar b,
+  [data-theme='coffee'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .4549 .4275 .3882);
+  }
+
+  [data-theme='luxury'] .navbar a,
+  [data-theme='luxury'] .navbar b,
+  [data-theme='luxury'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .8627 .6471 .298);
+  }
+
+  [data-theme='night'] .navbar a,
+  [data-theme='night'] .navbar b,
+  [data-theme='night'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .7019 .7725 .9373);
+  }
+
+  [data-theme='forest'] .navbar a,
+  [data-theme='forest'] .navbar b,
+  [data-theme='forest'] .navbar .navbar__items>.navbar__item {
+    color: color(display-p3 .8431 .8431 .8431);
+  }
+}
+
 [data-theme='dracula'] code {
   @apply text-slate-900;
 }

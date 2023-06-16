@@ -67,11 +67,13 @@
 }
 
 .socialLinks > .col > a:hover {
+  @apply backdrop-blur-sm brightness-125 contrast-100;
   background-color: #4093F6;
 }
 
 @supports (color: color(prophoto-rgb 1 1 1)) {
   .socialLinks > .col > a:hover {
+    @apply backdrop-blur-sm brightness-125 contrast-100;
     background-color: color(prophoto-rgb .251 .542 .957);
   }
 }
