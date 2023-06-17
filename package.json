@@ -70,7 +70,7 @@
     "@ffmpeg/ffmpeg": "^0.11.6",
     "@tailwindcss/typography": "^0.5.9",
     "@tauri-apps/cli": "2.0.0-alpha.9",
-    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.9",
+    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.10",
     "@tauri-apps/plugin-log": "2.0.0-alpha.0",
     "@tsconfig/docusaurus": "^1.0.7",
     "@types/react": "^18.2.12",
