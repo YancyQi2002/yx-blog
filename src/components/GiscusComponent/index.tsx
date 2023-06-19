@@ -10,9 +10,9 @@ export default function GiscusComponent() {
     <Giscus
       id="comments"
       repo="yancyqi2002/yx-blog"
-      repoId="MDEwOlJlcG9zaXRvcnkzMjA4NDc0NTE="
+      repoId="R_kgDOJPXl2A"
       category="General"
-      categoryId="DIC_kwDOEx--W84CRm6P"
+      categoryId="DIC_kwDOJPXl2M4CXTiR"
       mapping="url"
       term="Welcome to @giscus/react component!"
       strict="0"

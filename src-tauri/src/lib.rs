@@ -1,3 +1,4 @@
+#[allow(unused_imports)]
 use tauri::{App, Manager};
 use tauri_plugin_log::{LogTarget};
 use window_shadows::set_shadow;
@@ -32,7 +33,14 @@ impl AppBuilder {
   pub fn run(self) {
     let setup = self.setup;
     tauri::Builder::default()
+      .plugin(tauri_plugin_log::Builder::default().targets([
+        LogTarget::LogDir,
+        LogTarget::Stdout,
+        LogTarget::Webview,
+      ]).build())
       .setup(move |app| {
+        log::info!("setup app");
+
         if let Some(setup) = setup {
           (setup)(app)?;
         }
@@ -52,11 +60,6 @@ impl AppBuilder {
 
         Ok(())
       })
-      .plugin(tauri_plugin_log::Builder::default().targets([
-        LogTarget::LogDir,
-        LogTarget::Stdout,
-        LogTarget::Webview,
-      ]).build())
       .run(tauri::generate_context!())
       .expect("error while running tauri application");
   }
