@@ -268,9 +268,9 @@ dependencies = [
 
 [[package]]
 name = "cfg-expr"
-version = "0.15.2"
+version = "0.15.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e70d3ad08698a0568b0562f22710fe6bfc1f4a61a367c77d0398c562eadd453a"
+checksum = "215c0072ecc28f92eeb0eea38ba63ddfcb65c2828c46311d646f1a3ff5f9841c"
 dependencies = [
  "smallvec",
  "target-lexicon",
@@ -2827,7 +2827,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-log"
 version = "2.0.0-alpha.0"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#83abea3cae8408ce262f3815c1a6cc506e73c486"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#5fd597ddaf118c5e6279f6fbc304f7c876052808"
 dependencies = [
  "android_logger",
  "byte-unit",
