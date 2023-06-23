@@ -43,7 +43,7 @@
     "@node-rs/jieba-win32-x64-msvc": "^1.7.0",
     "@tauri-apps/api": "2.0.0-alpha.5",
     "clsx": "^1.2.1",
-    "daisyui": "^3.1.1",
+    "daisyui": "^3.1.6",
     "docusaurus2-dotenv": "^1.4.0",
     "http-proxy-middleware": "^2.0.6",
     "node-addon-api": "^7.0.0",
@@ -56,7 +56,7 @@
     "react-transition-group": "^4.4.5",
     "rehype-katex": "^6.0.3",
     "remark-math": "^5.1.1",
-    "styled-components": "6.0.0-rc.3",
+    "styled-components": "6.0.0-rc.5",
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
@@ -83,7 +83,7 @@
     "eslint-plugin-react": "^7.32.2",
     "internal-ip": "^8.0.0",
     "postcss": "^8.4.24",
-    "postcss-preset-env": "^8.5.0",
+    "postcss-preset-env": "^8.5.1",
     "tailwindcss": "^3.3.2",
     "typescript": "^5.1.3"
   },
