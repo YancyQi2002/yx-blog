@@ -6,8 +6,8 @@ settings:
 
 dependencies:
   '@ark-ui/react':
-    specifier: ^0.6.0
-    version: 0.6.0(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^0.7.0
+    version: 0.7.0(react-dom@18.2.0)(react@18.2.0)
   '@docusaurus/core':
     specifier: 3.0.0-alpha.0
     version: 3.0.0-alpha.0(@docusaurus/types@3.0.0-alpha.0)(eslint@8.43.0)(react-dom@18.2.0)(react@18.2.0)(typescript@5.1.3)
@@ -427,8 +427,8 @@ packages:
       - typescript
     dev: true
 
-  /@ark-ui/react@0.6.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-9LqN0fnFgaTc0Slp6tRZvkLverp0/O/Ps3Ffq5x1KvH46DMi5KMs7EGGULXgjzZCln3RVzVjIEK/jzm5aSmyKg==}
+  /@ark-ui/react@0.7.0(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-wopLR5fzugEKWxvI7wZ43RhI2jYr28IZ8OoxicGHLp1KIjsDEs0VuUPY3uqShI6VYBTGm8sKaDAstBng/gfIKA==}
     peerDependencies:
       react: '>=18.0.0'
       react-dom: '>=18.0.0'
