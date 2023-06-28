@@ -72,7 +72,7 @@
     "@tauri-apps/cli": "2.0.0-alpha.10",
     "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.10",
     "@tauri-apps/plugin-log": "2.0.0-alpha.0",
-    "@tsconfig/docusaurus": "^1.0.7",
+    "@tsconfig/docusaurus": "^2.0.0",
     "@types/react": "^18.2.14",
     "@types/react-dom": "^18.2.6",
     "autoprefixer": "^10.4.14",
