@@ -93,8 +93,8 @@ dependencies:
     specifier: ^5.1.1
     version: 5.1.1
   styled-components:
-    specifier: 6.0.2
-    version: 6.0.2(react-dom@18.2.0)(react@18.2.0)
+    specifier: 6.0.3
+    version: 6.0.3(react-dom@18.2.0)(react@18.2.0)
   theme-change:
     specifier: ^2.5.0
     version: 2.5.0
@@ -906,7 +906,7 @@ packages:
       '@babel/core': ^7.0.0-0
     dependencies:
       '@babel/core': 7.12.9
-      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/helper-plugin-utils': 7.22.5
       '@babel/plugin-syntax-object-rest-spread': 7.8.3(@babel/core@7.12.9)
       '@babel/plugin-transform-parameters': 7.22.5(@babel/core@7.12.9)
     dev: false
@@ -9227,7 +9227,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.12.1
-      resolve: 1.22.3
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -17309,8 +17309,8 @@ packages:
       inline-style-parser: 0.1.1
     dev: false
 
-  /styled-components@6.0.2(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-CRWTuYme0W4zVqzXpODByyocgVbBpRoXmaEgPGb67dvweV1igp7Ik4Z5C9e83wZ2l2hPg/XKV7cjuNxhRlC7Mg==}
+  /styled-components@6.0.3(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-qEyWvDK4CYCyDckNIruRJIcQSvcUR3dVEw/fwxu1v0LFzUMPr2uf5PhXHp17FkGK+S4TkglOS+XIealo1MssQA==}
     engines: {node: '>= 16'}
     peerDependencies:
       babel-plugin-styled-components: '>= 2'
