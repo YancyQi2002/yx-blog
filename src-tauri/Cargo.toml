@@ -29,7 +29,7 @@ tauri-plugin-log = { git = "https://github.com/tauri-apps/plugins-workspace", br
 tao = "0.20"
 tokio = { version = "1", features = ["signal"] }
 window-shadows = "0.2.1"
-window-vibrancy = "0.3.2"
+window-vibrancy = "0.4.0"
 log = "0.4"
 
 [features]
