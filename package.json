@@ -42,7 +42,7 @@
     "@node-rs/jieba": "^1.7.0",
     "@node-rs/jieba-win32-x64-msvc": "^1.7.0",
     "@tauri-apps/api": "2.0.0-alpha.5",
-    "clsx": "^1.2.1",
+    "clsx": "^2.0.0",
     "daisyui": "^3.2.1",
     "docusaurus2-dotenv": "^1.4.0",
     "http-proxy-middleware": "^2.0.6",
