@@ -1,7 +1,9 @@
 #[allow(unused_imports)]
 use tauri::{App, Manager};
 use tauri_plugin_log::{LogTarget};
+#[allow(unused_imports)]
 use window_shadows::set_shadow;
+#[allow(unused_imports)]
 use window_vibrancy::{apply_blur, apply_vibrancy, NSVisualEffectMaterial};
 
 #[cfg(mobile)]

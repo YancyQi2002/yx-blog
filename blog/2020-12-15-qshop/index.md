@@ -119,6 +119,7 @@ new Vue({
 index.js 中路由，实现页面切换：
 
 ```javascript
+
 首页Home.vue ：
 
 import Home from '@/components/Home'
@@ -135,9 +136,9 @@ import User from '@/components/User'
 
 App.vue：引入 Home.vue 组件
 
-**< ** **router-view**  **/>** **：** **代表路由中的组件，根据路由切换**
+**&#60;router-view&#47;&#62; ：代表路由中的组件，根据路由切换**
 
-**路由切换时，切换的是**  **<** **router-view** **>** **挂载的组件，其他内容不改变**
+**路由切换时，切换的是 &#60;router-view&#47;&#62; 挂载的组件，其他内容不改变**
 
 #### 动画切换
 
@@ -207,14 +208,14 @@ import apptabbar from './components/part/AppTabBar.vue'
 
 思路：
 
-- 使用组件库中组件封装成自己的组件，文件： AppHeader.vue
+- 使用组件库中组件封装成自己的组件 AppHeader.vue
 - 在 App.vue 中使用组件 AppHeader.vue
 
 AppHeader.vue
 
 - template
   - title
-  - { path: '/', name: 'Home', component: Home, meta:{title:'求知书屋',}, },
+  - `{ path: '/', name: 'Home', component: Home, meta:{title:'求知书屋',}, },`
 - style
   - .van-nav-bar：注意命名规则与组件对应
 
