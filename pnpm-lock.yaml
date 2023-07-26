@@ -119,8 +119,8 @@ devDependencies:
     specifier: 0.0.0-5628
     version: 0.0.0-5628(react-dom@18.2.0)(react@18.2.0)
   '@ffmpeg/core':
-    specifier: ^0.11.0
-    version: 0.11.0
+    specifier: ^0.12.0
+    version: 0.12.0
   '@ffmpeg/ffmpeg':
     specifier: ^0.11.6
     version: 0.11.6
@@ -3902,8 +3902,9 @@ packages:
     resolution: {integrity: sha512-Ag+9YM4ocKQx9AarydN0KY2j0ErMHNIocPDrVo8zAE44xLTjEtz81OdR68/cydGtk6m6jDb5Za3r2useMzYmSw==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ffmpeg/core@0.11.0:
-    resolution: {integrity: sha512-9Tt/+2PMpkGPXUK8n6He9G8Y+qR6qmCPSCw9iEKZxHHOvJ9BE/r0Fccj+YgDZTlyu6rXxc9x6EqCaFBIt7qzjA==}
+  /@ffmpeg/core@0.12.0:
+    resolution: {integrity: sha512-7bwkwL+1z1sfm9MrNcXRxkVsgacGXIhjj82ccBQpV94coeoyrqcnJBOU29FVmrSCythCX14FyPH/zlTwqONNQQ==}
+    engines: {node: '>=16.6.0'}
     dev: true
 
   /@ffmpeg/ffmpeg@0.11.6:
@@ -9283,7 +9284,7 @@ packages:
     dependencies:
       debug: 3.2.7
       is-core-module: 2.12.1
-      resolve: 1.22.3
+      resolve: 1.22.2
     transitivePeerDependencies:
       - supports-color
     dev: true
