@@ -16,17 +16,15 @@ import {
 } from '@ark-ui/react'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import Translate from '@docusaurus/Translate'
-import {
-  createFFmpeg,
-  fetchFile,
-} from '@ffmpeg/ffmpeg'
+import { FFmpeg } from '@ffmpeg/ffmpeg'
+import { fetchFile } from '@ffmpeg/util'
 import { Transition } from '@headlessui/react'
 import {
   type Video,
   initJingjuVedioList,
 } from '@site/src/interface'
 
-const ffmpeg = createFFmpeg({ log: true })
+const ffmpeg = new FFmpeg()
 
 async function transcodeVideo(inputFile) {
   try {
@@ -39,7 +37,7 @@ async function transcodeVideo(inputFile) {
     const outputFileName = `${inputFile.slice(0, inputFile.length - 4)}_h264.mp4`
 
     // 转码视频
-    await ffmpeg.run(
+    await ffmpeg.exec([
       '-i', // 输入文件
       new TextDecoder().decode(input), // 解码输入文件 使用 TextDecoder 对象将 Uint8Array 类型转换为字符串类型
       '-c:v', // 视频编码器
@@ -51,10 +49,12 @@ async function transcodeVideo(inputFile) {
       '-c:a', // 音频编码器
       'copy', // 复制音频编码
       outputFileName, // 输出文件
-    )
+    ])
 
     // 读取输出文件
-    const output = ffmpeg.FS('readFile', outputFileName)
+    const output = ffmpeg.readFile('readFile', outputFileName)
+
+    await ffmpeg.terminate()
 
     // 返回输出文件的URL
     return URL.createObjectURL(new Blob([output.buffer], { type: 'video/mp4' }))
