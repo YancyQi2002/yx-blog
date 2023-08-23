@@ -76,7 +76,7 @@
     "@tauri-apps/plugin-dialog": "2.0.0-alpha.1",
     "@tauri-apps/plugin-fs": "2.0.0-alpha.1",
     "@tauri-apps/plugin-http": "2.0.0-alpha.1",
-    "@tauri-apps/plugin-log": "2.0.0-alpha.0",
+    "@tauri-apps/plugin-log": "2.0.0-alpha.1",
     "@tauri-apps/plugin-notification": "2.0.0-alpha.1",
     "@tauri-apps/plugin-os": "2.0.0-alpha.2",
     "@tsconfig/docusaurus": "^2.0.0",
