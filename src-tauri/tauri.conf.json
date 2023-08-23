@@ -11,6 +11,7 @@
     "productName": "yx-blog",
     "version": "0.1.0"
   },
+  "plugins": {},
   "tauri": {
     "bundle": {
       "active": true,
@@ -44,8 +45,8 @@
         "digestAlgorithm": "sha256",
         "timestampUrl": "",
         "webviewInstallMode": {
-          "type": "embedBootstrapper",
-          "silent": true
+          "silent": true,
+          "type": "embedBootstrapper"
         },
         "wix": {
           "language": [
@@ -62,12 +63,12 @@
     },
     "windows": [
       {
+        "center": true,
         "fullscreen": false,
         "height": 600,
         "resizable": true,
         "title": "yx-blog",
-        "width": 800,
-        "center": true
+        "width": 800
       }
     ]
   }

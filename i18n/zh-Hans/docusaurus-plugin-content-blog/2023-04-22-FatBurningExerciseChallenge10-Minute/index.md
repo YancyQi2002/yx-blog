@@ -9,7 +9,7 @@ tags: [华为, 运动健康, 国家体育总局群体司, 中华全国体育总�
 
 国家体育总局群体司和中华全国体育总会群体部联合颁发电子参赛证书
 
-*<!--truncate-->*
+<!--truncate-->
 
 ![](./FatBurningExerciseChallenge10-Minute01.png)
 
