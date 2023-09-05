@@ -3593,7 +3593,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-app"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "tauri",
 ]
@@ -3601,7 +3601,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-cli"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "clap",
  "log",
@@ -3614,7 +3614,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-clipboard-manager"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "arboard",
  "log",
@@ -3628,7 +3628,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-dialog"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "glib",
  "log",
@@ -3645,7 +3645,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-fs"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "anyhow",
  "glob",
@@ -3658,7 +3658,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-global-shortcut"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "global-hotkey",
  "log",
@@ -3671,7 +3671,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-http"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "data-url",
  "glob",
@@ -3688,7 +3688,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-log"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "android_logger",
  "byte-unit",
@@ -3708,7 +3708,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-notification"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "log",
  "notify-rust",
@@ -3726,7 +3726,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-os"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "gethostname 0.4.3",
  "log",
@@ -3742,7 +3742,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-window"
 version = "2.0.0-alpha.1"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2cb0fa719b8b1f5ac07dada93520dbbcf637d64c"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#70e535abd5410873862fb035b6b66f0fea1edde2"
 dependencies = [
  "serde",
  "tauri",
