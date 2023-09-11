@@ -348,7 +348,7 @@ packages:
       eslint-plugin-import: /eslint-plugin-i@2.28.0-2(@typescript-eslint/parser@6.6.0)(eslint@8.49.0)
       eslint-plugin-jsonc: 2.9.0(eslint@8.49.0)
       eslint-plugin-markdown: 3.0.1(eslint@8.49.0)
-      eslint-plugin-n: 16.0.2(eslint@8.49.0)
+      eslint-plugin-n: 16.1.0(eslint@8.49.0)
       eslint-plugin-no-only-tests: 3.1.0
       eslint-plugin-promise: 6.1.1(eslint@8.49.0)
       eslint-plugin-unicorn: 48.0.1(eslint@8.49.0)
@@ -417,7 +417,7 @@ packages:
       eslint-plugin-html: 7.1.0
       eslint-plugin-import: /eslint-plugin-i@2.28.0-2(@typescript-eslint/parser@6.6.0)(eslint@8.49.0)
       eslint-plugin-jsonc: 2.9.0(eslint@8.49.0)
-      eslint-plugin-n: 16.0.2(eslint@8.49.0)
+      eslint-plugin-n: 16.1.0(eslint@8.49.0)
       eslint-plugin-promise: 6.1.1(eslint@8.49.0)
       eslint-plugin-unicorn: 48.0.1(eslint@8.49.0)
       eslint-plugin-vue: 9.17.0(eslint@8.49.0)
@@ -3945,18 +3945,18 @@ packages:
   /@floating-ui/core@1.4.1:
     resolution: {integrity: sha512-jk3WqquEJRlcyu7997NtR5PibI+y5bi+LS3hPmguVClypenMsCY3CBa3LAQnozRCtCrYWSEtAdiskpamuJRFOQ==}
     dependencies:
-      '@floating-ui/utils': 0.1.1
+      '@floating-ui/utils': 0.1.2
     dev: false
 
   /@floating-ui/dom@1.5.1:
     resolution: {integrity: sha512-KwvVcPSXg6mQygvA1TjbN/gh///36kKtllIF8SUm0qpFj8+rvYrpvlYdL1JoA71SHpDqgSSdGOSoQ0Mp3uY5aw==}
     dependencies:
       '@floating-ui/core': 1.4.1
-      '@floating-ui/utils': 0.1.1
+      '@floating-ui/utils': 0.1.2
     dev: false
 
-  /@floating-ui/utils@0.1.1:
-    resolution: {integrity: sha512-m0G6wlnhm/AX0H12IOWtK8gASEMffnX08RtKkCgTdHb9JpHKGloI7icFfLg9ZmQeavcvR0PKmzxClyuFPSjKWw==}
+  /@floating-ui/utils@0.1.2:
+    resolution: {integrity: sha512-ou3elfqG/hZsbmF4bxeJhPHIf3G2pm0ujc39hYEZrfVqt7Vk/Zji6CXc3W0pmYM8BW1g40U+akTl9DKZhFhInQ==}
     dev: false
 
   /@giscus/react@2.3.0(react-dom@18.2.0)(react@18.2.0):
@@ -9510,8 +9510,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-n@16.0.2(eslint@8.49.0):
-    resolution: {integrity: sha512-Y66uDfUNbBzypsr0kELWrIz+5skicECrLUqlWuXawNSLUq3ltGlCwu6phboYYOTSnoTdHgTLrc+5Ydo6KjzZog==}
+  /eslint-plugin-n@16.1.0(eslint@8.49.0):
+    resolution: {integrity: sha512-3wv/TooBst0N4ND+pnvffHuz9gNPmk/NkLwAxOt2JykTl/hcuECe6yhTtLJcZjIxtZwN+GX92ACp/QTLpHA3Hg==}
     engines: {node: '>=16.0.0'}
     peerDependencies:
       eslint: '>=7.0.0'
@@ -9520,6 +9520,7 @@ packages:
       builtins: 5.0.1
       eslint: 8.49.0
       eslint-plugin-es-x: 7.2.0(eslint@8.49.0)
+      get-tsconfig: 4.7.0
       ignore: 5.2.4
       is-core-module: 2.13.0
       minimatch: 3.1.2
