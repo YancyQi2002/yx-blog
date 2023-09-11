@@ -70,7 +70,7 @@
     "@ffmpeg/util": "^0.12.1",
     "@tailwindcss/typography": "^0.5.10",
     "@tauri-apps/cli": "2.0.0-alpha.11",
-    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.11",
+    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.14",
     "@tauri-apps/plugin-app": "2.0.0-alpha.1",
     "@tauri-apps/plugin-clipboard-manager": "2.0.0-alpha.1",
     "@tauri-apps/plugin-dialog": "2.0.0-alpha.1",
