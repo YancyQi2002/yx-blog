@@ -90,9 +90,9 @@ dependencies = [
 
 [[package]]
 name = "anstyle"
-version = "1.0.2"
+version = "1.0.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "15c4c2c83f81532e5845a733998b6971faca23490340a418e9b72a3ec9de12ea"
+checksum = "b84bf0a05bbb2a83e5eb6fa36bb6e87baa08193c35ff52bbf6b38d8af2890e46"
 
 [[package]]
 name = "anstyle-parse"
@@ -544,9 +544,9 @@ dependencies = [
 
 [[package]]
 name = "clap"
-version = "4.4.2"
+version = "4.4.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6a13b88d2c62ff462f88e4a121f17a82c1af05693a2f192b5c38d14de73c19f6"
+checksum = "84ed82781cea27b43c9b106a979fe450a13a31aab0500595fb3fc06616de08e6"
 dependencies = [
  "clap_builder",
 ]
@@ -1890,9 +1890,9 @@ dependencies = [
 
 [[package]]
 name = "json-patch"
-version = "1.0.0"
+version = "1.1.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "1f54898088ccb91df1b492cc80029a6fdf1c48ca0db7c6822a8babad69c94658"
+checksum = "4f7765dccf8c39c3a470fc694efe322969d791e713ca46bc7b5c506886157572"
 dependencies = [
  "serde",
  "serde_json",
@@ -1956,9 +1956,9 @@ dependencies = [
 
 [[package]]
 name = "libc"
-version = "0.2.147"
+version = "0.2.148"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3"
+checksum = "9cdc71e17332e86d2e1d38c1f99edcb6288ee11b815fb1a4b049eaa2114d369b"
 
 [[package]]
 name = "libloading"
@@ -3259,9 +3259,9 @@ dependencies = [
 
 [[package]]
 name = "socket2"
-version = "0.5.3"
+version = "0.5.4"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "2538b18701741680e0322a2302176d3253a35388e2e62f172f64f4f16605f877"
+checksum = "4031e820eb552adee9295814c0ced9e5cf38ddf1e8b7d566d6de8e2538ea989e"
 dependencies = [
  "libc",
  "windows-sys 0.48.0",
@@ -3477,9 +3477,9 @@ checksum = "9d0e916b1148c8e263850e1ebcbd046f333e0683c724876bb0da63ea4373dc8a"
 
 [[package]]
 name = "tauri"
-version = "2.0.0-alpha.13"
+version = "2.0.0-alpha.14"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "679480b724273657456c01532e1317cac5e04dbe0acc9ad5acae869d3cd05e13"
+checksum = "46acc0b6d20fe3a7c27e6036d9ef52d2c28afd1b6178ffc2dd4881f9994fecd7"
 dependencies = [
  "anyhow",
  "bytes",
@@ -3587,7 +3587,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-app"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "tauri",
 ]
@@ -3595,7 +3595,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-cli"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "clap",
  "log",
@@ -3608,7 +3608,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-clipboard-manager"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "arboard",
  "log",
@@ -3622,7 +3622,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-dialog"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "glib",
  "log",
@@ -3639,7 +3639,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-fs"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "anyhow",
  "glob",
@@ -3652,7 +3652,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-global-shortcut"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "global-hotkey",
  "log",
@@ -3665,7 +3665,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-http"
 version = "2.0.0-alpha.3"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "data-url",
  "glob",
@@ -3682,7 +3682,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-log"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "android_logger",
  "byte-unit",
@@ -3702,7 +3702,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-notification"
 version = "2.0.0-alpha.3"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "log",
  "notify-rust",
@@ -3720,7 +3720,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-os"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "gethostname 0.4.3",
  "log",
@@ -3736,7 +3736,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-window"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#903361100cd2dfe1cb5f4027c9a8b53f9d09a612"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
 dependencies = [
  "serde",
  "tauri",
@@ -3765,9 +3765,9 @@ dependencies = [
 
 [[package]]
 name = "tauri-runtime-wry"
-version = "1.0.0-alpha.1"
+version = "1.0.0-alpha.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "79f53914c8ab391c5cd83f0bc269f8dfa6d48cb826d0584b57d396862360dc38"
+checksum = "fce46e920b62699045e02db3006017d24324119189dfab2b12261aeebf98f4be"
 dependencies = [
  "cocoa 0.24.1",
  "gtk",
@@ -3963,7 +3963,7 @@ dependencies = [
  "num_cpus",
  "pin-project-lite",
  "signal-hook-registry",
- "socket2 0.5.3",
+ "socket2 0.5.4",
  "windows-sys 0.48.0",
 ]
 
@@ -4141,9 +4141,9 @@ checksum = "92888ba5573ff080736b3648696b70cafad7d250551175acbaa4e0385b3e1460"
 
 [[package]]
 name = "unicode-ident"
-version = "1.0.11"
+version = "1.0.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "301abaae475aa91687eb82514b328ab47a211a533026cb25fc3e519b86adfc3c"
+checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
 
 [[package]]
 name = "unicode-normalization"
@@ -4807,9 +4807,9 @@ dependencies = [
 
 [[package]]
 name = "wry"
-version = "0.32.0"
+version = "0.33.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "41fc00d1511c9ff5b600a6c6bde254eb39b9fcc5c0369b71a8efd5ff807bf937"
+checksum = "bf906b43b8042615c85a978dceb4d4b72214d27b850b54abc3edeb7c5a67abab"
 dependencies = [
  "base64",
  "block",
