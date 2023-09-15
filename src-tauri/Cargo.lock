@@ -417,9 +417,9 @@ dependencies = [
 
 [[package]]
 name = "bumpalo"
-version = "3.13.0"
+version = "3.14.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a3e2c3daef883ecc1b5d58c15adae93470a91d425f3532ba1695849656af3fc1"
+checksum = "7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec"
 
 [[package]]
 name = "byte-unit"
@@ -3587,7 +3587,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-app"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "tauri",
 ]
@@ -3595,7 +3595,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-cli"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "clap",
  "log",
@@ -3608,7 +3608,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-clipboard-manager"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "arboard",
  "log",
@@ -3622,7 +3622,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-dialog"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "glib",
  "log",
@@ -3639,7 +3639,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-fs"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "anyhow",
  "glob",
@@ -3652,7 +3652,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-global-shortcut"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "global-hotkey",
  "log",
@@ -3665,7 +3665,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-http"
 version = "2.0.0-alpha.3"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "data-url",
  "glob",
@@ -3682,7 +3682,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-log"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "android_logger",
  "byte-unit",
@@ -3702,7 +3702,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-notification"
 version = "2.0.0-alpha.3"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "log",
  "notify-rust",
@@ -3720,7 +3720,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-os"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "gethostname 0.4.3",
  "log",
@@ -3736,7 +3736,7 @@ dependencies = [
 [[package]]
 name = "tauri-plugin-window"
 version = "2.0.0-alpha.2"
-source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2409b01fe7cd66164c94c541822be13fb3fdaf37"
+source = "git+https://github.com/tauri-apps/plugins-workspace?branch=v2#2b9ddbe29a8429c4a5a065e1ae2b57166c2f978c"
 dependencies = [
  "serde",
  "tauri",
