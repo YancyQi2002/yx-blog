@@ -79,7 +79,7 @@
     "@tauri-apps/plugin-log": "2.0.0-alpha.1",
     "@tauri-apps/plugin-notification": "2.0.0-alpha.1",
     "@tauri-apps/plugin-os": "2.0.0-alpha.2",
-    "@tsconfig/docusaurus": "^2.0.0",
+    "@tsconfig/docusaurus": "^2.0.1",
     "@types/react": "^18.2.21",
     "@types/react-dom": "^18.2.7",
     "autoprefixer": "^10.4.15",
