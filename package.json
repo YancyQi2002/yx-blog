@@ -42,7 +42,7 @@
     "@node-rs/jieba": "^1.7.2",
     "@node-rs/jieba-win32-x64-msvc": "^1.7.2",
     "@tauri-apps/api": "2.0.0-alpha.8",
-    "daisyui": "^3.8.1",
+    "daisyui": "^3.8.2",
     "docusaurus2-dotenv": "^1.4.0",
     "http-proxy-middleware": "^2.0.6",
     "node-addon-api": "^7.0.0",
@@ -60,7 +60,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^0.42.1",
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^17.7.2",
     "@commitlint/config-conventional": "^17.7.0",
     "@docusaurus/eslint-plugin": "3.0.0-beta.0",
     "@docusaurus/module-type-aliases": "3.0.0-beta.0",
@@ -90,7 +90,7 @@
     "eslint": "^8.50.0",
     "eslint-plugin-react": "^7.33.2",
     "internal-ip": "^8.0.0",
-    "postcss": "^8.4.30",
+    "postcss": "^8.4.31",
     "postcss-preset-env": "^9.1.4",
     "tailwindcss": "^3.3.3",
     "typescript": "^5.2.2"
