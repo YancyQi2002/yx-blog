@@ -1,3 +1,5 @@
+import { Temporal } from '@js-temporal/polyfill'
+
 // 定义每个社交链接对象
 interface SocialLink {
   name: string // 社交媒体平台的名称
@@ -25,6 +27,17 @@ interface Video {
   webm_url?: string // 可选参数：视频WebM格式地址
 }
 
+// Date object
+// const date: Date = new Date()
+// const fullYear: number = date.getFullYear()
+// const monthNumStr = (date.getMonth() + 1) <= 10 ? (`0${(date.getMonth() + 1).toString()}`) : (date.getMonth() + 1)
+// const dateNumStr = date.getDate() <= 10 ? (`0${date.getDate().toString()}`) : date.getDate()
+// dateStr = `${monthNumStr}-${dateNumStr}`
+const date: Temporal.PlainDate = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
+const fullYear: number = date.year
+const monthNumStr: string | number = date.month <= 10 ? (`0${date.month}`) : date.month
+const dateNumStr: string | number = date.day <= 10 ? (`0${date.day}`) : date.day
+
 const initJingjuVedioList: Video[] = [ // 视频列表
   {
     title: '狸猫换太子·平寇进猫',
@@ -47,4 +60,13 @@ const initJingjuVedioList: Video[] = [ // 视频列表
   // { title: '狸猫换太子·九曲救主', url: '/video/jqjz.mp4' },
 ]
 
-export { FeatureItem, SocialLink, SocialLinksProps, Video, initJingjuVedioList }
+export {
+  FeatureItem,
+  SocialLink,
+  SocialLinksProps,
+  Video,
+  dateNumStr,
+  fullYear,
+  initJingjuVedioList,
+  monthNumStr,
+}

@@ -8,18 +8,17 @@ import { themeChange } from 'theme-change'
 
 import { PageMetadata } from '@docusaurus/theme-common'
 import { translate } from '@docusaurus/Translate'
-import { Temporal } from '@js-temporal/polyfill'
 import Layout from '@theme/Layout'
+
+import {
+  dateNumStr,
+  fullYear,
+  monthNumStr,
+} from '../../interface'
 
 const NotFoundContent = lazy(() => import('./Content/index.tsx'))
 
-let dateStr = ''
-
-const date: Temporal.PlainDate = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
-const fullYear: number = date.year
-const monthNumStr: string | number = date.month <= 10 ? (`0${date.month}`) : date.month
-const dateNumStr: string | number = date.day <= 10 ? (`0${date.day}`) : date.day
-dateStr = `${monthNumStr}-${dateNumStr}`
+const dateStr = `${monthNumStr}-${dateNumStr}`
 
 function isLeapYear(year: number) {
   return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)

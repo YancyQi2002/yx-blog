@@ -8,26 +8,19 @@ import React, {
 import { themeChange } from 'theme-change'
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import { Temporal } from '@js-temporal/polyfill'
 import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import Layout from '@theme/Layout'
 
+import {
+  dateNumStr,
+  fullYear,
+  monthNumStr,
+} from '../interface'
+
 const SocialLinks = lazy(() => import('../components/Homepage/SocialLinks.tsx'))
 
-let dateStr = ''
-
-// const date: Date = new Date()
-// const fullYear: number = date.getFullYear()
-// const monthNumStr = (date.getMonth() + 1) <= 10 ? (`0${(date.getMonth() + 1).toString()}`) : (date.getMonth() + 1)
-// const dateNumStr = date.getDate() <= 10 ? (`0${date.getDate().toString()}`) : date.getDate()
-// dateStr = `${monthNumStr}-${dateNumStr}`
-
-const date: Temporal.PlainDate = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
-const fullYear: number = date.year
-const monthNumStr: string | number = date.month <= 10 ? (`0${date.month}`) : date.month
-const dateNumStr: string | number = date.day <= 10 ? (`0${date.day}`) : date.day
-dateStr = `${monthNumStr}-${dateNumStr}`
+const dateStr = `${monthNumStr}-${dateNumStr}`
 
 function isLeapYear(year: number) {
   return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)

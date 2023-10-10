@@ -3,19 +3,18 @@ import React, { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 
 import type { WrapperProps } from '@docusaurus/types'
-import { Temporal } from '@js-temporal/polyfill'
 import BlogPostPage from '@theme-original/BlogPostPage'
 import type BlogPostPageType from '@theme/BlogPostPage'
 
+import {
+  dateNumStr,
+  fullYear,
+  monthNumStr,
+} from '../../interface'
+
 type Props = WrapperProps<typeof BlogPostPageType>
 
-let dateStr = ''
-
-const date: Temporal.PlainDate = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
-const fullYear: number = date.year
-const monthNumStr: string | number = date.month <= 10 ? (`0${date.month}`) : date.month
-const dateNumStr: string | number = date.day <= 10 ? (`0${date.day}`) : date.day
-dateStr = `${monthNumStr}-${dateNumStr}`
+const dateStr = `${monthNumStr}-${dateNumStr}`
 
 function isLeapYear(year: number) {
   return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)
