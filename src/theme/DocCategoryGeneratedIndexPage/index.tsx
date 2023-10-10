@@ -12,7 +12,7 @@ import {
   dateNumStr,
   fullYear,
   monthNumStr,
-} from '../../interface'
+} from '@site/src/interface'
 
 type Props = WrapperProps<typeof DocCategoryGeneratedIndexPageType>
 

@@ -8,13 +8,12 @@ import { themeChange } from 'theme-change'
 
 import { PageMetadata } from '@docusaurus/theme-common'
 import { translate } from '@docusaurus/Translate'
-import Layout from '@theme/Layout'
-
 import {
   dateNumStr,
   fullYear,
   monthNumStr,
-} from '../../interface'
+} from '@site/src/interface'
+import Layout from '@theme/Layout'
 
 const NotFoundContent = lazy(() => import('./Content/index.tsx'))
 

@@ -10,13 +10,12 @@ import { themeChange } from 'theme-change'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
-import Layout from '@theme/Layout'
-
 import {
   dateNumStr,
   fullYear,
   monthNumStr,
-} from '../interface'
+} from '@site/src/interface'
+import Layout from '@theme/Layout'
 
 const SocialLinks = lazy(() => import('../components/Homepage/SocialLinks.tsx'))
 

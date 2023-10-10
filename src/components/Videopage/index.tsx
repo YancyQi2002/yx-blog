@@ -107,9 +107,12 @@ const VideoPage: React.FC = () => {
           try {
             setVideoUrl(video.url)
             // 尝试将视频编码格式转换为能在用户设备上播放的mp4格式
-            let transcodedUrl = await transcodeVideo(video.url)
-            if (transcodedUrl === null)
+            let transcodedUrl = video.url
+            if (typeof window !== 'undefined') {
+              transcodedUrl = await transcodeVideo(video.url)
+              if (transcodedUrl === null)
               transcodedUrl = video.url // 如果转码失败，则使用原视频地址
+            }
             setVideoUrl(transcodedUrl)
           }
           catch (err) {

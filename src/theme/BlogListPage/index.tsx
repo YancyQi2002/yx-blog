@@ -3,14 +3,13 @@ import React, { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 
 import type { WrapperProps } from '@docusaurus/types'
-import BlogListPage from '@theme-original/BlogListPage'
-import type BlogListPageType from '@theme/BlogListPage'
-
 import {
   dateNumStr,
   fullYear,
   monthNumStr,
-} from '../../interface'
+} from '@site/src/interface'
+import BlogListPage from '@theme-original/BlogListPage'
+import type BlogListPageType from '@theme/BlogListPage'
 
 type Props = WrapperProps<typeof BlogListPageType>
 
