@@ -119,11 +119,11 @@ devDependencies:
     specifier: 0.0.0-5703
     version: 0.0.0-5703(react-dom@18.2.0)(react@18.2.0)
   '@ffmpeg/core':
-    specifier: ^0.12.4
-    version: 0.12.4
+    specifier: 0.12.3
+    version: 0.12.3
   '@ffmpeg/ffmpeg':
-    specifier: ^0.12.7
-    version: 0.12.7
+    specifier: 0.12.6
+    version: 0.12.6
   '@ffmpeg/util':
     specifier: ^0.12.1
     version: 0.12.1
@@ -3987,13 +3987,13 @@ packages:
     resolution: {integrity: sha512-HxjQ8Qn+4SI3/AFv6sOrDB+g6PpUTDwSJiQqOrnneEk8L71161srI9gjzzZvYVbzHiVg/BvcH95+cK/zfIt4pg==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
 
-  /@ffmpeg/core@0.12.4:
-    resolution: {integrity: sha512-m+H+P66TSEPlf1vK5WwVDr+Uksd1GULi7jk4o/447X5HQouTLaZjicAXC00C/IrrmyqJ8YX/8cfhqMryvNZGSg==}
+  /@ffmpeg/core@0.12.3:
+    resolution: {integrity: sha512-HjTvLnb7WEbApO7vmscLsKfnpCf2OT4AspatST1GntUt/NZWILMHSKHer0SVCKi1ce3LQQ7tUQqS7qkjn4T4mg==}
     engines: {node: '>=16.x'}
     dev: true
 
-  /@ffmpeg/ffmpeg@0.12.7:
-    resolution: {integrity: sha512-Uw9h1tNU4/Q4YRrgBKvnKiH5gpL+nl8h4HRfvSK0K93MqVOan6Qs3Lj82l9i1qj6xQLPramXw0Wl6g65W4pfnA==}
+  /@ffmpeg/ffmpeg@0.12.6:
+    resolution: {integrity: sha512-4CuXDaqrCga5qBwVtiDDR45y65OGPYZd7VzwGCGz3QLdrQH7xaLYEjU19XL4DTCL0WnTSH8752b8Atyb1SiiLw==}
     engines: {node: '>=18.x'}
     dependencies:
       '@ffmpeg/types': 0.12.2
