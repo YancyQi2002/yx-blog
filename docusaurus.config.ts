@@ -1,15 +1,17 @@
-// @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
+/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable import/newline-after-import */
+import { themes } from 'prism-react-renderer'
 
-const { themes } = require('prism-react-renderer')
+import type * as Preset from '@docusaurus/preset-classic'
+// Note: type annotations allow type checking and IDEs autocompletion
+import type { Config } from '@docusaurus/types'
+import { Temporal } from '@js-temporal/polyfill'
 
 const lightCodeTheme = themes.github
 const darkCodeTheme = themes.dracula
 
 const math = import ('remark-math')
 const katex = import ('rehype-katex')
-
-const { Temporal } = require('@js-temporal/polyfill')
 
 const OriginTrial = 'AsQfvYHVhFEUOGL9ddGU33VJ525p51lAhfmfjcqod4JV36SUb6h5bvanj/4Om/MRcAJpK8mTlXHppPn0FSWJvAQAAAB8eyJvcmlnaW4iOiJodHRwczovL3l4LWJsb2cudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ=='
 
@@ -66,8 +68,7 @@ if (typeof window !== 'undefined') {
   }
 }
 
-/** @type {import('@docusaurus/types').Config} */
-const config = {
+const config: Config = {
   title: 'Yancy Qi′s Blog',
   tagline: '-',
   url: 'https://yx-blog.vercel.app',
@@ -116,7 +117,6 @@ const config = {
   presets: [
     [
       'classic',
-      /** @type {import('@docusaurus/preset-classic').Options} */
       {
         docs: {
           sidebarPath: require.resolve ('./sidebars.js'),
@@ -160,7 +160,7 @@ const config = {
         theme: {
           customCss: require.resolve ('./src/css/custom.css'),
         },
-      },
+      } satisfies Preset.Options,
     ],
   ],
 
@@ -177,11 +177,7 @@ const config = {
         configurePostCss(postcssOptions) {
           // Appends TailwindCSS and AutoPrefixer.
           postcssOptions.plugins.push(require ('tailwindcss'))
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-expect-error
           postcssOptions.plugins.push(require ('autoprefixer'))
-          // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-          // @ts-expect-error
           postcssOptions.plugins.push(require ('postcss-preset-env'))
           return postcssOptions
         },
@@ -232,9 +228,6 @@ const config = {
     ],
   ],
 
-  /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  // @ts-expect-error
   themeConfig: {
     docs: {
       sidebar: {
@@ -317,7 +310,7 @@ const config = {
     liveCodeBlock: {
       playgroundPosition: 'bottom',
     },
-  },
+  } satisfies Preset.ThemeConfig,
 }
 
-module.exports = config
+export default config
