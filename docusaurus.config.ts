@@ -24,7 +24,7 @@ let dateStr = ''
 // const dateNumStr = date.getDate() <= 10 ? (`0${date.getDate().toString()}`) : date.getDate()
 // dateStr = `${monthNumStr}-${dateNumStr}`
 
-// Temporal API
+// 使用 Temporal API 获取日期
 const date = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
 // console.log(`${date.year}-${date.month}-${date.day}`)
 const fullYear = date.year
@@ -32,17 +32,20 @@ const monthNumStr = date.month <= 10 ? (`0${date.month}`) : date.month
 const dateNumStr = date.day <= 10 ? (`0${date.day}`) : date.day
 dateStr = `${monthNumStr}-${dateNumStr}`
 
+// 判断是否为闰年
 function isLeapYear(year) {
   return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)
 }
 
+// 获取清明节日期
 function qinMingDate(year) {
   return (isLeapYear(year) || isLeapYear(year - 1))
     ? '04-04'
     : '04-05'
 }
 
-const dateArray = [
+// 日期数组
+const dateArray: string[] = [
   '01-19',
   '03-06',
   '03-08',
@@ -53,10 +56,10 @@ const dateArray = [
   '09-09',
   '10-27',
   '11-30',
-]
-dateArray.push(qinMingDate(fullYear))
-dateArray.sort()
+  qinMingDate(fullYear)
+].sort()
 
+// 设置主题
 if (typeof window !== 'undefined') {
   const theme = localStorage.getItem('theme')
   if (dateArray.includes(dateStr)) {
