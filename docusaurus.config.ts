@@ -56,7 +56,7 @@ const dateArray: string[] = [
   '09-09',
   '10-27',
   '11-30',
-  qinMingDate(fullYear)
+  qinMingDate(fullYear),
 ].sort()
 
 // 设置主题
