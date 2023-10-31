@@ -23,3 +23,5 @@ $ pnpm run build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+[![code style](https://antfu.me/badge-code-style.svg)](https://github.com/antfu/eslint-config)

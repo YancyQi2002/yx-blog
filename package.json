@@ -59,7 +59,7 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^0.42.1",
+    "@antfu/eslint-config": "1.0.0-beta.29",
     "@commitlint/cli": "^18.2.0",
     "@commitlint/config-conventional": "^18.1.0",
     "@docusaurus/eslint-plugin": "3.0.0-rc.0",
@@ -69,6 +69,7 @@
     "@ffmpeg/core": "0.12.3",
     "@ffmpeg/ffmpeg": "0.12.6",
     "@ffmpeg/util": "^0.12.1",
+    "@stylistic/eslint-plugin": "^0.1.2",
     "@tailwindcss/typography": "^0.5.10",
     "@tauri-apps/cli": "2.0.0-alpha.17",
     "@tauri-apps/cli-win32-x64-msvc": "2.0.0-alpha.17",
@@ -88,7 +89,6 @@
     "cz-git": "^1.7.1",
     "dotenv": "^16.3.1",
     "eslint": "^8.52.0",
-    "eslint-plugin-react": "^7.33.2",
     "internal-ip": "^8.0.0",
     "postcss": "^8.4.31",
     "postcss-preset-env": "^9.2.0",

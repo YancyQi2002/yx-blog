@@ -1,9 +1,4 @@
-/* eslint-disable @docusaurus/no-untranslated-text */
-import React, {
-  Suspense,
-  lazy,
-  useEffect,
-} from 'react'
+import React, { Suspense, lazy, useEffect } from 'react'
 
 import { themeChange } from 'theme-change'
 
@@ -123,18 +118,20 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Description will go into a meta tag in <head />"
+    >
       <HomepageHeader />
       <main>
         <div className="container padding-vert">
-          <Suspense fallback={
+          <Suspense fallback={(
             <div className="flex justify-center items-center -mt-48 px-0 pt-8 pb-16">
               <div className="animate-spin text-4xl text-blue-500">
                 <span className="loading loading-ring loading-lg"></span>
               </div>
             </div>
-          }>
-            <SocialLinks data={ socialLinks } />
+          )}
+          >
+            <SocialLinks data={socialLinks} />
           </Suspense>
         </div>
         <HomepageFeatures />

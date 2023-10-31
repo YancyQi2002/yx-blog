@@ -1,8 +1,4 @@
-import React, {
-  Suspense,
-  lazy,
-  useEffect,
-} from 'react'
+import React, { Suspense, lazy, useEffect } from 'react'
 
 import { themeChange } from 'theme-change'
 
@@ -69,13 +65,14 @@ export default function Index(): JSX.Element {
     <>
       <PageMetadata title={title} />
       <Layout>
-        <Suspense fallback={
+        <Suspense fallback={(
           <div className="flex justify-center items-center">
             <div className="animate-spin text-4xl text-blue-500">
               <span className="loading loading-ring loading-lg"></span>
             </div>
           </div>
-        }>
+        )}
+        >
           <NotFoundContent />
         </Suspense>
       </Layout>

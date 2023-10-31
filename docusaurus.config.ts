@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-require-imports */
+/* eslint-disable ts/no-require-imports */
+/* eslint-disable ts/no-var-requires */
 /* eslint-disable import/newline-after-import */
 import { themes } from 'prism-react-renderer'
 

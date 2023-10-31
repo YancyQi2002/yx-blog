@@ -1,4 +1,12 @@
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
+/* eslint-disable ts/no-unsafe-argument */
+/* eslint-disable ts/no-unsafe-call */
+/* eslint-disable ts/no-unsafe-member-access */
+/* eslint-disable ts/no-floating-promises */
+/* eslint-disable ts/await-thenable */
+/* eslint-disable antfu/consistent-list-newline */
+/* eslint-disable style/jsx-indent */
+
+/* eslint-disable style/jsx-closing-tag-location */
 import React, {
   Fragment,
   useState,
@@ -220,31 +228,31 @@ const VideoPage: React.FC = () => {
       <div className="flex flex-wrap justify-center mt-2 w-full select-none">
         {videoList.filter(video => video.title.includes(inputValue)).map((video, index) => (
           <div key={index} className="m-1 transition duration-200">
-            <Tooltip openDelay={500} closeDelay={200}>
-              <TooltipTrigger
-                className={`p-4 rounded-lg shadow cursor-pointer transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${video.selected ? 'bg-gray-200' : ''}`}
-                onClick={() => {
-                  handleVideoClick(video)
-                  handleVideoItemSelect(index)
-                }}
-              >
-                <span>
+  <Tooltip openDelay={500} closeDelay={200}>
+            <TooltipTrigger
+              className={`p-4 rounded-lg shadow cursor-pointer transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${video.selected ? 'bg-gray-200' : ''}`}
+              onClick={() => {
+                handleVideoClick(video)
+                handleVideoItemSelect(index)
+              }}
+            >
+              <span>
                   <div title={video.title}>
-                    {video.title}
-                  </div>
+          {video.title}
+        </div>
                 </span>
-              </TooltipTrigger>
+            </TooltipTrigger>
 
-              <TooltipPositioner>
-                <TooltipArrow>
+            <TooltipPositioner>
+              <TooltipArrow>
                   <TooltipArrowTip />
                 </TooltipArrow>
-                <TooltipContent className='px-4 w-60 text-xs'>
-                  <div className='text-center' dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
+              <TooltipContent className="px-4 w-60 text-xs">
+                  <div className="text-center" dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
                 </TooltipContent>
-              </TooltipPositioner>
-            </Tooltip>
-          </div>
+            </TooltipPositioner>
+          </Tooltip>
+</div>
         ))}
       </div>
     </div>

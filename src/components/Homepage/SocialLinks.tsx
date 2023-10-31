@@ -30,7 +30,7 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
 
   return (
     <div className={clsx('-mt-48', styles.socialContainer)}>
-      <Heading as="h1" className='text-center' style={{ margin: '-4rem auto 2rem' }}>
+      <Heading as="h1" className="text-center" style={{ margin: '-4rem auto 2rem' }}>
         <Translate>
           Social media
         </Translate>
