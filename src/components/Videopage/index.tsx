@@ -14,14 +14,7 @@ import React, {
 
 import ReactPlayer from 'react-player'
 
-import {
-  Tooltip,
-  TooltipArrow,
-  TooltipArrowTip,
-  TooltipContent,
-  TooltipPositioner,
-  TooltipTrigger,
-} from '@ark-ui/react'
+import { Tooltip } from '@ark-ui/react'
 import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
 import Translate from '@docusaurus/Translate'
 import { FFmpeg } from '@ffmpeg/ffmpeg'
@@ -228,31 +221,31 @@ const VideoPage: React.FC = () => {
       <div className="flex flex-wrap justify-center mt-2 w-full select-none">
         {videoList.filter(video => video.title.includes(inputValue)).map((video, index) => (
           <div key={index} className="m-1 transition duration-200">
-  <Tooltip openDelay={500} closeDelay={200}>
-            <TooltipTrigger
-              className={`p-4 rounded-lg shadow cursor-pointer transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${video.selected ? 'bg-gray-200' : ''}`}
-              onClick={() => {
-                handleVideoClick(video)
-                handleVideoItemSelect(index)
-              }}
-            >
-              <span>
+            <Tooltip.Root closeDelay={0} openDelay={0}>
+              <Tooltip.Trigger
+                className={`p-4 rounded-lg shadow cursor-pointer transition duration-200 ease-in-out transform hover:-translate-y-1 hover:scale-105 ${video.selected ? 'bg-gray-200' : ''}`}
+                onClick={() => {
+                  handleVideoClick(video)
+                  handleVideoItemSelect(index)
+                }}
+              >
+                <span>
                   <div title={video.title}>
-          {video.title}
-        </div>
+                    {video.title}
+                  </div>
                 </span>
-            </TooltipTrigger>
+              </Tooltip.Trigger>
 
-            <TooltipPositioner>
-              <TooltipArrow>
-                  <TooltipArrowTip />
-                </TooltipArrow>
-              <TooltipContent className="px-4 w-60 text-xs">
-                  <div className="text-center" dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
-                </TooltipContent>
-            </TooltipPositioner>
-          </Tooltip>
-</div>
+              <Tooltip.Positioner>
+                <Tooltip.Content className="px-4 w-60 text-xs">
+                  <Tooltip.Arrow>
+                    <Tooltip.ArrowTip />
+                  </Tooltip.Arrow>
+                    <div className="text-center" dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
+                  </Tooltip.Content>
+              </Tooltip.Positioner>
+            </Tooltip.Root>
+          </div>
         ))}
       </div>
     </div>

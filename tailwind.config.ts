@@ -1,7 +1,16 @@
-const defaultTheme = require('tailwindcss/defaultTheme')
+import type { Config } from 'tailwindcss'
+import defaultTheme from 'tailwindcss/defaultTheme'
+import typography from '@tailwindcss/typography'
+import headlessui from '@headlessui/tailwindcss'
+import daisyui from 'daisyui'
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
+  content: [
+    './src/**/*.{js,jsx,ts,tsx}',
+  ],
+  corePlugins: {
+    preflight: false,
+  },
   daisyui: {
     themes: true, // true: all themes | false: only light + dark | array: specific themes like this ["light", "dark", "cupcake"]
     darkTheme: 'dark', // name of one of the included themes for dark mode
@@ -13,9 +22,6 @@ module.exports = {
     logs: true, // Shows info about daisyUI version and used config in the console when building your CSS
   },
   darkMode: ['class', '[data-theme="dark"]'],
-  content: [
-    './src/**/*.{js,jsx,ts,tsx}',
-  ],
   theme: {
     screens: {
       xs: '475px',
@@ -29,11 +35,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@headlessui/tailwindcss'),
-    require('daisyui'),
+    typography,
+    headlessui,
+    daisyui,
   ],
-  corePlugins: {
-    preflight: false,
-  },
-}
+} satisfies Config

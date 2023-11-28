@@ -1,18 +1,15 @@
 /* eslint-disable ts/no-require-imports */
 /* eslint-disable ts/no-var-requires */
 /* eslint-disable import/newline-after-import */
-import { themes } from 'prism-react-renderer'
+import { themes as prismThemes } from 'prism-react-renderer'
 
 import type * as Preset from '@docusaurus/preset-classic'
 // Note: type annotations allow type checking and IDEs autocompletion
 import type { Config } from '@docusaurus/types'
 import { Temporal } from '@js-temporal/polyfill'
-
-const lightCodeTheme = themes.github
-const darkCodeTheme = themes.dracula
-
-const math = import ('remark-math')
-const katex = import ('rehype-katex')
+import remarkMath from 'remark-math'
+import rehypeKatex from 'rehype-katex'
+import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn'
 
 const OriginTrial = 'AsQfvYHVhFEUOGL9ddGU33VJ525p51lAhfmfjcqod4JV36SUb6h5bvanj/4Om/MRcAJpK8mTlXHppPn0FSWJvAQAAAB8eyJvcmlnaW4iOiJodHRwczovL3l4LWJsb2cudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ=='
 
@@ -123,15 +120,17 @@ const config: Config = {
       'classic',
       {
         docs: {
-          sidebarPath: require.resolve ('./sidebars.js'),
+          sidebarPath: require.resolve ('./sidebars.ts'),
           remarkPlugins: [
-            math,
-            require('@docusaurus/remark-plugin-npm2yarn'),
-            {
-              sync: true,
-            },
+            remarkMath,
+            [
+              remarkPluginNpm2yarn,
+              {
+                sync: true,
+              },
+            ],
           ],
-          rehypePlugins: [katex],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: '',
@@ -139,7 +138,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            frontMatter.hide_reading_time
+            frontMatter?.hide_reading_time
               ? undefined
               : defaultReadingTime ({ content }),
           feedOptions: {
@@ -150,19 +149,21 @@ const config: Config = {
           blogSidebarTitle: '近期文章',
           blogSidebarCount: 8,
           remarkPlugins: [
-            math,
-            require('@docusaurus/remark-plugin-npm2yarn'),
-            {
-              sync: true,
-            },
+            remarkMath,
+            [
+              remarkPluginNpm2yarn,
+              {
+                sync: true,
+              },
+            ],
           ],
-          rehypePlugins: [katex],
+          rehypePlugins: [rehypeKatex],
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: '',
         },
         theme: {
-          customCss: require.resolve ('./src/css/custom.css'),
+          customCss: './src/css/custom.css',
         },
       } satisfies Preset.Options,
     ],
@@ -192,7 +193,7 @@ const config: Config = {
       return {
         name: 'docusaurus-cross',
         // eslint-disable-next-line unused-imports/no-unused-vars
-        configureWebpack(config, isServer, utils) {
+        configureWebpack(config, isServer, utils, content) {
           return {
             mergeStrategy: { 'module.rules': 'prepend' },
             devServer: {
@@ -210,9 +211,8 @@ const config: Config = {
 
   themes: [
     [
-      require.resolve ('@easyops-cn/docusaurus-search-local'),
-      {
-        // ... Your options.
+      '@easyops-cn/docusaurus-search-local',
+      ({
         indexDocs: true,
         indexBlog: true,
         indexPages: false,
@@ -228,7 +228,7 @@ const config: Config = {
         // language: ["en", "zh"],
         // ```
         language: ['zh', 'en'],
-      },
+      }),
     ],
   ],
 
@@ -307,8 +307,8 @@ const config: Config = {
       copyright: `Copyright © 2020 — ${fullYear} Yancy Qi  Built with Docusaurus.`,
     },
     prism: {
-      theme: lightCodeTheme,
-      darkTheme: darkCodeTheme,
+      theme: prismThemes.github,
+      darkTheme: prismThemes.dracula,
       additionalLanguages: ['powershell'],
     },
     liveCodeBlock: {

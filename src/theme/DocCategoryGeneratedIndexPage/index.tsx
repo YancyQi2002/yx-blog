@@ -3,16 +3,15 @@ import React, { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 
 import type { WrapperProps } from '@docusaurus/types'
-import DocCategoryGeneratedIndexPage
-  from '@theme-original/DocCategoryGeneratedIndexPage'
-import type DocCategoryGeneratedIndexPageType
-  from '@theme/DocCategoryGeneratedIndexPage'
-
 import {
   dateNumStr,
   fullYear,
   monthNumStr,
 } from '@site/src/interface'
+import DocCategoryGeneratedIndexPage
+  from '@theme-original/DocCategoryGeneratedIndexPage'
+import type DocCategoryGeneratedIndexPageType
+  from '@theme/DocCategoryGeneratedIndexPage'
 
 type Props = WrapperProps<typeof DocCategoryGeneratedIndexPageType>
 
