@@ -15,6 +15,9 @@
   "tauri": {
     "bundle": {
       "active": true,
+      "android": {
+        "minSdkVersion": 24
+      },
       "category": "DeveloperTool",
       "copyright": "",
       "deb": {

@@ -32,7 +32,8 @@ module.exports = antfu(
       'docs/*',
       'blog/*',
       'i18n/*',
-      '**/*.js'
+      '**/*.js',
+      'README.md'
     ],
 
     overrides: [

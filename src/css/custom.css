@@ -363,6 +363,10 @@ a:has(svg) {
   font-display: swap;
 }
 
+img[src*="#md-h-fit"] {
+  @apply h-fit;
+}
+
 .markdown:has(hr):has(p):not(:has(input)) .alert
 .markdown:has(hr):has(p):not(:has(input)) .alert > :where(*) {
   @apply !block;
