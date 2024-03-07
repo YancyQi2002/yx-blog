@@ -29,6 +29,7 @@ function qinMingDate(year: number) {
 const dateArray: string[] = [
   '01-19',
   '03-06',
+  '03-07',
   '03-08',
   '06-10',
   '07-04',

@@ -2,14 +2,14 @@
 /* eslint-disable ts/no-var-requires */
 /* eslint-disable import/newline-after-import */
 import { themes as prismThemes } from 'prism-react-renderer'
+import rehypeKatex from 'rehype-katex'
+import remarkMath from 'remark-math'
 
 import type * as Preset from '@docusaurus/preset-classic'
+import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn'
 // Note: type annotations allow type checking and IDEs autocompletion
 import type { Config } from '@docusaurus/types'
 import { Temporal } from '@js-temporal/polyfill'
-import remarkMath from 'remark-math'
-import rehypeKatex from 'rehype-katex'
-import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn'
 
 const OriginTrial = 'AsQfvYHVhFEUOGL9ddGU33VJ525p51lAhfmfjcqod4JV36SUb6h5bvanj/4Om/MRcAJpK8mTlXHppPn0FSWJvAQAAAB8eyJvcmlnaW4iOiJodHRwczovL3l4LWJsb2cudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ=='
 
@@ -46,6 +46,7 @@ function qinMingDate(year) {
 const dateArray: string[] = [
   '01-19',
   '03-06',
+  '03-07',
   '03-08',
   '06-10',
   '07-04',
@@ -177,7 +178,7 @@ const config: Config = {
       return {
         name: 'docusaurus-tailwindcss',
         /**
-         * @param {{ plugins: typeof import("tailwindcss")[]; }} postcssOptions
+         * @param {{ plugins: typeof import("tailwindcss")[] }} postcssOptions
          */
         configurePostCss(postcssOptions) {
           // Appends TailwindCSS and AutoPrefixer.
