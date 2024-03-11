@@ -5,6 +5,7 @@ import { themeChange } from 'theme-change'
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
 import HomepageFeatures from '@site/src/components/HomepageFeatures'
+import type { SocialLink } from '@site/src/interface'
 import {
   dateNumStr,
   fullYear,
@@ -41,11 +42,7 @@ const dateArray: string[] = [
   qinMingDate(fullYear),
 ].sort()
 
-const socialLinks: {
-  name: string
-  url: string
-  svg: JSX.Element
-}[] = [
+const socialLinks: SocialLink[] = [
   {
     name: 'GitHub',
     url: 'https://github.com/YancyQi2002',

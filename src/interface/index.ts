@@ -4,7 +4,7 @@ import { Temporal } from '@js-temporal/polyfill'
 interface SocialLink {
   name: string // 社交媒体平台的名称
   url: string // 社交媒体平台的URL
-  svg: string // 社交媒体平台的SVG图标
+  svg: JSX.Element // 社交媒体平台的SVG图标
 }
 
 // 定义SocialLinksProps
