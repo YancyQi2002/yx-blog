@@ -1,5 +1,6 @@
 .features {
-  @apply flex items-center px-0 py-8 w-full;
+  @apply flex items-center w-full;
+  padding: 2rem 0;
 }
 
 .featureSvg {
