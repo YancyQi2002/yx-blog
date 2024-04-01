@@ -36,7 +36,10 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
         </Translate>
       </Heading>
       <div className={clsx('row', styles.socialLinks)}>
-        {socialLinksComponents}
+        <Translate>
+          TODO
+        </Translate>
+        {/* {socialLinksComponents} */}
       </div>
     </div>
   )

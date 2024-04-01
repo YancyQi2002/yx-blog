@@ -1,8 +1,0 @@
-.features {
-  @apply flex items-center w-full;
-  padding: 2rem 0;
-}
-
-.featureSvg {
-  @apply w-52 h-52 will-change-auto;
-}

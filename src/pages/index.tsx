@@ -4,7 +4,6 @@ import { themeChange } from 'theme-change'
 
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
 import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
-import HomepageFeatures from '@site/src/components/HomepageFeatures'
 import type { SocialLink } from '@site/src/interface'
 import {
   dateNumStr,
@@ -132,7 +131,6 @@ export default function Home(): JSX.Element {
             <SocialLinks data={socialLinks} />
           </Suspense>
         </div>
-        <HomepageFeatures />
       </main>
     </Layout>
   )
