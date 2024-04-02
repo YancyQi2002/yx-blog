@@ -16,14 +16,20 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
   React.useMemo(() => {
     // 遍历数据数组以创建社交链接组件数组
     setSocialLinksComponents(data.map(({ name, url, svg }) => (
-      <div className={clsx('col', styles.col)} key={name}>
-        <Link
-          to={url}
-          className={clsx('button button--outline button--primary', styles.btn)}
-        >
-          <span className={styles.btnIcon}>{svg}</span>
-          <span className={styles.btnText}>{name}</span>
-        </Link>
+      <div className="stats shadow">
+        <div className={clsx('stat', styles.btn)} key={name}>
+          <Link
+            to={url}
+            className={clsx('hover:no-underline', styles.btnUrl)}
+          >
+            <div className={clsx('stat-figure', styles.btnIcon)}>
+              {svg}
+            </div>
+            <div className={clsx('stat-value', styles.btnText)}>
+              {name}
+            </div>
+          </Link>
+        </div>
       </div>
     )))
   }, [data])
@@ -35,11 +41,8 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
           Social media
         </Translate>
       </Heading>
-      <div className={clsx('row', styles.socialLinks)}>
-        <Translate>
-          TODO
-        </Translate>
-        {/* {socialLinksComponents} */}
+      <div className="row justify-around! items-center! z-10">
+        {socialLinksComponents}
       </div>
     </div>
   )
