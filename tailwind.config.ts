@@ -1,8 +1,9 @@
+import daisyui from 'daisyui'
 import type { Config } from 'tailwindcss'
 import defaultTheme from 'tailwindcss/defaultTheme'
-import typography from '@tailwindcss/typography'
+
 import headlessui from '@headlessui/tailwindcss'
-import daisyui from 'daisyui'
+import typography from '@tailwindcss/typography'
 
 export default {
   content: [

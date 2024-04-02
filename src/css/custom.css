@@ -103,6 +103,10 @@
   background-color: #ffee00;
 }
 
+[data-theme='dim'] :is(.navbar, .hero) {
+  background-color: #2a303c;
+}
+
 [data-theme='dracula'] :is(.navbar, .hero) {
   background-color: #272935;
 }
@@ -123,8 +127,16 @@
   background-color: #0f1729;
 }
 
+[data-theme='nord'] :is(.navbar, .hero) {
+  background-color: #eceff4;
+}
+
 [data-theme='retro'] :is(.navbar, .hero) {
   background-color: #e4d8b4;
+}
+
+[data-theme='sunset'] :is(.navbar, .hero) {
+  background-color: #121c22;
 }
 
 [data-theme='synthwave'] :is(.navbar, .hero) {
@@ -165,6 +177,10 @@
     background-color: color(display-p3 .1529 .1765 .2078);
   }
 
+  [data-theme='dim'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .1647 .1882 .2353);
+  }
+
   [data-theme='forest'] :is(.navbar, .hero) {
     background-color: color(display-p3 .0902 .0706 .0706);
   }
@@ -180,9 +196,17 @@
   [data-theme='night'] :is(.navbar, .hero) {
     background-color: color(display-p3 .0588 .0902 .1608);
   }
+
+  [data-theme='nord'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .9255 .9608 .9569);
+  }
   
   [data-theme='retro'] :is(.navbar, .hero) {
     background-color: color(display-p3 .8941 .8471 .7059);
+  }
+
+  [data-theme='sunset'] :is(.navbar, .hero) {
+    background-color: color(display-p3 .0706 .1412 .1333);
   }
   
   [data-theme='synthwave'] :is(.navbar, .hero) {
@@ -247,6 +271,15 @@
 [data-theme='forest'] .navbar b,
 [data-theme='forest'] .navbar .navbar__items>.navbar__item {
   color: #d7cccc;
+}
+
+[data-theme='dim'] .navbar a,
+[data-theme='dim'] .navbar b,
+[data-theme='dim'] .navbar .navbar__items>.navbar__item
+[data-theme='sunset'] .navbar a,
+[data-theme='sunset'] .navbar b,
+[data-theme='sunset'] .navbar .navbar__items>.navbar__item {
+  color: #9fb9d0;
 }
 
 @supports (color: color(display-p3 1 1 1)) {

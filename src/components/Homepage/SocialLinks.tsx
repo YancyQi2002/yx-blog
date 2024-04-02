@@ -9,39 +9,40 @@ import Heading from '@theme/Heading'
 import type { SocialLinksProps } from '@site/src/interface'
 import styles from './styles.module.css'
 
-// 定义SocialLinks组件
+// 定义 SocialLinks 组件
 const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
-  // 将socialLinksComponents数组定义为一个状态，并使用React.useMemo()来缓存它
-  const [socialLinksComponents, setSocialLinksComponents] = React.useState<JSX.Element[]>([])
-  React.useMemo(() => {
-    // 遍历数据数组以创建社交链接组件数组
-    setSocialLinksComponents(data.map(({ name, url, svg }) => (
-      <div className="stats shadow">
-        <div className={clsx('stat', styles.btn)} key={name}>
-          <Link
-            to={url}
-            className={clsx('hover:no-underline', styles.btnUrl)}
-          >
-            <div className={clsx('stat-figure', styles.btnIcon)}>
-              {svg}
-            </div>
-            <div className={clsx('stat-value', styles.btnText)}>
-              {name}
-            </div>
-          </Link>
-        </div>
+  // 使用 React.useCallback 来避免不必要的函数创建
+  const createLink = React.useCallback(({ name, url, svg }) => (
+    // eslint-disable-next-line ts/no-unsafe-assignment
+    <React.Fragment key={name}>
+      <div className={clsx(styles.stats, styles.shadow)}>
+        <Link
+          // eslint-disable-next-line ts/no-unsafe-assignment
+          to={url}
+          className={styles.btnUrl}
+        >
+          <div className={clsx(styles.statfigure, styles.btnIcon)}>
+            {svg}
+          </div>
+          <div className={clsx(styles.statvalue, styles.btnText)}>
+            {name}
+          </div>
+        </Link>
       </div>
-    )))
-  }, [data])
+    </React.Fragment>
+  ), [])
+
+  // 使用 React.useMemo 来创建一个 socialLinksComponents 数组
+  const socialLinksComponents = React.useMemo(() => data.map(createLink), [data, createLink])
 
   return (
-    <div className={clsx('-mt-48', styles.socialContainer)}>
+    <div className={styles.socialContainer}>
       <Heading as="h1" className="text-center" style={{ margin: '-4rem auto 2rem' }}>
         <Translate>
           Social media
         </Translate>
       </Heading>
-      <div className="row justify-around! items-center! z-10">
+      <div className={clsx('row', styles.mediarow)}>
         {socialLinksComponents}
       </div>
     </div>

@@ -1,3 +1,5 @@
+@import url('https://cdn.tailwindcss.com');
+
 .highlighted {
   @apply bg-clip-text;
   background: linear-gradient(to left, #6C928C 0%, #B8FB3C 100%);
@@ -15,7 +17,34 @@
 }
 
 .socialContainer {
-  @apply px-0 pt-8 pb-16;
+  @apply -mt-48 px-0 pt-8 pb-16;
+}
+
+.mediarow {
+  @apply flex flex-wrap justify-around my-8 space-x-4 z-10;
+}
+
+.stats {
+  @apply inline-grid;
+  border-radius: var(--rounded-box, 1rem);
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b1, oklch(var(--b1) / var(--tw-bg-opacity)));
+  --tw-text-opacity: 1;
+  color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
+}
+
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.statfigure {
+  @apply col-start-2 place-self-center;
+}
+
+.statvalue {
+  @apply col-start-1 whitespace-nowrap font-extrabold;
 }
 
 @media (max-width: 996px) {
@@ -28,15 +57,23 @@
   }
 }
 
-.btn {
-  @apply p-6 w-full;
+.btnUrl {
+  @apply btn btn-outline p-5 w-32 h-48;
   border-color: var(--ifm-color-emphasis-200);
+}
+
+a--active,
+a:active,
+a:hover,
+a:focus {
+  @apply no-underline;
 }
 
 .btnUrl--active .btnText,
 .btnUrl:active .btnText,
 .btnUrl:hover .btnText,
 .btnUrl:focus .btnText {
+  @apply no-underline;
   color: var(--ifm-font-color-base-inverse);
 }
 
@@ -44,37 +81,39 @@
 .btnUrl:active .btnIcon,
 .btnUrl:hover .btnIcon,
 .btnUrl:focus .btnIcon {
+  @apply no-underline;
   fill: var(--ifm-font-color-base-inverse);
 }
 
 .btnIcon {
-  @apply block mx-auto my-0 p-2 w-10;
+  @apply block mx-auto my-0 p-2 w-20;
   fill: #4093f6;
 }
 
 @supports (color: color(a98-rgb 1 1 1)) {
   .btnIcon {
-    @apply block mx-auto my-0 p-2 w-10;
+    @apply block mx-auto my-0 p-2 w-20;
     fill: color(a98-rgb .251 .576 .965);
   }
 }
 
 .socialLinks > a:hover {
-  @apply backdrop-blur-sm brightness-125 contrast-100;
+  @apply backdrop-blur-sm brightness-125 contrast-100 no-underline;
   background-color: #4093F6;
 }
 
 @supports (color: color(prophoto-rgb 1 1 1)) {
   .socialLinks > a:hover {
-    @apply backdrop-blur-sm brightness-125 contrast-100;
+    @apply backdrop-blur-sm brightness-125 contrast-100 no-underline;
     background-color: color(prophoto-rgb .251 .542 .957);
   }
 }
 
 .btnText {
+  @apply text-2xl;
   color: var(--ifm-font-color-base);
 }
 
-[data-theme='dracula'] .socialLinks > .col > a > span {
+[data-theme='dracula'] .socialLinks > a > .btnText {
   @apply text-white;
 }
