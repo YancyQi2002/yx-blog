@@ -73,7 +73,7 @@
     "@stylistic/eslint-plugin": "^1.7.0",
     "@tailwindcss/typography": "^0.5.12",
     "@tauri-apps/cli": "2.0.0-beta.11",
-    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-beta.11",
+    "@tauri-apps/cli-win32-x64-msvc": "2.0.0-beta.12",
     "@tauri-apps/plugin-app": "2.0.0-alpha.1",
     "@tauri-apps/plugin-clipboard-manager": "2.1.0-beta.0",
     "@tauri-apps/plugin-dialog": "2.0.0-beta.2",
