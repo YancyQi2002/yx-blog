@@ -98,9 +98,9 @@ const config: Config = {
       type: 'text/css',
     },
     {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.15.2/dist/katex.min.css',
+      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css',
       type: 'text/css',
-      integrity: 'sha384-MlJdn/WNKDGXveldHDdyRP1R4CTHr3FeuDNfhsLPYrq2t0UBkUdK2jyTnXPEK1NQ',
+      integrity: 'sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww',
       crossorigin: 'anonymous',
     },
     {

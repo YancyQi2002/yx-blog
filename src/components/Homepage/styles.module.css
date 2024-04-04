@@ -1,5 +1,3 @@
-@import url('https://cdn.tailwindcss.com');
-
 .highlighted {
   @apply bg-clip-text;
   background: linear-gradient(to left, #6C928C 0%, #B8FB3C 100%);
