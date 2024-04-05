@@ -21,10 +21,10 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
           to={url}
           className={styles.btnUrl}
         >
-          <div className={clsx(styles.statfigure, styles.btnIcon)}>
+          <div className={clsx('stat-figure', styles.btnIcon)}>
             {svg}
           </div>
-          <div className={clsx(styles.statvalue, styles.btnText)}>
+          <div className={clsx('stat-value', styles.btnText)}>
             {name}
           </div>
         </Link>

@@ -37,14 +37,6 @@
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
-.statfigure {
-  @apply col-start-2 place-self-center;
-}
-
-.statvalue {
-  @apply col-start-1 whitespace-nowrap font-extrabold;
-}
-
 @media (max-width: 996px) {
   .socialLinks > div:nth-child(odd) {
     padding-right: calc(var(--ifm-spacing-horizontal) / 2);
