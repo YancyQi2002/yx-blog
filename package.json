@@ -67,7 +67,7 @@
     "@docusaurus/module-type-aliases": "^3.2.1",
     "@docusaurus/tsconfig": "^3.2.1",
     "@docusaurus/types": "^3.2.1",
-    "@ffmpeg/core": "0.12.3",
+    "@ffmpeg/core": "0.12.6",
     "@ffmpeg/ffmpeg": "0.12.6",
     "@ffmpeg/util": "^0.12.1",
     "@stylistic/eslint-plugin": "^1.7.0",
