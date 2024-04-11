@@ -51,7 +51,7 @@
     "react": "^18.2.0",
     "react-awesome-reveal": "^4.2.8",
     "react-dom": "^18.2.0",
-    "react-player": "^2.15.1",
+    "react-player": "^2.16.0",
     "react-spring": "^9.7.3",
     "react-transition-group": "^4.4.5",
     "rehype-katex": "^7.0.0",
@@ -60,7 +60,7 @@
     "theme-change": "^2.5.0"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "^2.12.1",
+    "@antfu/eslint-config": "^2.13.3",
     "@commitlint/cli": "^19.2.1",
     "@commitlint/config-conventional": "^19.1.0",
     "@docusaurus/eslint-plugin": "^3.2.1",
@@ -82,8 +82,8 @@
     "@tauri-apps/plugin-log": "2.0.0-beta.2",
     "@tauri-apps/plugin-notification": "2.0.0-beta.2",
     "@tauri-apps/plugin-os": "2.0.0-beta.2",
-    "@types/node": "^20.12.4",
-    "@types/react": "^18.2.74",
+    "@types/node": "^20.12.7",
+    "@types/react": "^18.2.75",
     "@types/react-dom": "^18.2.24",
     "autoprefixer": "^10.4.19",
     "clsx": "^2.1.0",
@@ -95,7 +95,7 @@
     "postcss": "^8.4.38",
     "postcss-preset-env": "^9.5.4",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5.4.4"
+    "typescript": "^5.4.5"
   },
   "browserslist": {
     "production": [
