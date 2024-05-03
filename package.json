@@ -90,7 +90,7 @@
     "commitizen": "^4.3.0",
     "cz-git": "^1.9.1",
     "dotenv": "^16.4.5",
-    "eslint": "9.0.0-rc.0",
+    "eslint": "9.2.0",
     "internal-ip": "^8.0.0",
     "postcss": "^8.4.38",
     "postcss-preset-env": "^9.5.4",
