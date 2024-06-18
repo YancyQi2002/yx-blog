@@ -25,7 +25,7 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
   return (
     <>
       <BlogPostItem {...props} />
-      {(enableComments && !isCurrentUrlBlog) && (
+      {(Boolean(enableComments) && !isCurrentUrlBlog) && (
         <GiscusComponent />
       )}
     </>

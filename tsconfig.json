@@ -6,5 +6,6 @@
     "baseUrl": ".",
     "allowImportingTsExtensions": true,
     "esModuleInterop": true,
+    "strictNullChecks": true,
   }
 }

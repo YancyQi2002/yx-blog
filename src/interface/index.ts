@@ -38,6 +38,16 @@ const fullYear: number = date.year
 const monthNumStr: string | number = date.month <= 10 ? (`0${date.month}`) : date.month
 const dateNumStr: string | number = date.day <= 10 ? (`0${date.day}`) : date.day
 
+function isLeapYear(year: number) {
+  return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)
+}
+
+function qinMingDate(year: number) {
+  return (isLeapYear(year) || isLeapYear(year - 1))
+    ? '04-04'
+    : '04-05'
+}
+
 const initJingjuVedioList: Video[] = [ // 视频列表
   {
     title: '狸猫换太子·平寇进猫',
@@ -69,4 +79,6 @@ export {
   fullYear,
   initJingjuVedioList,
   monthNumStr,
+  isLeapYear,
+  qinMingDate,
 }

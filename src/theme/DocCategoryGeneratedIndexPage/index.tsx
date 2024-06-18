@@ -7,6 +7,7 @@ import {
   dateNumStr,
   fullYear,
   monthNumStr,
+  qinMingDate,
 } from '@site/src/interface'
 import DocCategoryGeneratedIndexPage
   from '@theme-original/DocCategoryGeneratedIndexPage'
@@ -16,16 +17,6 @@ import type DocCategoryGeneratedIndexPageType
 type Props = WrapperProps<typeof DocCategoryGeneratedIndexPageType>
 
 const dateStr = `${monthNumStr}-${dateNumStr}`
-
-function isLeapYear(year: number) {
-  return !!(year % 400 === 0) || (year % 100 !== 0 && year % 4 === 0)
-}
-
-function qinMingDate(year: number) {
-  return (isLeapYear(year) || isLeapYear(year - 1))
-    ? '04-04'
-    : '04-05'
-}
 
 const dateArray: string[] = [
   '01-19',
@@ -50,12 +41,13 @@ export default function DocCategoryGeneratedIndexPageWrapper(props: Props): JSX.
 
   if (typeof window !== 'undefined') {
     const theme = localStorage.getItem('theme')
+    const effectiveTheme = theme !== null && theme !== '' ? theme : 'light'
     if (dateArray.includes(dateStr)) {
-      document.documentElement.setAttribute('data-theme', theme || 'autumn')
+      document.documentElement.setAttribute('data-theme', effectiveTheme === 'light' ? 'autumn' : effectiveTheme)
       document.documentElement.style.filter = 'grayscale(100%)'
     }
     else {
-      document.documentElement.setAttribute('data-theme', theme || 'light')
+      document.documentElement.setAttribute('data-theme', effectiveTheme)
     }
   }
 

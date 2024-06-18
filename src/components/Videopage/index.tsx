@@ -3,7 +3,7 @@
 /* eslint-disable ts/no-unsafe-member-access */
 /* eslint-disable ts/no-floating-promises */
 /* eslint-disable ts/await-thenable */
-/* eslint-disable antfu/consistent-list-newline */
+/* eslint-disable ts/strict-boolean-expressions */
 /* eslint-disable style/jsx-indent */
 
 /* eslint-disable style/jsx-closing-tag-location */
@@ -98,7 +98,7 @@ const VideoPage: React.FC = () => {
       }
       else {
         // 如果支持WebM格式，并且当前视频具有WebM URL，则播放WebM格式
-        if (supportsWebM && video.webm_url) {
+        if (supportsWebM && video.webm_url != null && video.webm_url !== '') {
           setVideoUrl(video.webm_url)
           setShowAlert(false)
         }

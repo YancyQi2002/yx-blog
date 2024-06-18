@@ -17,9 +17,9 @@ function Footer(): JSX.Element | null {
   return (
     <FooterLayout
       style={style}
-      links={links && links.length > 0 && <FooterLinks links={links} />}
-      logo={logo && <FooterLogo logo={logo} />}
-      copyright={copyright && <FooterCopyright copyright={copyright} />}
+      links={Array.isArray(links) && links.length > 0 ? <FooterLinks links={links} /> : null}
+      logo={logo != null ? <FooterLogo logo={logo} /> : null}
+      copyright={copyright != null ? <FooterCopyright copyright={copyright} /> : null}
     />
   )
 }

@@ -61,11 +61,11 @@ const dateArray: string[] = [
 if (typeof window !== 'undefined') {
   const theme = localStorage.getItem('theme')
   if (dateArray.includes(dateStr)) {
-    document.documentElement.setAttribute('data-theme', theme || 'autumn')
+    document.documentElement.setAttribute('data-theme', theme !== null && theme !== '' ? theme : 'autumn')
     document.documentElement.style.filter = 'grayscale(100%)'
   }
   else {
-    document.documentElement.setAttribute('data-theme', theme || 'light')
+    document.documentElement.setAttribute('data-theme', theme !== null && theme !== '' ? theme : 'light')
   }
 }
 
@@ -138,7 +138,7 @@ const config: Config = {
         blog: {
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
-            frontMatter?.hide_reading_time
+            frontMatter?.hide_reading_time === true
               ? undefined
               : defaultReadingTime ({ content }),
           feedOptions: {

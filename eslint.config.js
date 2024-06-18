@@ -60,6 +60,7 @@ module.exports = antfu(
           'ts/no-unsafe-assignment': 'off',
           'ts/no-var-requires': 'off',
           'ts/no-require-imports': 'off',
+          'ts/strict-boolean-expressions': 'off',
           'vue/valid-attribute-name': 'off',
         },
       },
