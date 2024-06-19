@@ -28,7 +28,7 @@ importers:
         version: 3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       '@easyops-cn/docusaurus-search-local':
         specifier: ^0.44.0
-        version: 0.44.0(@docusaurus/theme-common@3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
+        version: 0.44.1(@docusaurus/theme-common@3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       '@emotion/react':
         specifier: ^11.11.4
         version: 11.11.4(@types/react@18.3.3)(react@18.3.1)
@@ -1605,8 +1605,8 @@ packages:
   '@easyops-cn/autocomplete.js@0.38.1':
     resolution: {integrity: sha512-drg76jS6syilOUmVNkyo1c7ZEBPcPuK+aJA7AksM5ZIIbV57DMHCywiCr+uHyv8BE5jUTU98j/H7gVrkHrWW3Q==}
 
-  '@easyops-cn/docusaurus-search-local@0.44.0':
-    resolution: {integrity: sha512-sgLpvkRtYuEGvd4peYQW2oInI4JkcQfxo7HgEnkhcxn9kxDY5laA8DiCx9qMKAkM9cMed9e8IsLk5gBeDh8Rqw==}
+  '@easyops-cn/docusaurus-search-local@0.44.1':
+    resolution: {integrity: sha512-AxofPmf5Vayzj1Z2XOSORwg0nu/v/uaSfEfacs4eCqazI1+LH+abdgzCxUvarFrjy+ViSj+fqoZwppx5sePY1Q==}
     engines: {node: '>=12'}
     peerDependencies:
       '@docusaurus/theme-common': ^2 || ^3
@@ -2612,8 +2612,8 @@ packages:
   '@types/unist@3.0.2':
     resolution: {integrity: sha512-dqId9J8K/vGi5Zr7oo212BGii5m3q5Hxlkwy3WpYuKPklmBEvsbMYYyLxAQpSffdLl/gdW0XUpKWFvYmyoWCoQ==}
 
-  '@types/webxr@0.5.16':
-    resolution: {integrity: sha512-0E0Cl84FECtzrB4qG19TNTqpunw0F1YF0QZZnFMF6pDw1kNKJtrlTKlVB34stGIsHbZsYQ7H0tNjPfZftkHHoA==}
+  '@types/webxr@0.5.17':
+    resolution: {integrity: sha512-JYcclaQIlisHRXM9dMF7SeVvQ54kcYc7QK1eKCExCTLKWnZDxP4cp/rXH4Uoa1j5+5oQJ0Cc2sZC/PWiiG4q2g==}
 
   '@types/ws@8.5.10':
     resolution: {integrity: sha512-vmQSUcfalpIq0R9q7uTo2lXs6eGIpt9wtnLdMv9LVpIjCA/+ufZRozlVoVelIYixx1ugCBKDhn89vnsEGOCx9A==}
@@ -10623,7 +10623,7 @@ snapshots:
       cssesc: 3.0.0
       immediate: 3.3.0
 
-  '@easyops-cn/docusaurus-search-local@0.44.0(@docusaurus/theme-common@3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)':
+  '@easyops-cn/docusaurus-search-local@0.44.1(@docusaurus/theme-common@3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5))(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)':
     dependencies:
       '@docusaurus/plugin-content-docs': 3.4.0(debug@4.3.5)(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
       '@docusaurus/theme-common': 3.4.0(@docusaurus/types@3.4.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(eslint@9.5.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.5)
@@ -11480,7 +11480,7 @@ snapshots:
     dependencies:
       '@babel/runtime': 7.24.7
       '@types/react-reconciler': 0.26.7
-      '@types/webxr': 0.5.16
+      '@types/webxr': 0.5.17
       base64-js: 1.5.1
       buffer: 6.0.3
       its-fine: 1.2.5(react@18.3.1)
@@ -11975,7 +11975,7 @@ snapshots:
 
   '@types/unist@3.0.2': {}
 
-  '@types/webxr@0.5.16': {}
+  '@types/webxr@0.5.17': {}
 
   '@types/ws@8.5.10':
     dependencies:
