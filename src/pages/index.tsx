@@ -13,7 +13,7 @@ import {
 } from '@site/src/interface'
 import Layout from '@theme/Layout'
 
-const SocialLinks = lazy(() => import('../components/Homepage/SocialLinks.tsx'))
+const SocialLinks = lazy(async () => import('../components/Homepage/SocialLinks.tsx'))
 
 const dateStr = `${monthNumStr}-${dateNumStr}`
 

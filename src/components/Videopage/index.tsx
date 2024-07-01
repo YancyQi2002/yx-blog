@@ -4,9 +4,7 @@
 /* eslint-disable ts/no-floating-promises */
 /* eslint-disable ts/await-thenable */
 /* eslint-disable ts/strict-boolean-expressions */
-/* eslint-disable style/jsx-indent */
 
-/* eslint-disable style/jsx-closing-tag-location */
 import React, {
   Fragment,
   useState,
@@ -241,8 +239,8 @@ const VideoPage: React.FC = () => {
                   <Tooltip.Arrow>
                     <Tooltip.ArrowTip />
                   </Tooltip.Arrow>
-                    <div className="text-center" dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
-                  </Tooltip.Content>
+                  <div className="text-center" dangerouslySetInnerHTML={{ __html: video.tip_content }}></div>
+                </Tooltip.Content>
               </Tooltip.Positioner>
             </Tooltip.Root>
           </div>

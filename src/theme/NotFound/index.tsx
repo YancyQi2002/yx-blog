@@ -12,7 +12,7 @@ import {
 } from '@site/src/interface'
 import Layout from '@theme/Layout'
 
-const NotFoundContent = lazy(() => import('./Content/index.tsx'))
+const NotFoundContent = lazy(async () => import('./Content/index.tsx'))
 
 const dateStr = `${monthNumStr}-${dateNumStr}`
 
