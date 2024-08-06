@@ -1,10 +1,3 @@
-/* eslint-disable ts/no-unsafe-argument */
-/* eslint-disable ts/no-unsafe-call */
-/* eslint-disable ts/no-unsafe-member-access */
-/* eslint-disable ts/no-floating-promises */
-/* eslint-disable ts/await-thenable */
-/* eslint-disable ts/strict-boolean-expressions */
-
 import React, {
   Fragment,
   useState,

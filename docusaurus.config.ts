@@ -1,5 +1,5 @@
 /* eslint-disable ts/no-require-imports */
-/* eslint-disable ts/no-var-requires */
+
 import { themes as prismThemes } from 'prism-react-renderer'
 import rehypeKatex from 'rehype-katex'
 import remarkMath from 'remark-math'

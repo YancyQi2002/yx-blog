@@ -13,11 +13,11 @@ import styles from './styles.module.css'
 const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
   // 使用 React.useCallback 来避免不必要的函数创建
   const createLink = React.useCallback(({ name, url, svg }) => (
-    // eslint-disable-next-line ts/no-unsafe-assignment
+
     <React.Fragment key={name}>
       <div className={clsx(styles.stats, styles.shadow)}>
         <Link
-          // eslint-disable-next-line ts/no-unsafe-assignment
+
           to={url}
           className={styles.btnUrl}
         >

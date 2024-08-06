@@ -10,12 +10,12 @@ module.exports = antfu(
     stylistic: {
       indent: 2, // 4, or 'tab'
       quotes: 'single', // or 'double'
+      semi: false, // 禁止使用分号
+      trailingComma: 'none', // 禁止尾随逗号
     },
 
     // TypeScript and Vue are auto-detected, you can also explicitly enable them:
-    typescript: {
-      tsconfigPath: 'tsconfig.json',
-    },
+    typescript: true,
     vue: true,
 
     // Disable jsonc and yaml support
@@ -55,7 +55,6 @@ module.exports = antfu(
           'style/quote-props': ['error', 'as-needed'],
           'style/jsx-quotes': 'off',
           'style/jsx-indent': 'off',
-          'style/semi': ['error', 'never'],
           'style/jsx-closing-tag-location': 'off',
           'ts/no-unsafe-assignment': 'off',
           'ts/no-var-requires': 'off',
