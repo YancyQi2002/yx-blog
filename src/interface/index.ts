@@ -23,7 +23,7 @@ interface FeatureItem {
 interface Video {
   title: string // 视频标题
   tip_content: string // 提示信息
-  url: string // 视频地址
+  url: string | {} // 视频地址
   webm_url?: string // 可选参数：视频WebM格式地址
 }
 
@@ -71,14 +71,14 @@ const initJingjuVedioList: Video[] = [ // 视频列表
 ]
 
 export {
+  dateNumStr,
   FeatureItem,
+  fullYear,
+  initJingjuVedioList,
+  isLeapYear,
+  monthNumStr,
+  qinMingDate,
   SocialLink,
   SocialLinksProps,
   Video,
-  dateNumStr,
-  fullYear,
-  initJingjuVedioList,
-  monthNumStr,
-  isLeapYear,
-  qinMingDate,
 }

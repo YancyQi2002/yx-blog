@@ -2,12 +2,10 @@
   // This file is not used in compilation. It is here just for a nice editor experience.
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "jsx": "react",
     "baseUrl": ".",
     "allowImportingTsExtensions": true,
-    "esModuleInterop": true,
-    "strictNullChecks": true,
     "skipLibCheck": true,
-    "types": ["@docusaurus/theme-classic"]
+    "types": ["@docusaurus/theme-classic"],
+    "exclude": [".docusaurus", "build"]
   }
 }

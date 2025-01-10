@@ -3,6 +3,10 @@
     "message": "Yancy Qi′s Blog",
     "description": "The title in the navbar"
   },
+  "logo.alt": {
+    "message": "Yancy Qi′s Blog",
+    "description": "The alt text of navbar logo"
+  },
   "item.label.Docs": {
     "message": "Docs",
     "description": "Navbar item with label Docs"
@@ -11,16 +15,12 @@
     "message": "Blog",
     "description": "Navbar item with label Blog"
   },
-  "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
-  },
   "item.label.Themes": {
     "message": "Themes",
     "description": "Navbar item with label Themes"
   },
-  "logo.alt": {
-    "message": "Yancy Qi′s Blog",
-    "description": "The alt text of navbar logo"
+  "item.label.GitHub": {
+    "message": "GitHub",
+    "description": "Navbar item with label GitHub"
   }
 }

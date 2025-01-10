@@ -1,3 +1,5 @@
+@import "https://cdn.jsdelivr.net/npm/daisyui@4.12.14/dist/full.min.css";
+
 .highlighted {
   @apply bg-clip-text;
   background: linear-gradient(to left, #6C928C 0%, #B8FB3C 100%);
@@ -5,33 +7,13 @@
   -webkit-text-fill-color: transparent;
 }
 
-@supports (color: color(display-p3 1 1 1)) {
-  .highlighted {
-    @apply bg-clip-text;
-    background: linear-gradient(to left, color(display-p3 .4 .57 .54) 0%, color(display-p3 .72 1 .24) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
-.socialContainer {
-  @apply -mt-48 px-0 pt-8 pb-16;
-}
-
-.mediarow {
-  @apply flex flex-wrap justify-around my-8 space-x-4 z-10;
-}
-
-.stats {
-  @apply inline-grid;
-  border-radius: var(--rounded-box, 1rem);
-  --tw-bg-opacity: 1;
-  background-color: var(--fallback-b1, oklch(var(--b1) / var(--tw-bg-opacity)));
-  --tw-text-opacity: 1;
-  color: var(--fallback-bc, oklch(var(--bc) / var(--tw-text-opacity)));
+.socialTitle {
+  text-align: center;
+  margin: -4rem auto 2rem;
 }
 
 .shadow {
+  display: inline-table;
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / .1), 0 1px 2px -1px rgb(0 0 0 / .1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -47,61 +29,40 @@
   }
 }
 
-.btnUrl {
-  @apply btn btn-outline p-5 w-32 h-48;
-  border-color: var(--ifm-color-emphasis-200);
-}
-
 a--active,
 a:active,
 a:hover,
 a:focus {
-  @apply no-underline;
+  text-decoration-line: none;
 }
 
 .btnUrl--active .btnText,
 .btnUrl:active .btnText,
 .btnUrl:hover .btnText,
 .btnUrl:focus .btnText {
-  @apply no-underline;
-  color: var(--ifm-font-color-base-inverse);
+  text-decoration-line: none;
 }
 
 .btnUrl--active .btnIcon,
 .btnUrl:active .btnIcon,
 .btnUrl:hover .btnIcon,
 .btnUrl:focus .btnIcon {
-  @apply no-underline;
-  fill: var(--ifm-font-color-base-inverse);
+  text-decoration-line: none;
 }
 
 .btnIcon {
-  @apply block mx-auto my-0 p-2 w-20;
+  display: block;
+  margin: 0 auto;
+  padding: .5rem; 
+  width: 5rem;
   fill: #4093f6;
 }
 
-@supports (color: color(a98-rgb 1 1 1)) {
-  .btnIcon {
-    @apply block mx-auto my-0 p-2 w-20;
-    fill: color(a98-rgb .251 .576 .965);
-  }
-}
-
 .socialLinks > a:hover {
-  @apply backdrop-blur-sm brightness-125 contrast-100 no-underline;
+  text-decoration-line: none;
   background-color: #4093F6;
-}
-
-@supports (color: color(prophoto-rgb 1 1 1)) {
-  .socialLinks > a:hover {
-    @apply backdrop-blur-sm brightness-125 contrast-100 no-underline;
-    background-color: color(prophoto-rgb .251 .542 .957);
-  }
-}
-
-.btnText {
-  @apply text-2xl;
-  color: var(--ifm-font-color-base);
+  backdrop-filter: blur(4px);
+  filter: brightness(1.25) contrast(1);
 }
 
 [data-theme='dracula'] .socialLinks > a > .btnText {

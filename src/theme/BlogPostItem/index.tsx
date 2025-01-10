@@ -1,22 +1,20 @@
-import React from 'react'
+import React, { type ReactNode } from 'react';
+import BlogPostItem from '@theme-original/BlogPostItem';
+import type BlogPostItemType from '@theme/BlogPostItem';
+import type { WrapperProps } from '@docusaurus/types';
+import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
+import useIsBrowser from '@docusaurus/useIsBrowser';
+import GiscusComponent from '@site/src/components/GiscusComponent';
 
-import { useBlogPost } from '@docusaurus/theme-common/internal'
-import type { WrapperProps } from '@docusaurus/types'
-import useIsBrowser from '@docusaurus/useIsBrowser'
-import GiscusComponent from '@site/src/components/GiscusComponent'
-import BlogPostItem from '@theme-original/BlogPostItem'
-import type BlogPostItemType from '@theme/BlogPostItem'
+type Props = WrapperProps<typeof BlogPostItemType>;
 
-type Props = WrapperProps<typeof BlogPostItemType>
-
-export default function BlogPostItemWrapper(props: Props): JSX.Element {
+export default function BlogPostItemWrapper(props: Props): ReactNode {
   const { metadata } = useBlogPost()
   const isBrowser = useIsBrowser()
 
-  // eslint-disable-next-line unused-imports/no-unused-vars
   const { frontMatter, slug, title } = metadata
   const { enableComments } = frontMatter
-
+  
   let isCurrentUrlBlog = false
 
   if (isBrowser)
@@ -29,5 +27,5 @@ export default function BlogPostItemWrapper(props: Props): JSX.Element {
         <GiscusComponent />
       )}
     </>
-  )
+  );
 }

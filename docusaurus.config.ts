@@ -1,25 +1,16 @@
-/* eslint-disable ts/no-require-imports */
+import { themes as prismThemes } from 'prism-react-renderer';
+import type { Config } from '@docusaurus/types';
+import type * as Preset from '@docusaurus/preset-classic';
+import { Temporal } from '@js-temporal/polyfill';
+import rehypeKatex from 'rehype-katex';
+import remarkMath from 'remark-math';
+import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn';
 
-import { themes as prismThemes } from 'prism-react-renderer'
-import rehypeKatex from 'rehype-katex'
-import remarkMath from 'remark-math'
-
-import type * as Preset from '@docusaurus/preset-classic'
-import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn'
-// Note: type annotations allow type checking and IDEs autocompletion
-import type { Config } from '@docusaurus/types'
-import { Temporal } from '@js-temporal/polyfill'
+// This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const OriginTrial = 'AsQfvYHVhFEUOGL9ddGU33VJ525p51lAhfmfjcqod4JV36SUb6h5bvanj/4Om/MRcAJpK8mTlXHppPn0FSWJvAQAAAB8eyJvcmlnaW4iOiJodHRwczovL3l4LWJsb2cudmVyY2VsLmFwcDo0NDMiLCJmZWF0dXJlIjoiVW5yZXN0cmljdGVkU2hhcmVkQXJyYXlCdWZmZXIiLCJleHBpcnkiOjE3MDk4NTU5OTksImlzU3ViZG9tYWluIjp0cnVlfQ=='
 
 let dateStr = ''
-
-// Date object
-// const date = new Date()
-// const fullYear = date.getFullYear()
-// const monthNumStr = (date.getMonth() + 1) <= 10 ? (`0${(date.getMonth() + 1).toString()}`) : (date.getMonth() + 1)
-// const dateNumStr = date.getDate() <= 10 ? (`0${date.getDate().toString()}`) : date.getDate()
-// dateStr = `${monthNumStr}-${dateNumStr}`
 
 // 使用 Temporal API 获取日期
 const date = Temporal.PlainDate.from(Temporal.Now.plainDateISO().toString())
@@ -72,55 +63,47 @@ if (typeof window !== 'undefined') {
 const config: Config = {
   title: 'Yancy Qi′s Blog',
   tagline: '-',
-  url: 'https://yx-blog.vercel.app',
-  baseUrl: '/',
-  onBrokenLinks: 'throw',
-  onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon-me.ico',
+
+  // Set the production url of your site here
+  url: 'https://yx-blog.vercel.app',
+  // Set the /<baseUrl>/ pathname under which your site is served
+  // For GitHub pages deployment, it is often '/<projectName>/'
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'YancyQi2002', // Usually your GitHub org/user name.
-  projectName: 'yx-blog', // Usually your repo name.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+
+  // Even if you don't use internationalization, you can use this field to set
+  // useful metadata like html lang. For example, if your site is Chinese, you
+  // may want to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'zh-Hans',
     locales: ['zh-Hans', 'en'],
   },
 
-  stylesheets: [
-    {
-      rel: 'preconnect',
-      href: 'https://fonts.gstatic.com',
-      type: 'text/css',
+  future: {
+    experimental_faster: {
+      swcJsLoader: true,
+      swcJsMinimizer: true,
+      swcHtmlMinimizer: true,
+      lightningCssMinimizer: true,
+      rspackBundler: true,
+      mdxCrossCompilerCache: true,
     },
-    {
-      href: 'https://cdn.jsdelivr.net/npm/katex@0.16.10/dist/katex.min.css',
-      type: 'text/css',
-      integrity: 'sha384-wcIxkf4k558AjM3Yz3BBFQUbk/zgIYC2R0QpeeYb+TwlBVMrlgLqwRjRtGZiK7ww',
-      crossorigin: 'anonymous',
-    },
-    {
-      href: 'https://fonts.font.im/css?family=Raleway:500,700&display=swap',
-      type: 'text/css',
-      rel: 'stylesheet',
-    },
-    // {
-    //   href: "https://fonts.googleapis.com/css2?family=Fira+Code&display=swap",
-    //   type: "text/css",
-    //   rel: "stylesheet",
-    // },
-  ],
+  },
 
   presets: [
     [
       'classic',
       {
         docs: {
-          sidebarPath: require.resolve ('./sidebars.ts'),
+          sidebarPath: './sidebars.ts',
           remarkPlugins: [
             remarkMath,
             [
@@ -136,18 +119,32 @@ const config: Config = {
           // editUrl: '',
         },
         blog: {
+          path: './blog',
           showReadingTime: true,
           readingTime: ({ content, frontMatter, defaultReadingTime }) =>
             frontMatter?.hide_reading_time === true
               ? undefined
-              : defaultReadingTime ({ content }),
+              : defaultReadingTime({ content }),
           feedOptions: {
             type: 'all',
             copyright: `Copyright © 2020 — ${fullYear} Yancy Qi  Built with Docusaurus.`,
+            xslt: true,
+            createFeedItems: async (params) => {
+              const { blogPosts, defaultCreateFeedItems, ...rest } = params;
+              return defaultCreateFeedItems({
+                // keep only the 15 most recent blog posts in the feed
+                blogPosts: blogPosts.filter((item, index) => index < 15),
+                ...rest,
+              });
+            },
           },
-          path: './blog',
           blogSidebarTitle: '近期文章',
-          blogSidebarCount: 8,
+          blogSidebarCount: 15,
+          postsPerPage: 15,
+          blogListComponent: '@theme/BlogListPage',
+          blogPostComponent: '@theme/BlogPostPage',
+          blogTagsListComponent: '@theme/BlogTagsListPage',
+          blogTagsPostsComponent: '@theme/BlogTagsPostsPage',
           remarkPlugins: [
             remarkMath,
             [
@@ -161,6 +158,10 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           // editUrl: '',
+          // Useful options to enforce blogging best practices
+          onInlineTags: 'warn',
+          onInlineAuthors: 'warn',
+          onUntruncatedBlogPosts: 'warn',
         },
         theme: {
           customCss: './src/css/custom.css',
@@ -169,75 +170,32 @@ const config: Config = {
     ],
   ],
 
-  plugins: [
-    'docusaurus2-dotenv',
-    '@docusaurus/theme-live-codeblock',
-    // eslint-disable-next-line unused-imports/no-unused-vars
-    async function myTailwindcssPlugin(context, options) {
-      return {
-        name: 'docusaurus-tailwindcss',
-        /**
-         * @param {{ plugins: typeof import("tailwindcss")[] }} postcssOptions
-         */
-        configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
-          postcssOptions.plugins.push(require ('tailwindcss'))
-          postcssOptions.plugins.push(require ('autoprefixer'))
-          postcssOptions.plugins.push(require ('postcss-preset-env'))
-          return postcssOptions
-        },
-      }
-    },
-    // eslint-disable-next-line unused-imports/no-unused-vars
-    async function myCrossPlugin(context, options) {
-      return {
-        name: 'docusaurus-cross',
-        // eslint-disable-next-line unused-imports/no-unused-vars
-        configureWebpack(config, isServer, utils, content) {
-          return {
-            mergeStrategy: { 'module.rules': 'prepend' },
-            devServer: {
-              headers: {
-                'Cross-Origin-Opener-Policy': 'same-origin',
-                'Cross-Origin-Embedder-Policy': 'require-corp',
-                'Origin-Trial': OriginTrial,
-              },
-            },
-          }
-        },
-      }
-    },
-  ],
-
   themes: [
-    [
-      '@easyops-cn/docusaurus-search-local',
-      ({
-        indexDocs: true,
-        indexBlog: true,
-        indexPages: false,
-        docsRouteBasePath: '/docs',
-        blogRouteBasePath: '/blog',
-        docsDir: 'docs',
-        blogDir: 'blog',
-        highlightSearchTermsOnTargetPage: true,
-        // `hashed` is recommended as long-term-cache of index file is possible.
-        hashed: true,
-        // For Docs using Chinese, The `language` is recommended to set to:
-        // ```
-        // language: ["en", "zh"],
-        // ```
-        language: ['zh', 'en'],
-      }),
-    ],
+    // [
+    //   '@easyops-cn/docusaurus-search-local',
+    //   ({
+    //     indexDocs: true,
+    //     indexBlog: true,
+    //     indexPages: false,
+    //     docsRouteBasePath: '/docs',
+    //     blogRouteBasePath: '/blog',
+    //     docsDir: 'docs',
+    //     blogDir: 'blog',
+    //     highlightSearchTermsOnTargetPage: true,
+    //     // `hashed` is recommended as long-term-cache of index file is possible.
+    //     hashed: true,
+    //     // For Docs using Chinese, The `language` is recommended to set to:
+    //     // ```
+    //     // language: ["en", "zh"],
+    //     // ```
+    //     language: ['zh', 'en'],
+    //   }),
+    // ],
   ],
 
   themeConfig: {
-    docs: {
-      sidebar: {
-        hideable: true,
-      },
-    },
+    // Replace with your project's social card
+    // image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'Yancy Qi′s Blog',
       logo: {
@@ -250,15 +208,15 @@ const config: Config = {
           position: 'left',
         },
         {
-          type: 'doc',
-          docId: 'intro',
+          type: 'docSidebar',
+          sidebarId: 'introSidebar',
           position: 'left',
           label: 'Docs',
         },
         {
           to: '/blog',
           label: 'Blog',
-          position: 'left',
+          position: 'left'
         },
         {
           type: 'dropdown',
@@ -288,6 +246,11 @@ const config: Config = {
               label: '博客',
               to: '/',
             },
+          ],
+        },
+        {
+          title: 'Community',
+          items: [
             {
               label: 'Bilibili 哔哩哔哩',
               href: 'https://space.bilibili.com/314108035',
@@ -304,17 +267,55 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © 2020 — ${fullYear} Yancy Qi  Built with Docusaurus.`,
+      copyright: `Copyright © 2020 — ${fullYear} Yancy Qi Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
-      additionalLanguages: ['powershell'],
     },
     liveCodeBlock: {
       playgroundPosition: 'bottom',
     },
-  } satisfies Preset.ThemeConfig,
-}
 
-export default config
+    plugins: [
+      '@docusaurus/theme-live-codeblock',
+
+      async function myTailwindcssPlugin(context, options) {
+        return {
+          name: 'docusaurus-tailwindcss',
+          /**
+           * @param {{ plugins: typeof import("tailwindcss")[] }} postcssOptions
+           */
+          configurePostCss(postcssOptions) {
+            // Appends TailwindCSS and AutoPrefixer.
+            postcssOptions.plugins.push(require('tailwindcss'))
+            postcssOptions.plugins.push(require('autoprefixer'))
+            postcssOptions.plugins.push(require('postcss-preset-env'))
+            return postcssOptions
+          },
+        }
+      },
+
+      async function myCrossPlugin(context, options) {
+        return {
+          name: 'docusaurus-cross',
+          // eslint-disable-next-line unused-imports/no-unused-vars
+          configureWebpack(config, isServer, utils, content) {
+            return {
+              mergeStrategy: { 'module.rules': 'prepend' },
+              devServer: {
+                headers: {
+                  'Cross-Origin-Opener-Policy': 'same-origin',
+                  'Cross-Origin-Embedder-Policy': 'require-corp',
+                  'Origin-Trial': OriginTrial,
+                },
+              },
+            }
+          },
+        }
+      },
+    ]
+  } satisfies Preset.ThemeConfig,
+};
+
+export default config;

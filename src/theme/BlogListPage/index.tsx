@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
-
-import { themeChange } from 'theme-change'
-
 import type { WrapperProps } from '@docusaurus/types'
+
+import type BlogListPageType from '@theme/BlogListPage'
+
 import {
   dateNumStr,
   fullYear,
@@ -10,7 +9,8 @@ import {
   qinMingDate,
 } from '@site/src/interface'
 import BlogListPage from '@theme-original/BlogListPage'
-import type BlogListPageType from '@theme/BlogListPage'
+import React, { useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 type Props = WrapperProps<typeof BlogListPageType>
 

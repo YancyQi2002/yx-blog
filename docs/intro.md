@@ -128,4 +128,4 @@ sidebar_position: 1
 前进！前进！进！
 ```
 
-<audio autoPlay="true" controls loop src='/audio/audio.mp3'></audio>
+<audio autoPlay="false" controls src='/audio/audio.mp3'></audio>

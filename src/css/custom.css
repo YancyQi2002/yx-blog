@@ -4,15 +4,24 @@
  * work well for content-centric websites.
  */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* You can override the default Infima variables here. */
 
+@import 'tailwindcss';
+@import 'tailwindcss/utilities';
 @import url(https://cdn.jsdelivr.net/npm/firacode@6.2.0/distr/fira_code.css);
 
-@font-face {
-  font-family: yangrendongzhushi;
-  src: url('../fonts/yangrendongzhushiziti.ttf');
+@plugin '@tailwindcss/typography'
+@plugin '@headlessui/tailwindcss'
+@plugin 'daisyui' {
+  logs: true;
+  root: ":root";
+  themes: true;
+  darkTheme: 'dark';
+  base: true;
+  styled: true;
+  utils: true;
+  rtl: false;
+  prefix: '';
 }
 
 :root {
@@ -24,7 +33,7 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .1);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -36,38 +45,24 @@
   --ifm-color-primary-light: #29d5b0;
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, .3);
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-@supports (color: color(display-p3 1 1 1)) {
-  /* You can override the default Infima variables here. */
-  :root {
-    --ifm-color-primary: color(display-p3 .1804 .5216 .3333);
-    --ifm-color-primary-dark: color(display-p3 .1647 .4706 .298);
-    --ifm-color-primary-darker: color(display-p3 .1529 .4431 .2824);
-    --ifm-color-primary-darkest: color(display-p3 .1255 .3647 .2314);
-    --ifm-color-primary-light: color(display-p3 .2 .5725 .3647);
-    --ifm-color-primary-lighter: color(display-p3 .2078 .6 .3843);
-    --ifm-color-primary-lightest: color(display-p3 .2353 .6784 .4314);
-    --ifm-code-font-size: 95%;
-    --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .1);
-  }
+.navbar__item,
+.footer__items {
+  display: ruby-text;
+}
 
-  /* For readability concerns, you should choose a lighter palette in dark mode. */
-  [data-theme='dark'] {
-    --ifm-color-primary: color(display-p3 .1451 .7608 .6275);
-    --ifm-color-primary-dark: color(display-p3 .1294 .6863 .5647);
-    --ifm-color-primary-darker: color(display-p3 .1216 .6471 .5333);
-    --ifm-color-primary-darkest: color(display-p3 .102 .5333 .4392);
-    --ifm-color-primary-light: color(display-p3 .1608 .8353 .6902);
-    --ifm-color-primary-lighter: color(display-p3 .1961 .8471 .7059);
-    --ifm-color-primary-lightest: color(display-p3 .3098 .8667 .749);
-    --docusaurus-highlighted-code-line-bg: color(display-p3 0 0 0 / .3);
-  }
+.navbar__link:has(svg) {
+  display: ruby;
 }
 
 .navbar__item>ul>li>select {
   @apply m-4 w-36;
+}
+
+.breadcrumbs__link>svg {
+  top: 9px;
 }
 
 [data-theme='acid'] :is(.navbar, .hero) {
@@ -147,77 +142,6 @@
   background-color: #f0d6e8;
 }
 
-@supports (color: color(display-p3 1 1 1)) {
-  [data-theme='aqua'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .2039 .3647 .6588);
-  }
-  
-  [data-theme='autumn'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .949 .949 .949);
-  }
-
-  [data-theme='business'] :is(.navbar, .hero),
-  [data-theme='halloween'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .1294 .1294 .1294);
-  }
-
-  [data-theme='coffee'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .1294 .0941 .1255);
-  }
-
-  [data-theme='cupcake'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .9804 .9686 .9608);
-  }
-  
-  [data-theme='cyberpunk'] :is(.navbar, .hero) {
-    background-color: color(display-p3 1 .9333 0);
-  }
-
-  [data-theme='dracula'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .1529 .1765 .2078);
-  }
-
-  [data-theme='dim'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .1647 .1882 .2353);
-  }
-
-  [data-theme='forest'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .0902 .0706 .0706);
-  }
-
-  [data-theme='garden'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .9137 .9059 .9059);
-  }
-
-  [data-theme='luxury'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .0353 .0353 .0431);
-  }
-  
-  [data-theme='night'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .0588 .0902 .1608);
-  }
-
-  [data-theme='nord'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .9255 .9608 .9569);
-  }
-  
-  [data-theme='retro'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .8941 .8471 .7059);
-  }
-
-  [data-theme='sunset'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .0706 .1412 .1333);
-  }
-  
-  [data-theme='synthwave'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .1765 .1059 .4118);
-  }
-  
-  [data-theme='valentine'] :is(.navbar, .hero) {
-    background-color: color(display-p3 .9412 .8392 .9098);
-  }
-}
-
 .navbar__logo>img {
   @apply inline;
 }
@@ -282,53 +206,16 @@
   color: #9fb9d0;
 }
 
-@supports (color: color(display-p3 1 1 1)) {
-  [data-theme='aqua'] .navbar a,
-  [data-theme='aqua'] .navbar b,
-  [data-theme='aqua'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .7804 .8549 .9569);
-  }
-
-  [data-theme='business'] .navbar a,
-  [data-theme='business'] .navbar b,
-  [data-theme='business'] .navbar .navbar__items>.navbar__item,
-  [data-theme='halloween'] .navbar a,
-  [data-theme='halloween'] .navbar b,
-  [data-theme='halloween'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .8314 .8314 .8314);
-  }
-
-  [data-theme='coffee'] .navbar a,
-  [data-theme='coffee'] .navbar b,
-  [data-theme='coffee'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .4549 .4275 .3882);
-  }
-
-  [data-theme='luxury'] .navbar a,
-  [data-theme='luxury'] .navbar b,
-  [data-theme='luxury'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .8627 .6471 .298);
-  }
-
-  [data-theme='night'] .navbar a,
-  [data-theme='night'] .navbar b,
-  [data-theme='night'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .7019 .7725 .9373);
-  }
-
-  [data-theme='forest'] .navbar a,
-  [data-theme='forest'] .navbar b,
-  [data-theme='forest'] .navbar .navbar__items>.navbar__item {
-    color: color(display-p3 .8431 .8431 .8431);
-  }
-}
-
 [data-theme='dracula'] code {
   @apply text-slate-900;
 }
 
 footer {
   @apply flex justify-center;
+}
+
+.footer>.container {
+  place-items: normal;
 }
 
 .footer__col {
@@ -340,8 +227,20 @@ footer {
   @apply hidden;
 }
 
-a:has(svg) {
+.footer__item a:has(svg) {
   @apply inline-flex justify-center items-center !important;
+}
+
+.avatar>div {
+  display: block;
+  aspect-ratio: auto;
+  overflow: hidden;
+}
+
+.avatar img {
+  height: 100%;
+  width: 3rem;
+  object-fit: cover;
 }
 
 .markdown:has(hr) {
@@ -371,14 +270,6 @@ a:has(svg) {
   background: linear-gradient(to right, #EC695C, #61C454) no-repeat right bottom;
   background-size: 0 2px;
   transition: background-size 1300ms;
-}
-
-@supports (color: color(display-p3 1 1 1)) {
-  .markdown:has(h2) :where(h2) {
-    background: linear-gradient(to right, color(display-p3 .9255 .4118 .3608), color(display-p3 .3804 .7686 .3294)) no-repeat right bottom;
-    background-size: 0 2px;
-    transition: background-size 1300ms;
-  }
 }
 
 .markdown:has(h2) :where(h2):hover {

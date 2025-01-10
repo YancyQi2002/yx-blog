@@ -1,17 +1,10 @@
-import React, { Suspense, lazy, useEffect } from 'react'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
+import Layout from '@theme/Layout';
+import React, { lazy, Suspense, useEffect } from 'react'
 
-import { themeChange } from 'theme-change'
-
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
-import { HomepageHeader } from '@site/src/components/Homepage/HomepageHeader'
-import type { SocialLink } from '@site/src/interface'
-import {
-  dateNumStr,
-  fullYear,
-  monthNumStr,
-  qinMingDate,
-} from '@site/src/interface'
-import Layout from '@theme/Layout'
+import { monthNumStr, dateNumStr, qinMingDate, fullYear, SocialLink } from '../interface';
+import { HomepageHeader } from '../components/Homepage/HomepageHeader';
+import { themeChange } from 'theme-change';
 
 const SocialLinks = lazy(async () => import('../components/Homepage/SocialLinks.tsx'))
 
@@ -85,8 +78,30 @@ const socialLinks: SocialLink[] = [
   },
 ]
 
+// function HomepageHeader() {
+//   const {siteConfig} = useDocusaurusContext();
+//   return (
+//     <header className={clsx('hero hero--primary', styles.heroBanner)}>
+//       <div className="container">
+//         <Heading as="h1" className="hero__title">
+//           {siteConfig.title}
+//         </Heading>
+//         <p className="hero__subtitle">{siteConfig.tagline}</p>
+//         <div className={styles.buttons}>
+//           <Link
+//             className="button button--secondary button--lg"
+//             to="/docs/intro">
+//             Docusaurus Tutorial - 5min ⏱️
+//           </Link>
+//         </div>
+//       </div>
+//     </header>
+//   );
+// }
+
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext()
+  const { siteConfig } = useDocusaurusContext();
+
   useEffect(() => {
     themeChange(false)
     // 👆 false parameter is required for react project
@@ -107,8 +122,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />"
-    >
+      description="Description will go into a meta tag in <head />">
       <HomepageHeader />
       <main>
         <div className="container padding-vert">
@@ -125,5 +139,5 @@ export default function Home(): JSX.Element {
         </div>
       </main>
     </Layout>
-  )
+  );
 }

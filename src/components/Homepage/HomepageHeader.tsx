@@ -1,9 +1,9 @@
-import React from 'react'
+import Translate from '@docusaurus/Translate'
+
+import Heading from '@theme/Heading'
 
 import clsx from 'clsx'
-
-import Translate from '@docusaurus/Translate'
-import Heading from '@theme/Heading'
+import React from 'react'
 
 import styles from './styles.module.css'
 

@@ -1,9 +1,7 @@
-import React, { Suspense, lazy, useEffect } from 'react'
-
-import { themeChange } from 'theme-change'
-
 import { PageMetadata } from '@docusaurus/theme-common'
+
 import { translate } from '@docusaurus/Translate'
+
 import {
   dateNumStr,
   fullYear,
@@ -11,6 +9,8 @@ import {
   qinMingDate,
 } from '@site/src/interface'
 import Layout from '@theme/Layout'
+import React, { lazy, Suspense, useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 const NotFoundContent = lazy(async () => import('./Content/index.tsx'))
 

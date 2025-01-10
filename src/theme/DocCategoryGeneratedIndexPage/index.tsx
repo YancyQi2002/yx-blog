@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react'
-
-import { themeChange } from 'theme-change'
-
 import type { WrapperProps } from '@docusaurus/types'
+
+import type DocCategoryGeneratedIndexPageType from '@theme/DocCategoryGeneratedIndexPage'
+
 import {
   dateNumStr,
   fullYear,
@@ -11,8 +10,8 @@ import {
 } from '@site/src/interface'
 import DocCategoryGeneratedIndexPage
   from '@theme-original/DocCategoryGeneratedIndexPage'
-import type DocCategoryGeneratedIndexPageType
-  from '@theme/DocCategoryGeneratedIndexPage'
+import React, { useEffect } from 'react'
+import { themeChange } from 'theme-change'
 
 type Props = WrapperProps<typeof DocCategoryGeneratedIndexPageType>
 
@@ -36,7 +35,7 @@ const dateArray: string[] = [
 export default function DocCategoryGeneratedIndexPageWrapper(props: Props): JSX.Element {
   useEffect(() => {
     themeChange(false)
-  // 👆 false parameter is required for react project
+    // 👆 false parameter is required for react project
   }, [])
 
   if (typeof window !== 'undefined') {

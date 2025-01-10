@@ -1,10 +1,10 @@
-import React from 'react'
-
-import clsx from 'clsx'
+import type { Props } from '@theme/NotFound/Content'
 
 import Translate from '@docusaurus/Translate'
+
 import Heading from '@theme/Heading'
-import type { Props } from '@theme/NotFound/Content'
+import clsx from 'clsx'
+import React from 'react'
 
 export default function NotFoundContent({ className }: Props): JSX.Element {
   return (

@@ -1,20 +1,20 @@
 import React, {
   Fragment,
   useState,
-} from 'react'
+} from 'react';
 
-import ReactPlayer from 'react-player'
+import ReactPlayer from 'react-player/lazy';
 
-import { Tooltip } from '@ark-ui/react'
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
-import Translate from '@docusaurus/Translate'
-import { FFmpeg } from '@ffmpeg/ffmpeg'
-import { fetchFile } from '@ffmpeg/util'
-import { Transition } from '@headlessui/react'
+import { Tooltip } from '@ark-ui/react';
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
+import Translate from '@docusaurus/Translate';
+import { FFmpeg } from '@ffmpeg/ffmpeg';
+import { fetchFile } from '@ffmpeg/util';
+import { Transition } from '@headlessui/react';
 import {
-  type Video,
   initJingjuVedioList,
-} from '@site/src/interface'
+  type Video,
+} from '@site/src/interface';
 
 const ffmpeg = new FFmpeg()
 
@@ -96,18 +96,20 @@ const VideoPage: React.FC = () => {
         else {
           // 如果用户的设备不支持播放该视频格式，则转码视频
           setShowAlert(true)
-          try {
-            setVideoUrl(video.url)
-            // 尝试将视频编码格式转换为能在用户设备上播放的mp4格式
-            let transcodedUrl = await transcodeVideo(video.url)
-            if (transcodedUrl === null)
-              transcodedUrl = video.url // 如果转码失败，则使用原视频地址
-            setVideoUrl(transcodedUrl)
-          }
-          catch (err) {
-            // eslint-disable-next-line no-console
-            console.log(err)
-            setVideoUrl(video.url) // 如果转码失败，则使用原视频地址
+          if (typeof video.url == 'string') {
+            try {
+              setVideoUrl(video.url)
+              // 尝试将视频编码格式转换为能在用户设备上播放的mp4格式
+              let transcodedUrl = await transcodeVideo(video.url)
+              if (transcodedUrl === null)
+                transcodedUrl = video.url // 如果转码失败，则使用原视频地址
+              setVideoUrl(transcodedUrl)
+            }
+            catch (err) {
+              // eslint-disable-next-line no-console
+              console.log(err)
+              setVideoUrl(video.url) // 如果转码失败，则使用原视频地址
+            }
           }
         }
       }
@@ -136,33 +138,50 @@ const VideoPage: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center h-full rounded-lg">
       <div className="relative h-full join">
-        <span className="absolute inset-y-0 -top-2 left-0 flex items-center pl-2.5 z-10">
-          <svg xmlns="http://www.w3.org/2000/svg" width="1rem" height="1rem" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20.031 20.79c.46.46 1.17-.25.71-.7l-3.75-3.76a7.904 7.904 0 0 0 2.04-5.31c0-4.39-3.57-7.96-7.96-7.96s-7.96 3.57-7.96 7.96c0 4.39 3.57 7.96 7.96 7.96c1.98 0 3.81-.73 5.21-1.94l3.75 3.75zM4.11 11.02c0-3.84 3.13-6.96 6.96-6.96c3.84 0 6.96 3.12 6.96 6.96s-3.12 6.96-6.96 6.96c-3.83 0-6.96-3.12-6.96-6.96z" />
-          </svg>
-        </span>
-        <input
-          type="text"
-          className="input input-bordered mb-2 pl-10 w-full max-w-xs border-2 join-item !rounded-md"
-          onCompositionStart={() => setIsComposing(true)}
-          onCompositionEnd={(e) => {
-            if (e.currentTarget.value === '')
-              setVideoList(initJingjuVedioList)
-            if (isComposing) {
-              setInputValue(e.currentTarget.value)
-              setVideoList(videoList.filter(video => video.title.includes(e.currentTarget.value)))
-              setIsComposing(false)
-            }
-          }}
-          onChange={(e) => {
-            if (!isComposing) {
-              setInputValue(e.currentTarget.value)
+        <label
+          className="items-center input input-bordered input-lg gap-2"
+          style={{display: 'inline-flex'}}
+        >
+          <input
+            type="text"
+            className="grow"
+            style={{width: 20 + 'rem'}}
+            placeholder="Search"
+            onCompositionStart={() => setIsComposing(true)}
+            onCompositionEnd={(e) => {
               if (e.currentTarget.value === '')
                 setVideoList(initJingjuVedioList)
-            }
-          }}
-        />
+              if (isComposing) {
+                setInputValue(e.currentTarget.value)
+                setVideoList(videoList.filter(video => video.title.includes(e.currentTarget.value)))
+                setIsComposing(false)
+              }
+            }}
+            onChange={(e) => {
+              if (!isComposing) {
+                setInputValue(e.currentTarget.value)
+                if (e.currentTarget.value === '')
+                  setVideoList(initJingjuVedioList)
+              }
+            }}
+          />
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 16 16"
+            fill="currentColor"
+            width="3rem" height="3rem"
+            className="opacity-70"
+            style={{paddingTop: 0.625 + 'rem'}}
+          >
+            <path
+              fillRule="evenodd"
+              d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
+              clipRule="evenodd" />
+          </svg>
+        </label>
       </div>
+
+      <div className="divider"></div>
 
       <Transition
         appear
@@ -209,7 +228,9 @@ const VideoPage: React.FC = () => {
         }}
       />
 
-      <div className="flex flex-wrap justify-center mt-2 w-full select-none">
+      <div className="divider"></div>
+
+      <div style={{display: 'flex',justifyContent: 'space-around',flexWrap: 'wrap'}}>
         {videoList.filter(video => video.title.includes(inputValue)).map((video, index) => (
           <div key={index} className="m-1 transition duration-200">
             <Tooltip.Root closeDelay={0} openDelay={0}>
@@ -220,7 +241,10 @@ const VideoPage: React.FC = () => {
                   handleVideoItemSelect(index)
                 }}
               >
-                <span>
+                <span
+                  className="btn btn-outline btn-primary"
+                  style={{width: 100 + '%',height: 5 + 'rem',fontSize: 'medium',lineHeight: 1.5 + 'rem'}}
+                >
                   <div title={video.title}>
                     {video.title}
                   </div>

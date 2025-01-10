@@ -14,15 +14,20 @@ code {
 }
 
 .heroBanner {
-  @apply relative px-0 py-16 text-center overflow-hidden;
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    @apply p-8;
+    padding: 2rem;
   }
 }
 
 .buttons {
-  @apply flex items-center justify-center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

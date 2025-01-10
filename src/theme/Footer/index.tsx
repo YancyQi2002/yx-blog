@@ -1,9 +1,9 @@
-import React from 'react'
-
 import { useThemeConfig } from '@docusaurus/theme-common'
+
 import FooterLayout from '@theme/Footer/Layout'
 import FooterLinks from '@theme/Footer/Links'
 import FooterLogo from '@theme/Footer/Logo'
+import React from 'react'
 
 import FooterCopyright from './Copyright'
 
