@@ -6,8 +6,8 @@
   "build": {
     "frontendDist": "../build",
     "devUrl": "http://localhost:3000",
-    "beforeDevCommand": "pnpm start",
-    "beforeBuildCommand": "pnpm build"
+    "beforeDevCommand": "bun run start",
+    "beforeBuildCommand": "bun run build"
   },
   "app": {
     "windows": [
@@ -35,9 +35,28 @@
       "icons/icon.ico"
     ],
     "windows": {
+      "allowDowngrades": true,
       "certificateThumbprint": null,
-      "digestAlgorithm": "sha256",
-      "timestampUrl": "",
+      "digestAlgorithm": null,
+      "nsis": {
+        "compression": "lzma",
+        "displayLanguageSelector": true,
+        "headerImage": "icons/icon.ico",
+        "installerIcon": "icons/icon.ico",
+        "installerHooks": "./windows/hooks.nsh",
+        "installMode": "currentUser",
+        "languages": [
+          "SimpChinese",
+          "TradChinese",
+          "Japanese",
+          "English",
+          "Russian"
+        ],
+        "sidebarImage": "icons/icon.ico"
+      },
+      "signCommand": null,
+      "timestampUrl": null,
+      "tsp": false,
       "webviewInstallMode": {
         "silent": true,
         "type": "embedBootstrapper"

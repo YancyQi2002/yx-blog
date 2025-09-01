@@ -1,20 +1,21 @@
+import type { Video } from '@site/src/interface'
+
+import { Tooltip } from '@ark-ui/react'
+
+import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment'
+import Translate from '@docusaurus/Translate'
+import { FFmpeg } from '@ffmpeg/ffmpeg'
+import { fetchFile } from '@ffmpeg/util'
+import { Transition } from '@headlessui/react'
+import {
+  initJingjuVedioList,
+
+} from '@site/src/interface'
 import React, {
   Fragment,
   useState,
-} from 'react';
-
-import ReactPlayer from 'react-player/lazy';
-
-import { Tooltip } from '@ark-ui/react';
-import ExecutionEnvironment from '@docusaurus/ExecutionEnvironment';
-import Translate from '@docusaurus/Translate';
-import { FFmpeg } from '@ffmpeg/ffmpeg';
-import { fetchFile } from '@ffmpeg/util';
-import { Transition } from '@headlessui/react';
-import {
-  initJingjuVedioList,
-  type Video,
-} from '@site/src/interface';
+} from 'react'
+import ReactPlayer from 'react-player/lazy'
 
 const ffmpeg = new FFmpeg()
 
@@ -140,12 +141,12 @@ const VideoPage: React.FC = () => {
       <div className="relative h-full join">
         <label
           className="items-center input input-bordered input-lg gap-2"
-          style={{display: 'inline-flex'}}
+          style={{ display: 'inline-flex' }}
         >
           <input
             type="text"
             className="grow"
-            style={{width: 20 + 'rem'}}
+            style={{ width: `${20}rem` }}
             placeholder="Search"
             onCompositionStart={() => setIsComposing(true)}
             onCompositionEnd={(e) => {
@@ -169,14 +170,16 @@ const VideoPage: React.FC = () => {
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 16 16"
             fill="currentColor"
-            width="3rem" height="3rem"
+            width="3rem"
+            height="3rem"
             className="opacity-70"
-            style={{paddingTop: 0.625 + 'rem'}}
+            style={{ paddingTop: `${0.625}rem` }}
           >
             <path
               fillRule="evenodd"
               d="M9.965 11.026a5 5 0 1 1 1.06-1.06l2.755 2.754a.75.75 0 1 1-1.06 1.06l-2.755-2.754ZM10.5 7a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Z"
-              clipRule="evenodd" />
+              clipRule="evenodd"
+            />
           </svg>
         </label>
       </div>
@@ -230,7 +233,7 @@ const VideoPage: React.FC = () => {
 
       <div className="divider"></div>
 
-      <div style={{display: 'flex',justifyContent: 'space-around',flexWrap: 'wrap'}}>
+      <div style={{ display: 'flex', justifyContent: 'space-around', flexWrap: 'wrap' }}>
         {videoList.filter(video => video.title.includes(inputValue)).map((video, index) => (
           <div key={index} className="m-1 transition duration-200">
             <Tooltip.Root closeDelay={0} openDelay={0}>
@@ -243,7 +246,7 @@ const VideoPage: React.FC = () => {
               >
                 <span
                   className="btn btn-outline btn-primary"
-                  style={{width: 100 + '%',height: 5 + 'rem',fontSize: 'medium',lineHeight: 1.5 + 'rem'}}
+                  style={{ width: `${100}%`, height: `${5}rem`, fontSize: 'medium', lineHeight: `${1.5}rem` }}
                 >
                   <div title={video.title}>
                     {video.title}

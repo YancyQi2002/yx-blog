@@ -1,10 +1,11 @@
 import { themes as prismThemes } from 'prism-react-renderer';
-import type { Config } from '@docusaurus/types';
-import type * as Preset from '@docusaurus/preset-classic';
-import { Temporal } from '@js-temporal/polyfill';
 import rehypeKatex from 'rehype-katex';
 import remarkMath from 'remark-math';
+
+import type * as Preset from '@docusaurus/preset-classic';
 import remarkPluginNpm2yarn from '@docusaurus/remark-plugin-npm2yarn';
+import type { Config } from '@docusaurus/types';
+import { Temporal } from '@js-temporal/polyfill';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -96,6 +97,9 @@ const config: Config = {
       rspackBundler: true,
       mdxCrossCompilerCache: true,
     },
+    v4: {
+      removeLegacyPostBuildHeadAttribute: true
+    }
   },
 
   presets: [
@@ -287,9 +291,9 @@ const config: Config = {
            * @param {{ plugins: typeof import("tailwindcss")[] }} postcssOptions
            */
           configurePostCss(postcssOptions) {
-            // Appends TailwindCSS and AutoPrefixer.
+            // Appends TailwindCSS.
             postcssOptions.plugins.push(require('tailwindcss'))
-            postcssOptions.plugins.push(require('autoprefixer'))
+            postcssOptions.plugins.push(require('@tailwindcss/postcss'))
             postcssOptions.plugins.push(require('postcss-preset-env'))
             return postcssOptions
           },

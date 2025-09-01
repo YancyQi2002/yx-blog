@@ -1,12 +1,13 @@
-import React, { type ReactNode } from 'react';
-import BlogPostItem from '@theme-original/BlogPostItem';
-import type BlogPostItemType from '@theme/BlogPostItem';
-import type { WrapperProps } from '@docusaurus/types';
-import { useBlogPost } from '@docusaurus/plugin-content-blog/client';
-import useIsBrowser from '@docusaurus/useIsBrowser';
-import GiscusComponent from '@site/src/components/GiscusComponent';
+import type { WrapperProps } from '@docusaurus/types'
+import type BlogPostItemType from '@theme/BlogPostItem'
+import type { ReactNode } from 'react'
+import { useBlogPost } from '@docusaurus/plugin-content-blog/client'
+import useIsBrowser from '@docusaurus/useIsBrowser'
+import GiscusComponent from '@site/src/components/GiscusComponent'
+import BlogPostItem from '@theme-original/BlogPostItem'
+import React from 'react'
 
-type Props = WrapperProps<typeof BlogPostItemType>;
+type Props = WrapperProps<typeof BlogPostItemType>
 
 export default function BlogPostItemWrapper(props: Props): ReactNode {
   const { metadata } = useBlogPost()
@@ -14,7 +15,7 @@ export default function BlogPostItemWrapper(props: Props): ReactNode {
 
   const { frontMatter, slug, title } = metadata
   const { enableComments } = frontMatter
-  
+
   let isCurrentUrlBlog = false
 
   if (isBrowser)
@@ -27,5 +28,5 @@ export default function BlogPostItemWrapper(props: Props): ReactNode {
         <GiscusComponent />
       )}
     </>
-  );
+  )
 }

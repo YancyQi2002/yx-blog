@@ -1,10 +1,11 @@
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import React, { lazy, Suspense, useEffect } from 'react'
+import type { SocialLink } from '../interface'
+import useDocusaurusContext from '@docusaurus/useDocusaurusContext'
+import Layout from '@theme/Layout'
 
-import { monthNumStr, dateNumStr, qinMingDate, fullYear, SocialLink } from '../interface';
-import { HomepageHeader } from '../components/Homepage/HomepageHeader';
-import { themeChange } from 'theme-change';
+import React, { lazy, Suspense, useEffect } from 'react'
+import { themeChange } from 'theme-change'
+import { HomepageHeader } from '../components/Homepage/HomepageHeader'
+import { dateNumStr, fullYear, monthNumStr, qinMingDate } from '../interface'
 
 const SocialLinks = lazy(async () => import('../components/Homepage/SocialLinks.tsx'))
 
@@ -100,7 +101,7 @@ const socialLinks: SocialLink[] = [
 // }
 
 export default function Home(): JSX.Element {
-  const { siteConfig } = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext()
 
   useEffect(() => {
     themeChange(false)
@@ -122,7 +123,8 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      description="Description will go into a meta tag in <head />"
+    >
       <HomepageHeader />
       <main>
         <div className="container padding-vert">
@@ -139,5 +141,5 @@ export default function Home(): JSX.Element {
         </div>
       </main>
     </Layout>
-  );
+  )
 }

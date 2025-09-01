@@ -16,12 +16,12 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
     <React.Fragment key={name}>
       <div className={clsx('stats', styles.shadow)}>
         <div
-          className='stat place-items-center btn btn-outline rounded-md'
-          style={{height: '100%',border: 'none'}}
+          className="stat place-items-center btn btn-outline rounded-md"
+          style={{ height: '100%', border: 'none' }}
         >
           <Link
             to={url}
-            className='w-32'
+            className="w-32"
           >
             <div className={clsx('stat-figure', styles.btnIcon)}>
               {svg}
@@ -39,15 +39,15 @@ const SocialLinks: React.FC<SocialLinksProps> = ({ data }) => {
   const socialLinksComponents = React.useMemo(() => data.map(createLink), [data, createLink])
 
   return (
-    <div className='px-0 pt-8 pb-16'>
+    <div className="px-0 pt-8 pb-16">
       <Heading as="h1" className={styles.socialTitle}>
         <Translate>
           Social media
         </Translate>
       </Heading>
       <div
-        className='row my-10 space-x-1 z-10'
-        style={{justifyContent: 'space-between'}}
+        className="row my-10 space-x-1 z-10"
+        style={{ justifyContent: 'space-between' }}
       >
         {socialLinksComponents}
       </div>
